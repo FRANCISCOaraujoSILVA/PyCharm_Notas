@@ -1,0 +1,2 @@
+Esse é um arquivo para teste. A princípio, é um bom arquivo.
+Estou na segunda linha.

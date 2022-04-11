@@ -1,0 +1,4265 @@
+"""
+PEP8 - SÃO PROPOSTAS DE MELHORIAS PARA A LINGUAGEM PYTHON.
+
+import this
+
+A ideia da pep8 é que possamos escrever códigos de forma pythônica, ou seja, visualmente bonita.
+[1] utilizar Camel Case para nome de classes;
+ou seja, NomeSobrenome: Observe as letras maiúsculas.
+Perceba que duas linhas em brancos são necessárias para evitar o traço em baixo.
+Para tirar erros de palavras, mude: file,settings,slelling,desatiar typo
+[2] Utilizar nome minúsculo, separados por underline para funções ou variáveis;
+
+
+
+class Calculadora:
+    pass
+
+
+class CalculadoraCientífica:
+    pass
+
+
+def soma():
+    pass
+
+
+def soma_dois():
+    pass
+
+numero=4
+numero_impar=5
+
+[3] utilize 4 espaços para identação!, se não seguir, não conseguimos programar.
+Os dois pontos no fim indica que um novo bloco vai começar, por isso precisamos de 4 espaços.
+Não é recomendado usar o tab para dar os espaços.
+Essa linguagem de programação é completamente dependente da indentação.
+
+
+if 'a' in 'banana':
+    print('tem')
+
+[4] linhas em branco.
+-Precisamos das duas linhas de espaço, entre funções e definições de classe.
+-Métodos dentro de uma classe devem ser separados com uma única linha em branco.
+
+[5] Imports devem ser sempre feitos em linhas separadas.
+
+#Import errado
+
+import sys. os
+
+#import certo
+
+import sys
+import os
+
+#Podemos importar partes de uma biblioteca, não há problema em fazer isso. Serve para no máximo 3
+
+from types import StringType,ListType
+
+#para mais de 3, fazemos assim:
+
+from types import (
+    StringTupe,
+    ListType,
+    SetType,
+    OutroType
+)
+
+# imports devem ser colocadas no topo do arquivo, logo depois de qualquer comentário ou docstringr
+# e antes de constantes ou variáveis globais.
+
+[6] Espaços em expressões e instruções
+
+# Não faça:
+
+funcao( algo[ 1 ],{outro: 2})
+
+# faça:
+
+funcao(algo[1],{outro:2})
+
+# não faça:
+
+algo (1)
+
+# faça:
+
+algo (1)
+
+# não faça:
+
+dict ['chave'] = list [indice]
+
+# faça:
+
+dict['chave'] = list[indice]
+
+# não faça:
+
+x = 1
+y = 3
+
+# faça:
+
+x=1
+y=3
+
+[7] Sempre termine uma instrução com uma nova linha
+
+obs.: podemos fazer comentários com três aspas simples também. Mas é preferível usar três aspas duplas.
+"""
+-----------------------------------------------------------------------------------------------------------------------
+"""
+dir e help: UTILITÁRIOS PARA AUXILIAR NA PROGRAMAÇÃO.
+
+dir->apresenta todos os atributos e funções/métodos disponíveis para determinado tipo de dado ou variável.
+
+dir(tipo de dado ou variável)
+lower
+upper
+title
+
+help->apresenta  a documentação/como utilizar os atributos/propriedades e funções/métodos disponívels
+para determinado tipo de dado ou variável
+
+help(tipo de dado/variável.propriedade)
+
+q: sai do help
+
+Podemos fazer direto no terminal ou aqui no script.
+
+print(dir("sorte")).
+
+No terminal os dados saem muito melhor.
+"""
+-----------------------------------------------------------------------------------------------------------------------
+"""
+RECEBENDO DADOS DO USUÁRIO: DADOS RECEBDIDOS VIA INPUT SÃO DO TIPO STRING.
+
+Outro exemplos de string:
+-aspas simples
+'Palavra'
+-aspas duplas
+"Palavra"
+-aspas simples triplas
+'''Palavra'''
+-aspas duplas triplas
+""Palavra""
+"""
+
+# entrada de dados
+# Podemos fazer esse input em apenas uma linha. Muito mais elegante.
+# print("Qual é o seu nome?")
+# nome=input()
+
+nome = input('Qual o seu nome? ')
+
+# Exemplo de print antigo
+# print('seja bem vindo(a) %s' % nome)
+
+# Exemplo de print moderno
+# print('seja bem-vindo(a) {0}'.format(nome))
+
+# Exemplo de print 'mais atual'. Percebe que o f é de>>format
+print(f'Seja bem-vindo(a) {nome}!')
+
+
+# Podemos fazer esse input em apenas uma linha. Muito mais elegante.
+# print('Qual sua idade?')
+# idade=input()
+
+idade = input('Qual a sua idade? ')
+
+# saída
+# Exemplo de print antigo
+# print('O %s tem %s anos' % (nome,idade))
+
+# Exemplo de print moderno
+# print('O(a) {0} tem {1} anos'.format(nome,idade))
+
+# Exemplo de print 'mais atual'. Percebe que o f é de>>format
+print(f'O(a) {nome} tem {idade} anos, ou seja, nasceu em {2021-int(idade)}.')
+
+# O int(idade) => cast
+# cast é a conversão de um tipo de dado. Ou seja, conseguimos subtrair uma string de um número.
+# Podemos fazer cálculos dentro das chaves
+# é importante notar que eu poderia tirar esse int aqui de baixo e colocar lá no input da idade, antes do input, para
+# transformar em inteiro.
+
+# Achei o jeito atual muito mais maneiro e profissional. A coisa está ficando boa.
+
+
+# import scipy.optimize
+-----------------------------------------------------------------------------------------------------------------------
+"""
+TIPO NUMÉRICO:
+
+formas de obter um número inteiro: int(5/2) ou no modo pythônico 5//2
+obter o resto da divisão: 5%2
+
+obs.: se o resto da divisão de um número por 2 for 0, ele é par. se o resto da divisão de um número por 2 for 1, é ímpar
+
+exponenciação: 2**3
+
+em java, o limite de número inteiro é 2**63. Por outro lado, no python, o limite é a memória do computador
+
+LIMPAR O CONSOLE DO PYTHON NO TERMINAL: CTRL+l
+
+uma forma fácil de escrever um número difícil de visualizar:
+1_000_000_000
+    n+=1 é equivalente: n=n+1
+    n-=1 é equivalente: n=n-1
+    n*=1 é equivalente: n=n*1
+    n/=1 é equivalente: n=n/1
+
+Saber que tipo de variável temos: type(variável) no console
+"""
+-----------------------------------------------------------------------------------------------------------------------
+"""
+TIPO FLOAT:
+
+ou seja, tipo real, decimal.
+o separador de casas decimais é um ponto(.)
+
+Ao converter valores tipo float para inteiros perdemos precisão, lembrar de cálculo numérico.
+
+Número complexo sempre tem um "j" acompanhado.
+
+Podemos também passar um número inteiro para ponto flutuante, basta: float(num)
+"""
+
+# É possível fazer dupla atribuição:
+
+n1, n2 = 25.1, 33.2
+print(n1)
+print(n2)
+-----------------------------------------------------------------------------------------------------------------------
+"""
+TIPO BOOLEANO:
+
+Esse tipo vem da álgebra booleana, criada por George Boole.
+2 constantes, verdadeiro ou falso.
+
+True -> verdadeiro
+False -> falso
+
+obs.: não podemos usar letras minúsculas para representar "True" ou "False".
+Usado também para operações básicas.
+"""
+
+ativo = False
+
+print(ativo)
+print('-----')
+
+# Operações básicas
+
+# negação (not):
+"""
+Fazendo a negação, se o valor booleano for verdadeiro o resultado será falso,
+se for falso o resultado será verdadeiro. Ou seja, sempre o contrário.
+"""
+
+print(not ativo)
+print('-----')
+
+# ou (or):
+"""
+Retorna um valor verdadeiro:
+True or True>True
+True or False>True
+False or False>False
+
+"""
+logado = False
+print(ativo or logado)
+print('-----')
+
+# e (and)
+"""
+Ambos os valores devem ser verdadeiros, a recíproca não é verdadeira. Confira no último boobleano
+True and True>True
+True and False>False
+False and False>False
+"""
+
+print(ativo and logado)
+print('-----')
+-----------------------------------------------------------------------------------------------------------------------
+"""
+TIPO STRING:
+
+Sempre que:
+- estiver entre aspas simples
+- aspas duplas
+- aspas simples triplas
+- aspas duplas triplas
+- dados de input
+
+O mais comum é usar aspas simples.
+Se quisermos pular uma linha dentro de uma string, basta colocar \nFrancisco
+
+A primeira posição de uma lista é o 0.
+"""
+
+nome = 'Francisco \nAraújo \nda \nSilva'
+print(nome)
+print(type(nome))
+
+# Podemos fazer assim também, mas tem que ser com duplas triplas
+
+nome1 = """Francisco
+Araújo
+da
+silva
+"""
+print(nome)
+print(type(nome))
+
+nome2 = "Francisco \"Araújo\" "
+# print(nome2.lower()) transforma tudo em minúsculo.
+print(nome2)
+
+print(nome2[0:9])  # Forma de capturar o dado, conhecido como Slice de string
+print(nome2.split())  # transforma os nomes em uma lista
+print(nome2.split()[0])  # pegamos o primeiro elemento dessa lista
+print(nome2.split()[1])  # pegamos o segunodo elemento de uma lista
+
+# invertendo as letras
+
+print(nome2[::-1])  # ou seja, vamos do primeiro até o último e invertemos.
+
+# Podemos também trocar uma letra por outra
+
+print(nome.replace('F', 'FF'))  # ou seja, trocamos F por FF
+
+texto = 'socorram me subino onibus em marrocos'  # Palíndromo
+print(texto)
+print(texto[::-1])
+-----------------------------------------------------------------------------------------------------------------------
+"""
+TIPO NONE: EM PYTHON REPRESENTA O TIPO SEM TIPO. ALÉM DISSO, PODE SER DO TIPO VAZIO.
+
+- É sempre específicado pela primeira letra maiúscula.
+- Podemos usar esse tipo quando queremos criar uma variável e inicializá-la com um tipo sem tipo antes de recebermos o
+valor final.
+"""
+
+numeros = None
+print(numeros)
+print(type(numeros))
+
+numeros = 1.44, 1.34, 5.67
+print(numeros)
+print(type(numeros))
+-----------------------------------------------------------------------------------------------------------------------
+"""
+ESCOPO DE VARIÁVEIS:
+
+Escopo é a limitação de algo. Ou seja, onde que nossa variável vai ser reconhecida dentro do nosso código. Temos dois
+casos.
+
+VARIÁVEIS GLOBAIS: seu escopo compreende no programa inteiro
+
+VARIÁVEIS LOCAIS: reconhecidas apenas no bloco onde forma declaradas
+
+Para declarar variáveis em python:
+
+Nome_da_variavel = valor_da_variavel
+
+Python é uma liguagem de tipagem dinâmica, ou seja, quando declaramos uma variável, não colocamos o tipo de dado dela.
+
+Se fosse em C:
+int numero = 42
+Se fosse em Java:
+int numero = 42
+
+Nessas linguagens, uma vez que a variável é declarada não podemos mais mudar. Já aqui no python
+podemos fazer retribuição.
+
+if numero > 10:
+    novo = numero + 10
+    print(novo)
+
+print(novo)
+
+Veja que a variável novo está apenas dentro do laço.
+"""
+
+numero = 42  # exemplo de variável global, posso acessar em qualquer parte do código
+print(numero)
+print(type(numero))
+
+if numero > 10:
+    novo = numero + 10
+    print(novo)
+
+
+# um exemplo de variável de escopo não global é aquela que pode estar dentro de um if apenas, por exemplo.
+-----------------------------------------------------------------------------------------------------------------------
+"""
+Espaço reservado pra solucionar os exercícios da seção 4
+"""
+# 1 - Faça um program que leia um número inteiro e o imprima.
+# a = input('Digite um número inteiro: ')
+# print(f'O número inteiro é: {a}')
+print('-----')
+
+# 2 - Faça um programa que leia um número real e o imprima.
+b = 2.2
+print(f'O número real é: {b}')
+print('-----')
+
+# 3 - Peça ao usuário para inserir três números inteiros e imprima a soma deles.
+# c = input('informe o primeiro número inteiro: ')
+# d = input('informe o segundo número inteiro: ')
+# e = input('informe o terceiro número inteiro: ')
+# print(f'A soma dos três números inteiros é: {int(c)+int(d)+ int(e)}')
+# print(f'A soma dos três números inteiros é: {c+d+e}')  # veja que aqui não estamos somando, estamos concatenando os n°
+# lembrar também que sem os "int" o dado é tipo string, devido ao input
+print('-----')
+
+# 4 - Leia um número real e imprima o resultado do quadrado desse número.
+f = 3
+print(f'O quadrado do número real é: {f**2}')
+print('-----')
+
+# 5 - Leia um número real e imprima a quinta parte desse número.
+g = 5
+print(f'A quinta parte do número {g} é: {(1/5)*g}')
+print('-----')
+
+# 6 - Leia uma temperatura em graus Celsius e apresente-a convertida em graus Fahrenheit.
+# A fórmula de conversão é: F=C*(9/5)+32, sendo F a temperatura em Fahrenheit
+# e C a temperatura em Celsius.
+h = 42
+print(f'A temperatura de {h} graus Celsius equivale a {h*(9/5)+32} graus Fahrenheit.')
+print('-----')
+
+# 7 - Leia uma temperatura em graus Fahrenheit e apresente-a convertida em graus Celsius.
+# A fórmula de conversão é: C = 5*(F - 32)/9, sendo C a temperatura em Celsius e F a temperatura em Fahrenheit
+i = 107.6
+print(f'A temperatura de {i} graus Fahrenheit equivale a {5*(i-32)/9} graus Celsius.')
+print('-----')
+
+# 28
+valor1 = 10
+valor2 = 20
+valor3 = 30
+print(f'A soma dos quadrados dos três valores: {(valor1 * valor1) + (valor2 * valor2) + (valor3 * valor3)}')
+print('-----')
+
+# 43
+valor_lido = 425
+print(f'Valor total a pagar com 10% de desconto: {valor_lido * .9} R$')
+print(f'Valor parcelado, 3x sem juros: {valor_lido/3} R$')
+print(f'Comissão do vendedor na compra a vista: {.05 * (valor_lido * .9)} R$')
+print(f'Comissão do vendedor na compra parcelada: {.05 * valor_lido}')
+print('----')
+
+# 45 - Faça um programa para converter uma letra maiúscula em letra minúscula. Use a tabela ASCII para resolver.
+j = 'FRANCISCO ARAujo'
+print(j.lower())
+print('-----')
+
+# 46 - Faça um programa que leia um número inteiro positivo de três dígitos (de 100 a 999). Gere outro número formado
+# pelos dígitos invertidos do número lido.
+numero = str(123)
+print(f'O número {numero} invertido é: {numero[::-1]}')
+print('-----')
+
+# 47 - Leia um número de 4 dígitos (de a 1000 a 9999) e imprima 1 dígito por linha.
+nm = 2234
+nm = str(nm)
+print(nm[0])
+print(nm[1])
+print(nm[2])
+print(nm[3])
+print('-----')
+
+# 50 - Implemente um programa que calcule o ano de nascimento de uma pessoa a partir de sua idade e do ano atual
+idade = 25
+ano_atual = 2022
+print(f'Ano de nascimento do cidadão: {ano_atual-idade-1}')
+print('-----')
+-----------------------------------------------------------------------------------------------------------------------
+"""
+ESTRUTURAS CONDICIONAIS:
+
+if
+else
+elif > para mais de duas estruturas de condição. elif= else+if
+"""
+
+idade = 15
+
+if idade < 18:  # veja que o dois pontos cria o bloco. Estrutura condicional na frente.
+    print('Menor de idade!')
+    print(f'{idade} anos')
+elif idade == 18:  # Podemos ter vários "elfis"
+    print('Tem 18 anos')
+else:  # Estrutura condicional em baixo
+    print('Maior de idade!')
+    print(f'{idade} anos')
+
+# veja que no python é muito mais limpo para escrever estruturas condicionais.
+# Poderíamos ter vários if também, mas não é legal, fica muito poluído visualmente
+-----------------------------------------------------------------------------------------------------------------------
+"""
+ESTRUTURAS CONDICIONAIS:
+
+Operadores binários
+    and(e) - ambos precisam ser verdadeiros
+    or(ou) - ou um ou outro precisa ser verdaderio
+Operadores unários
+    not(não) - o valor do boolenao é invertido, ou seja, se for True, vira False, se for False, vira True. É uma negação
+    operador de negação
+    is(é) - é muito usado para comparação como forma de pergunta, retorna True ou False
+
+o "if" verifica se a expressão é verdadeira ou falsa
+
+obs.: quanto mais alto o nível da programação, mais próximo da linguagem humana, quanto mais baixo, mais
+próximo das máquinas
+
+temos os is nas iniciais de algumas expressões quando consultamos o "dir"
+no terminal:
+nome = 'Francisco'
+dir(nome)      > veja que lá temos várias propriedades começando com o "is"
+
+faça:
+nome.isupper()
+nome.title()
+"""
+ativo = True
+logado = False
+
+# if ativo or logado:
+#     print('Bem vindo usuário!')
+# else:
+#    print('Você precisa ativar sua conta, Por favor, cheque seu email')
+print('-----')
+if not ativo:  # se não for ativo
+    print('Você precisa ativar sua conta. Por favor, cheque seu email')
+else:  # se for ativo
+    print('Bem-vido usuário')
+print('-----')
+
+print(not True)
+print(not False)
+print('-----')
+
+if ativo is False:  # jeito redunte de analisar
+    print('Você precisa ativar sua conta')
+else:
+    print('Bem-vido usuário')
+print('-----')
+
+if not ativo:  # jeito pythônico de fazer a análise, se não está ativo você prescisa ativar sua conta
+    print('Você precisa ativar sua conta')
+else:
+    print('Bem-vido usuário')
+print('-----')
+
+# ativo é True?
+print(ativo is True)
+# ativo é False?
+print(ativo is False)
+-----------------------------------------------------------------------------------------------------------------------
+"""
+Espaço reservado pra solucionar os exercícios da seção 5
+
+# 1
+x = input('Digite o primeiro número: ')
+y = input('Digite o segundo número: ')
+if x > y:
+    print(f'{x} é maior que {y}.')
+elif x < y:
+    print(f'{y} é maior que {x}.')
+else:
+    print(f'O númeoro {x} é igual ao número {y}.')
+print('-----')
+
+
+# 2
+x = float(input('Digite um número real: '))
+
+if x >= 0:
+    print(f'A raiz quadrada do número é: {x**0.5}')
+else:
+    print(f'O número não possui raiz real, já que {x} é negativo.')
+print('-----')
+
+# 3
+x = float(input('Digite um número inteiro (Z): '))
+if x != int:
+    print(f"O número '{x}' será transformado em inteiro do tipo: {int(x)}")
+    if x % 2 == 0:  # Calculamos o resto da divisão com "%"
+        print(f'O número é par.\nA raiz quadrada: {(x**0.5)}')
+    else:
+        print(f'O número é impar.\nO número ao quadrado: {x**2}')
+else:
+    if x % 2 == 0:  # Calculamos o resto da divisão com "%"
+        print(f'O número é par.\nA raiz quadrada: {(x**0.5)}')
+    else:
+        print(f'O número é impar.\nO número ao quadrado: {x**2}')
+print('-----')
+
+# 8
+nota1 = float(input('Insira a primeira nota: '))
+nota2 = float(input('Insira a segunda nota: '))
+
+if nota1 > 10 or nota1 < 0:
+    print(f'A nota {nota1} não é válida. Precisa estar entre 0 e 10.')
+elif nota2 > 10 or nota2 < 0:
+    print(f'A nota {nota1} não é válida. Precisa estar entre 0 e 10.')
+else:
+    print(f'A média aritmética: {(nota1+nota2)/2}')
+
+
+# 11
+num = float(input('Insira um número inteiro maior que zero: '))
+if num != int and num > 0:
+    print(f"O número '{num}' será transformado em: {int(num)}")
+num = str(int(num))
+
+soma = []
+if int(num) > 0:
+    for i in num:
+        soma.append(int(i))
+    print(f'A soma dos algarismos: {sum(soma)}')
+else:
+    print(f"Número inválido.")
+
+
+# 12 = Preciso refinar esse código
+numero = input('Digite um número inteiro: ')
+if int(numero) < 0:
+    print('O número é negativo.')
+else:
+    lista = list(range(0, int(numero)))
+    print(lista)
+    for i in lista:
+        if 10**i - int(numero) < 0.3:
+            print(f'O log de {numero} na base 10 é aproximadamente: {i}')
+
+
+# 13 - Calcula a média ponderada.
+notaProva1 = 6
+notaProva2 = 6
+notaProva3 = 6
+pesoProva1 = 1
+pesoProva2 = pesoProva1
+pesoProva3 = 2
+listaPeso = [pesoProva2, pesoProva3, pesoProva1]  # Não sei o que houve, mas não consegui usar o comando list aqui.
+mediaPonde = ((notaProva1*pesoProva1)+(notaProva2*pesoProva2)+(notaProva3*notaProva3))/sum(listaPeso)
+if mediaPonde >= 10:
+    print(f'VOCÊ ESTÁ APROVADO. Sua nota: {mediaPonde}')
+else:
+    print(f'VOCÊ ESTÁ REPROVADO. Sua nota: {mediaPonde}')
+# Acho que ele está errando na suposta análise do cálculo da média ponderada
+"""
+-----------------------------------------------------------------------------------------------------------------------
+"""
+LOOP - repetição
+FOR - umas das estruturas
+
+Utilizamos loops para iterar sobre sequências ou sobre valores iteráveis
+
+Dica para ir na documentação da função: ctrl+clique na função
+Podemos multiplicar uma string pelo nome
+
+Dicas para concatenar:
+nome = 'Francisco'
+nome + ' Araújo
+
+"""
+
+print('-----')
+nome = 'Francisco Araújo'  # faça: nome[1]
+lista = [1, 3, 5, 7, 9]
+numeros = range(1, 10)  # temos que tranformar em uma lista, ainda, vamos ver depois
+
+print('-----')
+# Exemplo de for 1 (iterando em uma string)
+for letra in nome:
+    print(letra)
+
+print('-----')
+# Exemplo de for 2 (iterando em uma lista)
+for numero in lista:
+    print(numero)
+
+print('-----')
+# Exemplo de for 3 (iterando em um range)
+for numero in range(1, 10):  # lembra muito o linspace. Obs.: O range não inclui o último, nesse caso do python
+    print(numero)
+
+print('-----')
+# E se quisermos os índices?
+
+"""
+Enumerate: trás dois valores
+((1, 'F'), (2, 'r'), (3, 'a'), (4, 'n'), (5, 'c'), (6, 'i'), (7, 's'), (8, 'c'), (9, 'o'), (10, '')...)
+Retorna o número e a letra.
+"""
+
+for indice, letra in enumerate(nome):
+    print(nome[indice])
+print('-----2')
+
+
+for _, letra in enumerate(nome):  # é uma outra forma de fazer, quando não precisamos do número descartamos com o under.
+    print(letra)
+
+print('-----3')
+
+for dado in enumerate(nome):  # Retorna o índice e valor
+    print(dado)
+print('-----4')
+
+for valor in enumerate(nome):
+    print(valor[0])  # Somente os índices
+
+
+# Outras formas de usar o for aqui no python
+
+quantidade = int(input('Quantas vezes esse loop deve rodar? '))
+for n in range(1, quantidade+1):
+    print(f'Imprimindo: {n}')
+print('-----')
+
+Nome = 'Um novo nome!'
+
+for letra in Nome:
+    print(letra, end='  ')  # o end='' faz com que as impressões sejam feitas na mesma linha com um espaçado pré-
+# especificado
+-----------------------------------------------------------------------------------------------------------------------
+"""
+ENTENDENDO E EXPLORANDO RANGES: NÃO É UM LAÇO DE REPETIÇÃO, É MAIS UMA FUNÇÃO AUXILIAR.
+
+-Precisamos conhecer o loop for para usar os ranges.
+-Precisamos conhecer o range para trabalhar melhor com loop for
+
+Ranges são utilizados para gerar sequências numéricas, nõo de forma aleatória, mas
+sim de maneira específica.
+"""
+# Formas gerais:
+
+"""
+# Forma 1:
+range(valor_de_parada)
+Obs.: valor_de_parada não inclusiva (início padrão em 0 e passo de 1 em 1)
+"""
+
+for num in range(12):  # vai até 12-1
+    print(num)
+print('-----')
+
+"""
+# Forma 2:
+range(range(valor_de_início, valor_de_parada)
+Obs.: valor_de_parada não inclusiva (início padrão específicado e passo de 1 em 1)
+"""
+for num in range(2, 12):
+    print(num)
+print('-----')
+
+"""
+# Forma 3:
+range(range(valor_de_início, valor_de_parada, passo)
+Obs.: valor_de_parada não inclusiva (início padrão específicado e passo específicado)
+"""
+
+for num in range(0, 20, 4):
+    print(num)
+print('-----')
+
+"""
+# Forma 4:
+igual a três, mas inversa.
+range(range(valor_de_início, valor_de_parada, -passo)
+Ou seja de trás para frente.
+"""
+
+for num in range(20, 0, -1):
+    print(num)
+
+"""
+Obs.: Para criar uma lista no terminal, basta: lista = list(range(12)).
+Só assim podemos visualizar no console
+"""-----------------------------------------------------------------------------------------------------------------------
+"""
+LOOP WHILE: É IMPORTANTE LEMBRAR DA EXPRESSÃO BOOLEANA E O CRITÉRIO DE PARADA.
+
+Forma geral:
+while expressão_booleana:
+    //execução do loop
+
+O bloco do while se repete enquanto a expressão booleana for verdadeira
+
+Expressão booleana é toda expressão onde o resultado é verdadeiro ou falso!
+
+ex.:
+num = 5
+num < 5    False
+num < 10   True
+
+Ou seja, condições de verdadeiro ou falso.
+"""
+# Exemplo 1:
+
+numero = 10
+
+while numero > 0:  # eu que escolhi essa forma de decréscimo
+    print(f'O número da vez é: {numero}')
+    numero = numero - 1
+print('-----')
+
+# Obs.: Em um loop while é importante cuidar do critério de parada. Para "parar" é preciso clicar no stop do RUN, se o
+# código for acionado aqui no script.
+
+
+# Exemplo 2:
+
+resposta = ''
+
+while resposta != 'sim' and resposta != 'Sim':  # um jeido de cobrir as dus possibilidades para S Minúsculo e Maiúsculo
+    resposta = input('Já finalizou Francisco???: ')
+-----------------------------------------------------------------------------------------------------------------------
+"""
+SAINDO DE LOOPS COM BREAK: TANTO PARA O LOOP FOR QUANDO PARA O LOOP WHILE.
+"""
+# Exemplo com o for:
+Parada = 15
+for numero in range(1, 20):
+    if numero == Parada:
+        break
+    else:
+        print(numero)
+print(f"No  número '{Parada}' saímos do loop!")
+print('-----')
+
+# Exemplo com o while:
+while True:  # Estamos forçando o loop infinito com True
+    comando = input("Digite 'sair' para sair: ")
+    if comando == 'sair':
+        break
+    else:
+        if comando == 'Sair':
+            break
+print('Conseguimos sair do loop!')
+-----------------------------------------------------------------------------------------------------------------------
+"""
+Espaço reservado pra solucionar os exercícios da seção 6
+
+# 1-múltiplos de 3
+lista = list(range(0, 500, 3))
+print(lista[0:5])
+print('-----')
+
+# 2.1-usando o for
+limite = 100
+for i in range(0, limite+1):
+    print(i)
+    if i == limite:
+        for h in range(0, limite+1):
+            print(h)
+            if h == limite:
+                for m in range(0, limite+1):
+                    print(m)
+
+print('------')
+
+# 2.2-usando while
+limite = 0
+parada = 0
+while limite < 101:
+    limite += 1
+    print(limite)
+    if limite == 100:
+        limite = 0
+        parada += 1
+    print(limite)
+    if parada == 3:
+        break
+
+print('-----')
+
+# 3-contagem regressiva
+cont = 0
+while cont < 10:
+    cont += 1
+    print(cont)
+print('FIM')
+
+print('-----')
+
+# 4-com passos
+limite = int(input('Digite um valor inteiro maior que 10_000: '))
+olimite = 0
+while olimite < limite:  # Uma forma diferente de representar o valor 10000. É melhor para visualizar
+    olimite += 1_000
+    print(olimite)
+print('-----')
+
+
+# 5
+n = 0
+lista = []
+while True:
+    n += 1
+    x = float(input('Digite o primeiro valor para somar no final: '))
+    lista.append(x)
+    if n == 10:
+        break
+print(' ')
+print(f'A soma dos valores: {sum(lista)}')
+print('-----')
+
+# 7
+
+lista = [1, 10, -1, -2, 5, 6, 4, 3, 2, 5]
+positivos = []
+for i in lista:
+    if i > 0:
+        positivos.append(i)
+print(f'A média aritmética dos valores positivos: {sum(positivos)/len(positivos)}')
+print('-----')
+
+# 8
+print(f'O menor valor lido da lista: {min(lista)}')
+print(f'O maior valor lido da lista: {max(lista)}')
+print('-----')
+
+# 10 - somas os pares e positivos
+lista = [1, 10, -1, -2, 5, 6, 4, 3, 2, 5]
+lista_pares = []
+for i in lista:
+    if i > 0:
+        if i % 2 == 0:
+            lista_pares.append(i)
+print(f'A somas de todos os pares da lista: {sum(lista_pares)}')
+print('-----')
+
+
+# 17
+inteiro = int(input("Digite um número inteiro para criar um lista de 0 até ele: "))
+quantidades = int(input("Escolha o índice até onde devemos somar os elementos na lista: "))
+listint = list(range(0, inteiro))
+print(f'A soma dos números até o índice da lista: {sum(listint[0:quantidades])}')
+print(listint)
+
+
+# 18 - Não era o exercício pedia, mas gostei depois de feito e resolvi não apagar. Tudo pela arte do código.
+numeros = list(range(0, int(input("Insira um valor como índice para que uma lista seja criada de 0 até ele: "))))
+parada = int(input('Escolha até qual índice devemos contar: '))
+contagem = []
+print(numeros)
+print(f"O maior deles: {max(numeros)}")
+for i in numeros:
+    contagem.append(i)
+    if i == parada:
+        break
+
+print(f"Foram feitas '{len(contagem)}' leituras.")
+
+
+# 24
+divisores = []
+inteiro = int(input('Digite um número inteiro:  '))
+lista = list(range(1, inteiro))
+lista_divisores = []
+
+for i in lista:
+    if inteiro % i == 0:
+        lista_divisores.append(i)
+
+print(f'A soma dos divisores: {sum(lista_divisores)}')
+print(f'A lista dos divisores: {lista_divisores}')
+
+
+# 25
+lista = list(range(0, 1001))
+multiplos = []
+for i in lista:
+    if i % 3 == 0:
+        multiplos.append(i)
+    else:
+        if i % 5 == 0:
+            multiplos.append(i)
+
+print(f"A soma de todos os multiplos: {sum(multiplos)}")
+print(f"A lista de todos os multiplos: {multiplos}")
+
+
+# 26
+numero = int(input('Digite um número: '))
+multiplos = [11, 13, 17]
+lista_multiplos = []
+for i in multiplos:
+    if numero % i == 0:
+        lista_multiplos.append(i)
+
+if len(lista_multiplos) > 0:
+    print(f'Os múltiplos: {lista_multiplos}')
+else:
+    if len(lista_multiplos) == 0:
+        print(f'Esse número não possui os seguintes múltiplos: {multiplos}')
+
+if len(lista_multiplos) > 0:
+    for i in lista_multiplos:
+        if numero > i:
+            print(f'O múltiplo mais próximo: {i}')
+        if numero < i:
+            print(f'O múltiplo mais próximo: {i}')
+"""
+-----------------------------------------------------------------------------------------------------------------------
+"""
+LISTAS SÃO MUTÁVEIS:
+
+O python é uma das linguagens mais usadas no campo da biotecnologia.
+
+Listas: Em Python funciona como vetores/matrizes (arrays), em outras linguagens, com a diferença de serem
+DINÂMICOS e também de podermos colocar QUALQUER tipo de dado. Além disso, posso misturar números com letras.
+
+ No Python;
+ - Dinâmico: não possuem tamanho fixo, ou seja, podemos criar a incrementar elementos, mas o tamanho não é
+ infinito, depende do tamanho da memória da máquina que se está usando.
+ - Qualquer tipo de dado: não possuem tipo de dado fixo, pode ser qualquer tipo de dado
+
+ - As listas em Python são represetadas entre colchetes.
+ Faça (no terminal): type([])>> você vai ser informado que é uma lista
+
+ Obs.: Faça; dir(lista5) no terminal>> nos diz todos os métdos para essa variável
+"""
+
+# from typing import List
+
+print(type([]))
+print('-----')
+
+lista1 = [1, 2, 5, 6, 1, 4, 6, 12, 45]  # Lista de inteiros
+lista2 = ['F', 'r', 'a', 'n', 'c', 'i', 's', 'c', 'o']  # lista de strings
+lista3 = []  # lista vazia
+lista4 = list(range(11))  # transforma em lista os dados de zero a dez
+lista5 = list('Francisco Araújo')  # gera uma lista com um único elemento do tipo string
+
+# Podemos, facilmente, checar se um elemento esta na lista
+n = 11
+if n in lista1:
+    print(f'Encontrei o valor {n} na lista!')
+elif n-1 in lista1:
+    print(f'O valor {n} não está na lista, mas tem o valor {n-1}!')
+elif n+1 in lista1:
+    print(f'O valor {n} não está na lista, mas tem o valor {n+1}!')
+else:
+    print(f"Valor '{n}' não encontrado na lista!")
+print('-----')
+
+# Podemos facilmente ordenar uma lista, de strings ou numérica. Não importa se houver elementos repetidos
+
+lista1.sort()
+print(lista1)
+print('-----')
+
+# Podemos contar o número de ocorrências de um valor em uma lista
+print(f'Ocorrência no número "1" na lista 1: {lista1.count(1)}')
+print(f"Ocorrência da letra 'a' na lista 5: {lista5.count('a')}")
+# ainda não sei como encontrar a letra na lista2 usando o count(). Mas é fácil também usando o if.
+print('-----')
+
+"""
+Para adicionar elementos em uma lista: Utilizamos a função "append", inclusive valor repetido. Mas conseguimos
+incrementar apenas um ELEMENTO (uma lista também é uma elemento) por vez.
+"""
+print('Lista1 original incrementada:')
+print(lista1)
+lista1.append(1)
+print('Adicionamos o número 1 na lista1:')  # essa adição de elemento é feita no final da lista
+print(lista1)
+print('Usamos [] para incrementar uma lista dentro de outra lista.')
+lista1.append([1, 2, 3, 4, 5, 6, 7])
+print(lista1)
+print('-----')
+
+# Mas atenção! Cuidado ao procurar dados nessa lista, já que não mais é um elemento, e sim vários.
+if [1, 2, 3, 4, 5, 6, 7] in lista1:
+    print('Ótimo, encontrei a lista incrementada (o elemento lista na verdade)!')
+else:
+    print('Não encontrei o elemento lista! Verifique novamente!')
+print('-----')
+
+"""
+Outra forma de adicionar elementos na lista, mas são adicionados individualmente. Ou seja, a lista continuará com 1 
+elemento.
+Outro detalhe importante é que essa função não aceita valor único. Para isso temos que usar o append().
+"""
+lista1.extend([1, 2, 3, 4, 5, 6, 7])
+print(lista1)
+print('-----')
+
+# Podemos inserir (e não substituir) um elemento na lista especificando a posição do elemento na lista
+print(f'Lista 1: {lista1}')
+lista1.insert(2, 'Elemento adicionado na terceira posição com a função insert')
+print(lista1)
+print('-----')
+
+# Podemos também juntar duas listas.
+lista6 = lista1 + lista2  # faz o mesmo trabalho que o extend.
+print(lista6)
+print('-----')
+
+# Podemos inserir a lista inversa.
+lista1.reverse()
+lista2.reverse()
+print(lista1)
+print(lista2)
+print('-----')
+
+# Outro jeito de inverter:
+print(lista5[::-1])
+print('-----')
+
+# Podemos também copiar uma lista.
+lista7 = lista6.copy()
+print(lista7)
+print('-----')
+
+# Podemos saber quantos elementos temos na lista.
+print(f'A lista7 tem {len(lista7)} elementos')
+print('-----')
+
+# Podemos excluir o último elemento da lista. O pop remove o último elemento mas também retorna. Verifique no terminal.
+print(lista5)
+lista5.pop()
+print(lista5)
+print('-----')
+
+"""
+Podemos também remover pelo índice. Os elementos a direita do índice são deslocados para a esquerda. Com isso, novos
+índices são criados. Esse detalhe é muito importante.
+"""
+print(lista5)
+lista5.pop(1)
+print(lista5)
+print('-----')
+
+# Podemos remover todos os elementos
+print(lista5)
+lista5.clear()
+print(lista5)
+print('-----')
+
+# Repetindo uma lista.
+nova = [1, 2, 4, 6, 8, 0]
+nova = nova * 3
+print(nova)
+print('-----')
+
+# Posso transformar um texto (string) numa lista a cada espaço (se não especificado no argumento do split) da expressão.
+nova = 'Francisco Araújo da Silva'
+print(nova.split())
+print('-----')
+
+# Para separar a cada vírgula
+nova = 'Francisco,Araújo,da,Silva'
+print(nova.split(','))
+print('-----')
+
+# Concatenando elementos de uma lista por espaço e transformando em uma string. Será que vale apenas para string?
+umTexto = ['Francisco', 'Araújo', 'da', 'Silva']
+umaString = ' '.join(umTexto)
+print(umaString)
+print('-----')
+
+# Numa lista, realmente, podemos colocar qualquer tipo de dado.
+listaVariada = [1, 2.32, True, 'Francisco', 'd', [1, 2, 3], 45462656]
+print(listaVariada)
+print('-----')
+
+# Exemplo 1 - com o for. Agora, vamos iterar uma lista. Ou seja, vamos imprimir cada elemento.
+for elemento in listaVariada:
+    print(elemento)
+print('-----')
+"""
+# Exemplo 2 - usando o while.
+carrinho = []  # Criamos uma lista vazia
+produto = ''  # Variável do tipo string, para adicionar ao carrinho
+
+while produto != 'sair':
+    print("Adicione um produto na lista ou digite 'sair' para sair e exibir o carrinho de produtos: ")
+    produto = input()
+    if produto != 'sair':
+        carrinho.append(produto)
+for produto in carrinho:
+    print(f'Todos os produtos adicionados ao carrinho são: {produto}')
+"""
+print('-----')
+
+# Podemos também criar uma lista com variáveis. Isso pode ser muito interessante. Vamos utilizar variáveis em letras.
+numeros = [1, 2, 3, 4, 5]
+print(numeros)
+
+num1 = 1
+num2 = 2
+num3 = 3
+num4 = 4
+num5 = 5
+
+numerosV = [num1, num2, num3, num4, num5]
+print(numerosV)
+print('-----')
+
+# Nas listas, fazemos acesso aos elementos de forma indexada.
+
+cores = ['verde', 'amarelo', 'azul', 'branco']
+
+print(cores[0])  # verde
+print(cores[1])  # amarelo
+print(cores[2])  # azul
+print(cores[3])  # branco
+print('-----')
+
+"""
+Podemos, também, acessar de trás para frente. Pensar nas listas como um círculo pode ajudar a acessar os elementos nessa
+ordem.
+"""
+print(cores[-1])  # branco
+print(cores[-2])  # azul
+print(cores[-3])  # amarelo
+print(cores[-4])  # verde
+print('-----')
+
+# loop nas cores com for.
+for cor in cores:
+    print(f'As cores com o loop for: {cor}')
+print('-----')
+
+# loop nas cores com o while.
+indice = 0
+while indice < len(cores):
+    print(f'As cores com o loop while: {cores[indice]}')
+    indice = indice + 1  # == indice += 1
+
+
+print('-----')
+
+
+# Podemor gerar índices em uma lista.
+for indiceDaLista, cor in enumerate(cores):
+    print(f"índice da lista: {indiceDaLista}, Cor no índice:  {cor}")
+# Ou seja, o  enumerate gera pares, chave e valor para a lista. A chave vair para "indiceDaLista" e valor para "Cor".
+"""
+Faça no terminal: cores = ['cor1', 'cor2', 'cor3', 'cor4', 'cor5', 'cor6', 'cor7']
+list(enumerate(cores))
+"""
+print('-----')
+
+# Lista aceita valores repetidos (reforçando)
+
+lista = list([])
+"""
+Com o append() abaixo vamos adicionar elementos nessa lista vazia.
+Essa declaração de lista, para criar lista vazia, é o jeito correto de criar sem gerar a cobrinha em baixo dele.
+"""
+
+lista.append(3)
+lista.append(2)
+lista.append(5)
+lista.append(0)
+lista.append(8)
+lista.append(8)
+lista.append(7)
+print(lista)
+print('-----')
+
+
+"""
+Agora vamos aprender outros métodos, mas não tão importantes para continuar trabalhando com listas.
+"""
+
+# Encontrar o índice de um elemento em uma lista. Se o elemento não estiver na lista, UM ERRO É GERADO.
+
+lista10 = [1, 3, 5, 6, 3, 8, 9, 5, 4, 7]
+print(f'O índice: {lista10.index(5)}')
+print(f'O índice: {lista10.index(6)}')
+print(f'O índice: {lista10.index(3)}')  # retorna o índice do primeiro elemento, por isso, atenção se existir repetição.
+print('-----')
+
+# Podemos fazer buscas dentro de um range, indicando qual o índice do ínicio da busca.
+print(lista10.index(3, 2))  # Procura o valor 3, a partir do índice 2. Ou seja, dentro de um range, busca o índice de
+# acordo com a lista original.
+print('-----')
+
+# Podemos fazer buscas dentro de um range. Valor, início, fim.
+print(lista10.index(6, 2, 7))
+print('-----')
+
+# Revisando o slicing.
+# lista[início:fim:passo]. Parece com o range(início:fim:passo)
+
+# Trabalhando com slice de lista com o parâmetro 'início'
+
+lista = [1, 2, 3, 4, 5]
+print(lista[1:])  # Imprime a lista a  partir do índice 1, ou seja, a partir do 2. Também aceita valores negativos.
+print('-----')
+
+# Trabalhando com o parâmetro fim
+print(lista[:2])  # Imprime do início até o índice 2.
+print('-----')
+
+# Trabalhando com início e fim.
+print(lista[1:3])  # Imprime do índice 1 até o índice 2.
+print('-----')
+
+# Trabalhando com o passo. Podemos usar valor negativo para o passo.
+print(lista[1::2])  # Imprime de 1 até o final de 2 em 2.
+print('-----')
+
+# Trocando os valores em uma lista de lugar
+
+nome = ['Francisco', 'Araújo', 'da', 'Silva']
+nome[0], nome[1], nome[2], nome[3] = nome[2], nome[1], nome[3], nome[0]  # Forma diferente de atribuição.
+print(nome)
+print('-----')
+
+# Modo Pythônico alinhado. Inverte a lista
+nome = ['Francisco', 'Araújo', 'da', 'Silva']
+nome.reverse()
+print(nome)
+print('-----')
+
+# Soma*, Valor Máximo*, Valor Mínimo*, Tamanho*
+# Se os valores forem todos inteiros ou reais.
+lista = [1, 2, 3, 4, 5, 6]
+
+print(sum(lista))  # soma
+print(max(lista))  # valor máximo
+print(min(lista))  # valor mínimo
+print(len(lista))  # tamanho da lista
+print('-----')
+
+# Podemos transformar uma lista (usa colchetes) em uma tupla (usa parênteses) - vamos estudar mais adiante.
+lista = [1, 2, 3, 4, 5, 6]
+print(lista)
+print(type(lista))
+
+tupla = tuple(lista)
+print(tupla)
+print(type(tupla))
+
+"""
+VISUALMENTE A ÚNICA DIFERENÇA SÃO OS COLCHETES E OS PARÊNTES. Mas tem mais coisas por trás de tudo isso. Em breve 
+estudaremos afinco.
+"""
+print('-----')
+
+# Fazendo o desempacotamento da lista. É importante notar que o número de variáveis deve ser igual ao len da lista.
+lista = [1, 2, 3, 4, 5, 6]
+nu1, nu2, nu3, nu4, nu5, nu6 = lista
+print(nu1)
+print(nu2)
+print(nu3)
+print(nu4)
+print(nu5)
+print(nu6)
+print('-----')
+
+"""
+Muito cobrado em entrevista. Copiando uma lista para outra (Shallow Copy e Deep Copy).
+"""
+# Deep Copy
+lista = [1, 2, 3]
+print(f'lista criada {lista}')
+
+novalista = lista.copy()
+print(f'Lista copiada {novalista}')
+
+novalista.append(4)
+
+print(f'Lista criada: {lista}')
+print(f'Lista copiado com o copy() adicionando elemento com o append(): {novalista} ')
+
+"""
+Veja que são duas listas diferentes. Ou seja, é o Deep Copy.
+lista.copy >> copia uma lista, mas sem vínculo. Em python é chamado de Deep Copy
+"""
+print('-----')
+
+# Shallow Copy
+lista = [1, 2, 3]
+print(f'lista criada {lista}')
+
+nova = lista  # Uma forma de cópia, que é também uma atribuição.
+print(f'lista copiada com vínculo {nova}')
+
+nova.append(4)
+
+print(f'lista criada {lista}')
+print(f'lista copiada {nova}')
+
+"""
+Utilizamos a cópia via atribuição. Copiamos o dado da lista para uma nova lista.
+Todavia, ao modificar uma, modificamos a outra. Em Python é chamado de Shallow Copy.
+Isso é muito importante.
+"""
+-----------------------------------------------------------------------------------------------------------------------
+"""
+TUPLAS (tuple): BASTANTE PARECIDAS COM LISTAS, COM DUAS DIFERENÇAS BÁSICAS:
+
+-Aceita diferentes tipos de dados.
+
+- Tuplas são representadas por parênteses.
+- Tuplas são IMUTÁVEIS, ou seja, ela nunca muda. Todas as operações em uma tupla gera uma nova tupla.
+"""
+# Nota 1: As tuplas são representadas por parênteses (). Mas veja:
+tupla1 = (1, 2, 3, 4, 5, 6)
+print(tupla1)
+print(type(tupla1))
+print('-----')
+
+tupla2 = 1, 2, 3, 4, 5, 6,  # Também cria uma tupla. Posso ou não usar a vírgula no final.
+print(tupla2)
+print(type(tupla2))
+print('-----')
+
+
+# Nota 3: Tuplas com 1 elemento, não é uma tupla, é um inteiro.
+tupla3 = (1)
+print(tupla3)
+print(f'Veja que é do tipo inteiro: {type(tupla3)}')
+print('-----')
+
+# Nota 4: Isso é uma tupla. Criamos com a vírgula.
+tupla4 = (1,)
+print(tupla4)
+print(type(tupla4))
+print('-----')
+
+tupla5 = 25,
+print(tupla5)
+print(type(tupla5))
+print('-----')
+
+
+"""
+Em conclusão: tuplas são definidas pela uso das vírgulas, e não pelo parênteses. Isso é importante.
+"""
+
+# Também podemos gerar tuplas com o range.
+tupla6 = tuple(range(20, -22, -2))
+print(tupla6)
+print(type(tupla6))
+print('-----')
+
+# Desempacotamento de tuplas. Funciona da mesma forma que as listas.
+tupla = ('Francisco', 'Araújo', 'da', 'Silva')
+nome, sobre_nome, terceiro_nome, quarto_nome = tupla
+print(nome)
+print(sobre_nome)
+print(terceiro_nome)
+print(quarto_nome)
+print('-----')
+
+"""
+Métodos para adição e remoção de elementos nas tuplas não existem, já que são imutáveis.
+"""
+
+# Se os valores forem inteiros ou reais: soma*, valor máximo*, valor mínimo*, tamanho*
+tupla7 = 1, 1, 5, 6, 5, 4, 9, 8.1
+print(f'soma: {sum(tupla7)}')
+print(f'máximo: {max(tupla7)}')
+print(f'mínimo: {min(tupla7)}')
+print(f'tamanho: {len(tupla7)}')
+print('-----')
+
+# Concatenação de tuplas
+tupla8 = 1, 2, 3,
+print(tupla8)
+
+tupla9 = 2, 5, 1
+print(tupla9)
+
+tupla10 = (tupla8 + tupla9)
+print(tupla10)
+print(type(tupla10))
+print(tupla8)
+print(tupla9)
+print('-----')
+
+# Tuplas são imutáveis, mas posso sobrescrever uma tupla. Informação importante.
+tupla8 = tupla8 + tupla9
+print(f'Tupla 8 sobrescrita: {tupla8}')
+print('-----')
+
+# Podemos verificar se determinado elemento está em uma tupla.
+tupla11 = 2, 6, 4, 1, 2, 3, 6, 9,
+print(1 in tupla11)  # Maneira interessante de fazer essa verificação
+print(15 in tupla11)
+print('-----')
+
+# Iterando em uma tupla.
+for n in tupla11:
+    print(n)
+print('-----')
+
+# Gerando índice para os elementos na tupla.
+for indice, valor in enumerate(tupla11):
+    print(f'índice: {indice}', f'valor: {valor}')  # Gostei dessa opção
+print('-----')
+
+# Contando elementos dentro de uma tupla.
+tupla12 = ('a', 'b', 'a', 'c', 'd', 'f', 'g', 'l', 'a', 'k', 'j', 'e', 'a', 'i', 'b')
+elemento = 'b'
+print(f"Possui '{tupla12.count(elemento)}' elementos '{elemento}' na tupla em estudo!")
+print('-----')
+
+# Posso transformar uma string em uma tupla.
+umaString = 'Francisco Araújo'
+print(umaString)
+print(type(umaString))
+print('-----')
+
+umatupla = tuple(umaString)
+print(umatupla)
+print(type(umatupla))
+print('-----')
+
+"""
+Exemplos para o bom uso de tuplas.
+"""
+
+# Exemplo 1: meses, já que nunca mudam
+meses = ('jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez')
+print(meses)
+print('-----')
+
+# Como acessar o elemento de uma tupla?
+print(meses[3])  # ou seja, é indexado
+print('-----')
+
+# iterando sobre uma tupla.
+indice = 0
+while indice < len(meses):
+    print(meses[indice])
+    indice += 1
+print('-----')
+
+# qual o índice do elemento?
+print(meses.index('fev'))
+print('-----')
+
+# slicing: tupla[inicio:fim:passo], ou seja, mesmo usando tuplas, temos que usar colchetes para o slicing.
+print(meses[5:8])
+
+"""
+- Porque utilizar tuplas? são mais rápidas do que listas. Ótimo para big data, AI. Ganhamos performance.
+- Tuplas deixam seu código mais seguro, já que os elementos imutáveis trazem segurança para o código
+"""
+print('-----')
+
+# Copiando uma tupla para outra.
+tupla = (1, 2, 3)
+print(f'Primeira tupla: {tupla}')
+
+nova = tupla
+
+print(f'Nova tupla: {nova}')
+print(f'Primeira tupla: {tupla}')
+
+outra = (3, 4, 0)
+
+nova = nova + outra  # Na tupla não temos o diferencial da Shallow Copy. Ous seja, não tem vínculos aqui na tupla.
+
+print(f'nova + outra: {nova}')
+print(tupla)
+-----------------------------------------------------------------------------------------------------------------------
+"""
+DICIONÁRIOS:
+
+Obs.: Em algumas linguagens de programação, os dicionários Python são conhecidos por MAPAS.
+
+Dicionários são coleções do tipo chave/valor.
+Ou seja, mapeamento entre chave-valor
+
+- nas listas e em tuplas
+[0, 1, 2] chave == índice -->> Finca de forma implícita
+[1, 2, 3] valor
+
+Todavia, nos dicionários, as chaves ficam explícitos. Ou seja, diferente das listas e tuplas.
+
+Dicionários são representados por {}, faça: print(type({}))
+O conjunto chave-valor pode ser de qualquer tipo (podemos misturar dados), e seprados por ':'
+Ex.: chave:valor
+"""
+
+"""
+Criação de dicionários
+"""
+# Forma 1: A mais comum. O conjunto chave-valor é um elemento, portanto, temos três elementos. Mais recomendado.
+# paises = {'br': 'Brasil', 'eua': 'Estados Unidos', 'py': 'Paraguai'}
+# print(paises)
+# print(type(paises))
+
+# Forma 2: Menos comun, mas acho essa melhor. Observe que o dicionário é criada pela palavra reservada, e não pelo "{}"
+paises = dict(br='Brasil', eua='Estados Unidos', py='Paraguai')
+print(paises)
+print(type(paises))
+print('-----')
+
+"""
+Acessando elementos. Lembrar que eles NÃO são indexados.
+"""
+# Forma 1 - Acessando via chave, da mesma forma que lista/tupla
+print(paises['br'])
+print(paises['py'])  # gera um erro se a chave não existir, keyerror, tratar o erro é mais complicado.
+print('-----')
+
+# Forma 2 - Acessando via get - RECOMENDADO, pois não gera erro, gera None se a chave não existir.
+print(paises.get('br'))
+print(paises.get('ru'))  # gera um aviso tipo None (não um erro), se o valor não for encontrado
+print('-----')
+
+# Imagine a aplicação abaixo. Veja a vantagem de usar o none a partir da forma 2.
+novosPaises = dict(br='Brasil', eua='Estados Unidos', py='Paraguai')
+pais = novosPaises.get('pa', 'PAÍS NÃO ENCONTRADO!')
+"""
+Olha aí, mais vantagem em usar o get. Assim, nem precisaríamos mais do if e do else.
+Posso deixar um recado se não encontrar o valor.
+Esse detalhe é muito importante.
+"""
+print(f'Encontrei o país {pais}!')
+print('-----')
+
+"""
+if russia:
+    print(f'Encontre o país {novosPaises}!')
+else:
+    print('Não encontrei o país!')
+"""
+print('-----')
+
+# Podemos verificar se uma CHAVE está dentro do dicionário
+
+print('br' in novosPaises)  # Está no dicionário, True
+print('ru' in novosPaises)  # Não está no dicionário, False
+print('Estados Unidos' in novosPaises)  # 'Estados Unidos' está no dicionário, mas não é chave, False
+print('-----')
+
+"""
+Podemos utilizar qualquer tipo de dado (int, float, string, booleano), incluisive lista, tupla dicionário, como 
+sendo as chaves dos dicionários.
+"""
+# Ex.: Localidades com as respectivas coordenadas geográficas (fictícias)
+localidades = {
+    (35.6565, 6365.656): 'Escritório em Tókio',
+    (40.6652, 4569.632): 'Escritório em Singapura',
+    (63.3215, 7849.5623): 'Escritório em Londres',
+}
+
+print(localidades)
+print(type(localidades))
+
+"""
+Veja, em localidades, usamos tuplas como chaves para o nosso dicionário. A tupla é uma boa tática para usar como chave
+de dicionário, já que ela é imutável.
+"""
+print('-----')
+
+# Adicionar elementos em um dicionário
+receita = {'jan': 100, 'fev': 120, 'mar': 300}
+print(receita)
+print(type(receita))
+
+# Forma 1: Mais comum e mais fácil
+receita['abr'] = 350  # muito simples
+print(receita)
+
+# Forma 2:
+novo_dado = {'mai': 500}
+receita.update(novo_dado)  # Achei essa forma 2 muito top. receita.update({'mai': 500}) - é a mesma coisa.
+print(receita)
+print('-----')
+# Atualizando/modificando dados em um dicionário.
+# Forma 1:
+receita['mai'] = 550
+print(receita)
+
+# Forma 2:
+receita.update({'mai': 600})
+print(receita)
+print('-----')
+
+"""
+CONCLUSÃO1: A forma de adicionar elementos em um dicionário ou atualizar dados em um dicionário é a mesma.
+CONCLUSÃO2: Em dicionários, NÃO podemos ter chaves repetidas. Já que se isso ocorrer, estamos, na verdade, atualizando.
+"""
+
+# Removendo dados de um dicionário
+receita = {'jan': 100, 'fev': 120, 'mar': 300}
+print(receita)
+# Forma 1: Mais comum (retorna o valor removido), preciso indicar o índice se não for o último elemento.
+ret = receita.pop('mar')  # O pop remove o último (na forma padrão) elemento da lista. Aqui, precisamos indicar a chave
+print(f'O VALOR retirado com o pop é sempre mostrado: {ret}')
+print(receita)
+print('-----')
+
+# Forma 2:  Mais interessante, mas não retorna o valor removido. A vantagem é que não preciso indicar o índice da chave.
+del receita['jan']
+print(receita)
+print('-----')
+
+
+"""
+Porque usar dicionários?
+"""
+
+# Imagine que você tem um comércio eletrônico, onde temos carrinho de compras para adicionar produtos.
+"""
+Carrinho de compras:
+    Produto 1:
+        - nome;
+        - quantidade;
+        - preço;
+    Produto 2:
+        - nome;
+        - quantidade;
+        - preço;
+"""
+
+# Poderíamos usar uma lista para isso? Sim! Mas não saberíamos quais são os índices (descrição do elemento)
+
+Carrinho = []
+Produto1 = ['Xadrez', 1, 230.00]
+Produto2 = ['Pincel', 1, 150.00]
+
+Carrinho.append(Produto1)
+Carrinho.append(Produto2)
+print(Carrinho)  # Na verdade, é uma lista de lista. Temos 2 produtos. Cada produto tem 3 índices.
+
+# Teríamos que saber qual é o índice de cada informação no produto.
+print('-----')
+
+# Poderíamos utilzar uma tupla para isso? Sim
+Produto1 = ('Xadrez', 1, 230.00)
+Produto2 = ('Pincel', 1, 150.00)
+
+carrinho = (Produto1, Produto2)
+print(carrinho)  # Também, teríamos que saber qual o índice de cada elemento nos 2 produtos.
+print('-----')
+
+# Poderíamos utilizar um dicinário para isso? Sim, e com vantagem, pois temos a descrição do índice
+carrinho = []
+produto1 = {'Nome': 'Xadrez', 'Quantidade': 1, 'preço': 230.00}
+produto2 = {'Nome': 'Pincel', 'Quantidade': 1, 'preço': 150.00}
+
+carrinho.append(produto1)
+carrinho.append(produto2)
+print(carrinho)  # Temos os índices bem explícitos, rico em detalhes. Fica melhor para visualizar. Evita problemas.
+
+"""
+Dessa forma, facilmente adicionamos ou removemos produtos no carrinho e em cada produto podemos ter a certeza sobre
+cada informação.
+Cada coleção possue suas particularidades, mas elas se completam.
+"""
+print('-----')
+
+# Métodos de dicionários.
+"""
+No terminal, faça: dir({}) e veja os vários métodos.
+"""
+
+d = dict(a=1, b=3, c=4)
+print(d)
+print(type(d))
+# Limpando o dicionário
+"""
+d.clear()
+print(d)
+"""
+
+# Copiando um dicionário.
+novo = d.copy()  # Deep Copy
+print(novo)
+novo['d'] = 10
+
+print(d)
+print(novo)
+print('-----')
+
+# Forma 2: Shallow Copy - com vínculo
+novo = d
+print(novo)
+novo['d'] = 10
+print(d)
+print(novo)
+print('-----')
+
+"""
+Forma não usual de criação de dicionários:
+outro = {}.fromkeys('chave', 'valor')  # Assim, para cada letra de 'chave' é uma chave para 'valor'. Mas não repete.
+Chave, ou seja, letras iguais nas palavras.
+"""
+
+outro = {}.fromkeys('A', 'B')  # Sempre teremos o mesmo valor para chaves diferentes.
+print(outro)
+print(type(outro))
+print('-----')
+
+# Criando várias chaves.
+usuario = {}.fromkeys(['nome', 'pontos', 'email', 'profile'], 'desconhecido')
+print(usuario)
+print(type(usuario))
+
+"""
+O método fromkeys recebe dois parâmetros: um interável e um valor.
+Ele vai gerar para cada valor do iterável uma chave e irá atribuir a esta chave o valor informado.
+"""
+print('-----')
+
+# Outra dica
+veja = {}.fromkeys(range(1, 11), 'novo')
+print(veja)
+-----------------------------------------------------------------------------------------------------------------------
+"""
+MAPAS:
+
+-Em Python são conhecidos como dicionários.
+-Dicionários são representados por chaves.
+"""
+
+receita = {'jan': 100, 'fev': 250, 'mar': 400}
+
+# Interar sobre dicionários
+for chave in receita:
+    print(chave)
+print('-----')
+
+# or
+
+for chave in receita:
+    print(receita[chave])  # aqui estamos querendo o valor da receita. Isso é muito importante.
+print('-----')
+
+print(receita)
+print('-----')
+
+for chave in receita:
+    print(f'Em {chave}: recebi o valor de {receita[chave]} R$')  # Outro exemplo muito útil. Importante.
+print('-----')
+
+# Podemos pedir todas as chaves em um dicionário:
+print(receita.keys())
+
+# Podemos acessar todos os valores em um dicionário:
+print(receita.values())
+
+print('-----')
+
+# Modo Pythônico de trabalhar:
+for chave in receita.keys():
+    print(receita[chave])
+
+print('-----')
+# Desempacotamento de dicionário. Outro detalhe importante.
+for chave, valor in receita.items():
+    print(f'Chave={chave}\nValor={valor}\n')  # Gostei dessa manipulação.
+
+print('-----')
+"""
+Soma, valor máximo, valor mínimo, tamanho.
+Se os valores forem todos inteiros ou reais, daí a importância usar a propriedade "values()".
+"""
+
+print(f' Soma dos valores: {sum(receita.values())}')
+print(f' Valor máximo: {max(receita.values())}')
+print(f' Valor mínimo: {min(receita.values())}')
+print(f' O tamanho do dicionário: {len(receita)}')
+-----------------------------------------------------------------------------------------------------------------------
+"""
+CONJUNTOS: MESMO PRINCÍPIO DA TEORIA DOS CONJUNTOS NA MATEMÁTICA:
+
+Sets: no Python, os conjuntos são chamados de sets.
+-Sets: não possuem valores ordenados
+-Sets: não possuem valores duplicados (não gera erro, mas não duplica)
+-Elementos não são acessados via índice. Ou seja, NÃO SÃO INDEXADOS
+-São MUTÁVEIS, diferente das tuplas
+
+- Os conjuntos são bons para:
+    -armazenar elementos, mas sem se importar com a ordenção, chaves, valores e itens duplicados
+    -referenciados com "{}". Lembrar que mapas também são representados por chaves. veja diferenças:
+
+Diferenças entre conjuntos  (Set) e mapas (dicionários)
+    -dicionárIo: chave/valor
+    -conjunto: valor
+
+Obs.: Podemos gerar sets para strings, listas, tupla, ...
+Podemos obter muitas outras propriedades com o "dir" no console
+"""
+
+# Definindo um conjunto:
+# Forma 1: menos comum
+s = set({1, 2, 3, 4, 5, 5, 6, 7, 2, 3})  # temos valores repetidos, que serão descartados na geração do set
+
+print(s)
+print((type(s)))
+
+"""
+Obs.: Ao criar um conjunto, caso seja adicionado um valor existente, o mesmo será ignorado sem gerar error e não fará
+fará parte do conjunto
+"""
+print('-----')
+
+# Forma 2, mais comum
+s = {1, 2, 3, 4, 5, 5}
+print(s)
+print((type(s)))
+print('-----')
+
+# verificando se determinado elemento está no conjunto
+n = 10
+if n in s:
+    print(f'Tem o {n} no conjunto')
+else:
+    print(f'Não tem o {n} no conjunto')
+print('-----')
+
+# Algumas diferenças importantes sobre nossas coleções:
+
+# Listas aceitam valores duplicados e mantém a ordem
+lista = [99, 2, 34, 23, 2, 12, 1, 44, 5, 34]
+print(f'Lista: {lista} com {len(lista)} elementos')
+
+# Tuplas aceitam valores duplicados e mantém a ordem
+tuupla = 99, 2, 34, 23, 2, 12, 1, 44, 5, 34
+print(f'Tupla: {tuupla} com {len(tuupla)} elementos')
+
+# Dicionários não aceitam chaves duplicadas e MANTÉM a ordem
+diicionario = {}.fromkeys([99, 2, 34, 23, 2, 12, 1, 44, 5, 34], 'Valor')
+print(f'Dicionário: {diicionario} com {len(diicionario)} elementos')
+
+# Conjuntos não aceitam valores duplicados e gera uma ordem ALEATÓRIA
+conjunto = {99, 2, 34, 23, 2, 12, 1, 44, 5, 34}
+print(f'Conjuntos: {conjunto} com {len(conjunto)} elementos')
+print('-----')
+
+# Podemos colocar diferentes tipos de dados no conjunto
+ss = {1, 'b', True, 32.32, 44}
+print(ss)
+print(type(ss))
+
+# Podemos iterar um conjuntos
+# Formas interessantes de usar os conjuntos:
+"""
+Formulário de um museu. Os visitantes visitam anualmente.
+Adicionamos cada cidade em uma lista Python, já que em uma lista podemos adicionar novos elementos de forma a ter 
+repetição.
+Aplicação abaixo
+"""
+print('-----')
+
+# No momento do cadastro
+cidades = ['Belo Horizonte', 'Mato Grosso', 'Campo Grande', 'Cuiabá', 'Campo Grande', 'São Paulo', 'Cuiabá']
+print(cidades)
+print(f'Temos {len(cidades)} cadastros no museu')  # Agora sabemos quantos cadastros temos no museu
+print('-----')
+
+# Quantas cidades distintas temos? Vamos usar o set para isso. Essa é uma sacada importante
+print(f'temos {len(set(cidades))} cidades distintas')
+print('-----')
+
+# Adiconando elementos em conjunto
+# Forma 1: usando o add()
+sss = {1, 3, 4, 5}
+print(sss)
+print(type(sss))
+
+sss.add(6)
+sss.add(6)  # duplicidade não gera erro
+print(sss)
+print(type(sss))
+print('-----')
+
+# Obs. : Não recomendo utilizar o update() nesse caso.
+"""
+sss.update({55})  # imprime com o valor 1
+print(sss)  # imprime sem o valor 1 - mas ainda não sei qual a explicação para isso
+print(type(sss))
+print('-----')
+"""
+
+# Removendo elementos de um conjunto. Não retornamos valor que foi removido.
+
+# Forma 1. GERA UM ERRO ao remover um elemento que não existe no conjunto
+sss.remove(6)  # removemos o 6. Repare que não é via índice pelo fato de não ser indexado
+print(sss)
+print('-----')
+
+# Forma 2. NÃO GERA UM ERRO ao remover um elemento que não existe no conjunto
+sss.discard(1)  # importante usar esse modelo
+print(sss)
+print('-----')
+
+# Copiando um conjunto para outro
+
+# Forma 1 - Deep Copy. Ou seja, temos dois objetos independes
+conj = {1, 3, 5, 7}
+novo_conj = conj.copy()
+print(novo_conj)
+novo_conj.add(50)
+print(conj)
+print(novo_conj)
+print('-----')
+
+# Forma 1 - Shallow Copy. Aqui, quando mudamos em uma mudamos também na outra.
+outro_conju = conj
+outro_conju.add(100)  # Aqui no Shallow Copy estamos adicionando tanto no outroConj quanto no conj
+print(conj)
+print(outro_conju)
+print('-----')
+
+# Podemos remover todos os elementos no conjunto
+outro_conju.clear()
+print(outro_conju)
+print('-----')
+
+# Métodos matemáticos dos conjuntos
+"""
+Imagine que temos dois conjuntos: 
+- Estudantes do curso de Administração Pública
+- Estudantes do curso de Engenharia de Petróleo
+"""
+estud_Adm = {'Ana', 'Carla', 'Frederico', 'Francisco', 'Endriw'}
+estud_EP = {'Francisco', 'Endriw', 'Henrique', 'Amanda'}
+
+"""
+Obs.: Observe que temos repetição nos nomes. Ou seja, estão nos dois conjutnos.
+Precisamos gerar um conjunto com nome de elementos únicos.
+"""
+print('-----')
+
+# Forma 1 - Utiizando union. Esse é recomendado, é mais explícito
+unicos1 = estud_Adm.union(estud_EP)  # aqui a ordem não importa
+print(f'Estudantes únicos via union(): {unicos1}')
+
+# Forma 2 - Utilizando o caractere pipe "|"
+unicos2 = estud_EP | estud_Adm
+print(f'Estudantes únicos via pipe "|": {unicos2}')
+
+# Gerar um conjunto de estudantes que estão em ambos os cursos
+print('-----')
+# Forma 1 - Utilizando intersection
+ambos1 = estud_Adm.intersection(estud_EP)
+print(f'Estudantes que estão em ambos os cursos via intersectiton(): {ambos1}')
+
+# Forma 2 - Utilizando "&"
+ambos2 = estud_Adm & estud_EP
+print(f'Estudantes que estão em ambos os curso via &: {ambos2}')
+
+# Agora, vamos gerar um conjunto de estudantes que não estão no outro curso. Ou seja, estão em um mas não em outro
+print('-----')
+apenas_EP = estud_EP.difference(estud_Adm)  # exclui os estudantes de Administração Pública
+print(f'Apenas em Engenharia de Petróleo {apenas_EP}')
+apenas_Adm = estud_Adm.difference(estud_EP)  # exclui os estudantes de Engenharia de Petróleo
+print(f'Apenas em Administração Pública {apenas_Adm}')
+
+# Soma, Valor máximo, Valor mínimo, Tamanho. Se os valores forem todos inteiros ou reais
+print('-----')
+s = {1, 3, 4, 5, 6, 7}
+print(f'Soma dos valores do conjunto: {sum(s)}')
+print(f'Valor máximo do conjunto: {max(s)}')
+print(f'Valor mínimo do conjunto: {min(s)}')
+print(f'Tamanho do conjunto: {len(s)}')
+-----------------------------------------------------------------------------------------------------------------------
+"""
+MÓDULO COLLECTIONS: COUNTER (CONTADOR)
+
+-temos que importar
+-não confundir com o count(), usado no temas das listas
+-collections -> conhecido como high-performance container datetypes
+-todas as coleções são containers
+
+Counter -> recebe um iterável como parâmetro e cria um OBJETO do tipo Collections Counter que é parecido com um
+dicionário, contendo como chave o elemento da lista e, como valor, a quantidade de ocorrências desse elemento.
+
+Importante para trabalhar com alguns framework
+"""
+
+# Usando o Counter. Estamos importando uma biblioteca. Podemos usar qualquer iterável. Aqui usamos uma lista
+from collections import Counter
+lista = [1, 1, 1, 2, 2, 3, 5, 6, 7, 7, 7, 7, 8, 9, 99, 100, 120, 150, 200, 400, 400, 400]
+
+# Utilizando o Counter()
+res = Counter(lista)  # se parece muito com um dicionário, mas não é
+print(type(res))
+print(lista)
+print(res)  # Observe a falta de ordenação
+print('-----')
+
+"""
+O que ele faz é: elemento: ocorrência
+<class 'collections.Counter'>
+Counter({7: 4, 1: 3, 400: 3, 2: 2, 3: 1, 5: 1, 6: 1, 8: 1, 9: 1, 99: 1, 100: 1, 120: 1, 150: 1, 200: 1})
+
+Ou seja, criou uma chave e colocou como valor a ocorrência dos elementos no iterável.
+Poderia ser uma string também.
+"""
+
+# Imprimindo direto
+print(Counter('Francisco'))  # Observe a falta de ordenação lá no console
+print('-----')
+
+print(Counter(['Francisco', 'Araújo', 'da', 'Silva']))
+print('-----')
+
+# Exemplo mais completo
+texto = """
+Quem aspira se graduar na Engenharia de Petróleo precisa ter espírito arrojado, colaborativo e cooperativo e, sobretudo,
+ entender a importância da cooperação e colaboração nas atividades cotidianas tendo em vista a promoção de ambientes 
+ propositivos alinhados na consecução de objetivos comuns. Ademais, deve estar preparado para ampliar o entendimento da 
+ realidade através do manuseio do repertório das ciências exatas e das engenharias.
+"""
+
+# Vamos separar essas palavras numa lista. O separador padrão é o espaço entre as palavras, mas posso escolher no
+# split(' ')
+palavras = texto.split()
+print(palavras)
+resp = Counter(palavras)
+print(resp)
+
+# Encontrando as 3 palavras com mais ocorrência no texto acima
+print('-----')
+print(resp.most_common(5))  # esse comando é muito interessante.
+
+"""
+Posso ver explição via terminal:
+from collections import Counter
+help(Counter)
+"""
+-----------------------------------------------------------------------------------------------------------------------
+"""
+MÓDULO COLLECTIONS: DEFAULT DICT:
+
+Olha a diferença:
+    recapitulando dicionários;
+        dicionário = {'Curso': 'Engenharia de Petróleo'}
+        print(dicionário)
+        print(dicionário['Curso'])
+        print(dicionário['Nome'])  # gera um keyError, já que essa chave não existe
+
+    Default Dict - informamos um valor default, para não gerar erro se a chave não existe;
+    Podemos usar o lambda para isso. Ou seja, sempre que não exisir um valor definido.
+    Ao tentar utilizar uma chave que não existe, essa chave será criada e o valor default será atribuído.
+
+Obs.: lambdas são funções sem nome, que podem ou não receber parâmetros de entrada e retornar valores
+"""
+
+# Importando
+from collections import defaultdict
+print(' ')
+dicionario = defaultdict(lambda: 0)  # uma função lambda que não recebe argumento mas retorna zero.
+print(dicionario)  # Imprime no estilo objeto
+print(dict(dicionario))  # Imprime o objeto convertido em dicionário
+print('-----')
+
+dicionario['Curso'] = 'Petróleo'  # Criando a primeira chave e valor
+print(dicionario)  # imprime no estilo defaultdict
+print('-----')
+
+print(dicionario['outro'])  # Mesmo não existindo, não gera KeyError, mas atribui o valor do lambada
+print('-----')
+
+print(dicionario)  # Agora vai atribuir a chave 'outro' com o valor '0' no dicionário.
+
+-----------------------------------------------------------------------------------------------------------------------
+"""
+MÓDULO COLLECTIONS: ORDERED DICT.
+"""
+from collections import OrderedDict
+# Em um dicionário, a ordem de inserção dos elementos não é garantida
+dicionario = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}
+print(dicionario)
+print('-----')
+
+for chave, valor in dicionario.items():  # esse recurso é muito interessante
+    print(f'Chave = {chave}: Valor = {valor}')
+print('-----d')
+
+dictionay = OrderedDict({'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5})
+
+for chave, valor in dictionay.items():
+    print(f'Chave = {chave}: Valor = {valor}')
+
+# Entendendo a difereça entre Dict e Ordered Dict;
+
+# Dicionários comuns
+print('-----')
+
+dict1 = {'a': 1, 'b': 2}
+dict2 = {'b': 2, 'a': 1}
+print(dict1 == dict2)  # True. A ordem dos elementos NÃO IMPORTA para o dicionário comum
+
+
+# Ordered Dict
+dict3 = OrderedDict({'a': 1, 'b': 2})
+dict4 = OrderedDict({'a': 2, 'b': 1})
+
+print(dict3 == dict4)  # False. A ordem dos elementos IMPORTA para o Ordered Dict
+-----------------------------------------------------------------------------------------------------------------------
+"""
+MÓDULO COLLECTIONS: NAMED TUPLE
+
+Named Tuple: são tuplas diferenciadas onde especificamos um nome para a mesma e também parâmetros
+"""
+from collections import namedtuple
+# Precisamos definir o nome e parâmentros
+# Forma 1 - Declaração Named Tuple
+cachorro1 = namedtuple('cachorro', 'idade raca nome')  # O primeiro argumento é o nome da tupla
+
+# Forma 2 - Declaração Named Tuple
+cachorro2 = namedtuple('cachorro', 'idade, raca, nome')
+
+# Forma 3 - Declaração Named Tuple. Esta forma é mais recomendada. Fica mais claro visualmente. Importante, top
+cachorro3 = namedtuple('cachorro', ['idade', 'raca', 'nome'])
+
+# Utilizando
+# Forma 1 - Recomendado
+Apoll = cachorro3(idade=1, raca='vira-Lata', nome='Apollo')
+print(Apoll)
+print(Apoll[0])  # idade
+print(Apoll[1])  # raça
+print(Apoll[2])  # nome
+
+# Forma 2. Modo recomendado
+print('-----')
+print(Apoll.idade)
+print(Apoll.raca)
+print(Apoll.nome)
+
+# Lembrando da aula de tupla:
+
+print('-----')
+print(Apoll.index('Apollo'))  # Índice do elemento na tupla
+print(Apoll.count('Apollo'))  # Ocorrencias do valor na tupla
+-----------------------------------------------------------------------------------------------------------------------
+"""
+MÓDULO COLLECTIONS: DEQUE
+
+Podemos dizer que é uma lista de ALTO DESEMPENHO.
+"""
+from collections import deque
+
+# Criando deques
+deq = deque('Francisco')
+print(deq)
+print('-----')
+
+# Adicionando elementos
+deq.append(' Araújo')  # Da mesmo forma que adicionamos na lista
+print(deq)
+print('-----')
+
+deq.appendleft('Silva')  # Adiciona no começo da lista. Uma vantagem
+print(deq)
+print('-----')
+
+# Remover elementos
+print(deq.pop())  # remove e retorna o último elemento da lista
+print(deq)
+print('-----')
+
+print(deq.popleft())
+print(deq)
+-----------------------------------------------------------------------------------------------------------------------
+"""
+Espaço reservado pra solucionar os exercícios da seção 7 - parte 1
+"""
+"""
+# 1
+A = [1, 2, 3, 4, 5, 6]
+print(A)
+print('-----')
+# a)
+A.extend([1, 0, 5, -2, -5, 7])
+print(A)
+print('-----')
+
+# b
+print(f'A somas dos valores: {sum([A[0], A[1], A[5]])}')
+print('-----')
+
+# c
+A.insert(4, 100)
+print(A)
+print('-----')
+
+# d
+for valor in A:
+    print(f'Cada elemento da lista: {valor}')
+
+
+# 3
+reais = list([])
+while len(reais) < 8:
+    reais.append(float(input('Digite o próximo valor real para armazena na lista real: ')))
+
+print(f'Os valores reais escolhidos: {reais}')
+reais_quadrados = reais.copy()
+quadrados = list([])
+for i in reais_quadrados:
+    quadrados.append(i**2)
+print(f'Os valores reais ao quadrado: {quadrados}')
+print('-----')
+print(reais)
+print(quadrados)
+
+
+# 7
+vetor = [1, 3, 4, 5, 8, 8, 10, 19, 34, 23]
+maior = max(vetor)
+print(f'O maior valor: {maior}\nEstá no índice: {vetor.index(maior)}')
+"""
+"""
+# 14 - Esse é um desafio a se pensar
+vetor = [1, 3, 4, 5, 8, 8, 1, 19, 34, 3]
+valores_iguais = list([])
+for i in vetor:
+
+
+print(valores_iguais)
+"""
+-----------------------------------------------------------------------------------------------------------------------
+"""
+Espaço reservado pra solucionar os exercícios da seção 7 - parte 2
+"""-----------------------------------------------------------------------------------------------------------------------
+"""
+DEFININDDO FUNÇÕES:
+
+- pode ou não receber entrada de dados e retornar uma saída de dados.
+- muito usado para processos repetitivos.
+
+OBS.:  Se a função criada realiza muitas tarefas, é bom fazer uma verificação para que a função seja simplificada.
+Faça print(help(print())) para ver uma ducumentação ou ctrl+click no nome da função
+"""
+# exemplo de utilização de funções nativas (built-in):
+
+cores = ['verde', 'amarela', 'azul', 'branco']
+curso = ['Engenharia']
+
+cores.append('roxo')  # adicionamos a cor "roxo" ao final da LISTA
+curso.append('Administração Pública')
+print('-----')
+
+# utilizando a função integrada (Built-in) do Python print()
+
+print(cores)
+print(curso)
+print('-----')
+
+# cores.clear()  limpa a lista. Essa função não recebe dados de entrada
+# print(cores)
+print('-----')
+
+# DRY - Don't Repeat Yourself (não repita você mesmo). Expressão muito usada na programação.
+
+"""
+Em python, a forma geral para definir função é:
+def: definition
+
+def nome_da_funcao(parametros_de_entrada):
+    bloco_da_funcao
+    
+obs.:
+nome_da_funcao: Sempre com letras minúsculas e separar com underline quando preciso.
+parametros_de_entrada: São opcionais, se houver mais de um, separar por vírgula.
+bloco_da_funcao: Também chamado de corpo da função, pode ou não ter o retorno da função.
+
+Abrimos o bloco de código com o dois pontos ":"
+Palavra reservada: def
+"""
+# Definindo a primeira função
+
+
+def diz_oi():
+    print('Olá usuário!')
+
+
+"""
+- Essa função "diz_oi" não recebe parâmetro de entrada.
+- Essa função não retorna nada, pois fizemos apenas a definição dela.
+- Podemos usar função dentro de outra função. Veja o "print", que está dentro da def.
+"""
+
+# Para utilizar essa função precisamos chamá-la
+diz_oi()
+
+# Veja que nunca podemos esquecer de usar o parênteses ao executar uma função. Lembrar também que ele é COLADO à função.
+print('-----')
+
+
+def cantar_parabens():
+    print('Parabéns para você')
+    print('Nesta data')
+    print('Querida')
+    print(' ')
+
+
+# Chamando 3 vezes a mesma função.
+cantar_parabens()
+cantar_parabens()
+cantar_parabens()
+print('-----')
+
+
+# or
+
+for n in range(5):  # executando 5 vezes. A posição é n-1.
+    cantar_parabens()
+print('-----')
+
+# or, mas não recomendado. Criando variáveis do tipo função. Executamos a variável como função.
+
+cantar = cantar_parabens  # recebe a execução. Veja que não temos o parênteses. Esse método NÃO é comum.
+cantar()
+-----------------------------------------------------------------------------------------------------------------------
+""""
+FUNÇÕES COM RETORNO:
+
+Obs.: Não precisamos criar uma variável para receber a variável de retorno. Podemos passar a
+execução da função para outra função ou para o próprio print.
+
+Posso importar minha função direto no terminal:
+"from nomeDoArquivo import nomeDafunção"
+nomeDafunção
+
+O import abaixo será usado no fim do código.
+"""
+from random import random
+
+numeros = [1, 2, 3]
+ret_por = numeros.pop()  # pop remove e retorna o último elemento de uma lista. Mas nesse caso, não retorna diretamente.
+print(f'Retorno de pop: {ret_por}')  # mostrando o elemento removido.
+print('-----')
+
+ret_pr = print(numeros)  # veja o erro (cobrinha).
+print(f'O retorno de print: {ret_pr}')  # veja que a função print não retorna nada, daí o aviso.
+print('-----a')
+
+
+def quadrado_de_7():
+    print(7 * 7)
+    # só estamos imprimindo, mas não retornando. Muito cuidado com isso.  É diferente.
+
+
+print('-----a')
+
+rettt = quadrado_de_7()
+print(f'O retorno do print: {rettt}')  # Veja que não retornamos nada com o print. É None. veja o erro (cobrinha).
+print('-----')
+
+# REFATORANDO (reescrevendo) o  problema. Ou seja, vamos dar uma melhorada no código.
+
+
+def quadrado_de_8():
+    return 8*8  # o return retorna o resultado.
+
+
+rett = quadrado_de_8()  # veja que agora não temos mais erro. Já que agora possui retorno.
+
+# diferentes formas de usar aquele resultado.
+print(f'O retorno de 8 é: {rett}')
+print(f'O retorno de 8 é: {quadrado_de_8()}')
+print(f'O retorno de 8 é: {quadrado_de_8()*2}')
+print('-----')
+
+# veja que a grande sacada é o "return". Ou seja, o que retornamos agora é o valor do quadrado, e o erro desaparece.
+
+
+def diz_oi():
+    return 'Olá'
+# Se fosse com um print não dava para somar lá em baixo, já que seria none.
+# Se fosse print, não iriamos conseguir fazer cálculos com ele.
+
+
+alguem = ' Lara!'
+print(diz_oi() + alguem)  # Veja que o return oferece mais flexibilidade para usar variáveis.
+
+"""
+Notas:
+1 - o return finaliza a função, ou seja, ela sai da execução da função.
+2 - podemos ter diferentes return para a mesma função, mas apenas um é executado.
+3 - podemos, em uma função, retornar qualquer tipo de dado e até múltiplos valores.
+"""
+print('-----')
+
+# Exemplo 1 - Finalizando com return.
+
+
+def diz_ola():
+    print('Executado antes do return')  # executa
+    return 'Olá'  # retorna
+    print('Estou sendo executado? Não, pois está após o return')  # nunca será executado e retornado.
+
+
+print(diz_ola())
+print('-----a')
+
+# Exemplo 2 - Diferentes returns.
+
+
+def nova_funcao():
+    variavel = None  # iniciando a variável.
+    if variavel:  # se a variável for True, retorna 4, se for None, retorna 3.2, se for falso retorna 'Última opção'.
+        return 4
+    elif variavel is None:
+        return 3.2
+    return 'Última opção'
+
+
+# veja que temos diferentes returns.
+print(nova_funcao())
+print('-----b')
+
+# Exemplo 3 - retornando múltiplos valores.
+
+
+def outra_funcao():  # número separado por vírgula são tuplas.
+    return 2, 3, 4, 5
+
+
+num1, num2, num3, num4 = outra_funcao()
+# Seria tipo um desempacotamento de função. MUITO IMPORTANTE ISSO AQUI.
+
+print(num1, num2, num3, num4)
+print(type(print(num1, num2, num3, num4)))  # Veja que está sem tipo.
+print('-----c')
+
+# or
+print(outra_funcao())  # retorna no formato tupla como foi definido na def.
+print('-----d')
+
+# vamos criar uma função para jogar a moeda.
+
+# No terminal, dá para importar nosso script (o pacote) e qualquer função desse script, da mesma maneira.
+
+
+def joga_moeda():
+    # gera um número pseudo randômico entre zero e um. Pseudo, pois pode repetir.
+
+    if random() > 0.5:
+        return 'Cara'
+    return 'Coroa'  # já tá fazendo o papel do else. IMPORTANTE ISSO AQUI.
+
+
+print(joga_moeda())  # Para cada run, retornamos cara ou coroa
+print('-----')
+
+
+# codificações DESNECESSÁRIAS no return:
+# %: verifica o resto da divisão
+# !=: diferente
+
+
+def e_impar():
+    numero = 4
+    if numero % 2 != 0:
+        return True
+    else:  # esse else é desnecessário
+        return False
+
+
+print(e_impar())
+-----------------------------------------------------------------------------------------------------------------------
+"""
+FUNÇÕES COM PARÂMETROS:
+entrada -> processamento -> saída
+"""
+
+# Refatorando uma função
+
+
+def quadrado(numero):  # TypeError se não existir parâmetro
+    # return numero * numero
+     return numero ** 2
+
+
+print(quadrado(10))
+print(quadrado(20))
+print(quadrado(30))
+# Veja que o parâmetro no print é obrigatório.
+print('------')
+
+# Refatorando outra função
+
+
+def cantar_para(Aniversariante):
+    print(f'Parabéns {Aniversariante}')
+    print('Nesta data')
+    print('Querida')
+
+
+cantar_para('Francisco')
+
+
+# Exemplo com mais parâmetros
+print('-----')
+
+
+def somar(a, b):
+    return a + b
+
+
+def mult(num1, num2):
+    return num1 * num2
+
+
+def outra(num1, b, msg):
+    return (num1 + b) * msg  # Veja que a mensagem vai se repetir pela quantidade da soma. Lembrar que  3*'palavra'=
+# palavra palavra palavra
+
+
+print(somar(2, 5))
+print(somar(5, 5))
+
+print(mult(2, 5))
+print(mult(5, 5))
+
+print(outra(2, 2, 'Francisco Araújo'))
+print(outra(5, 5, 'Francisco Araújo'))
+
+print('-----')
+
+# Nomeando parâmetros, para facilitar a leitura do código para que deseja usar
+
+
+def nome_completo(nome, sobrenome):  # Parâmetros (definição da função)
+    return f'Seu nome completo é {nome} {sobrenome}'  # Olhe essa maneira de de trabalhar com esse print
+
+
+print(nome_completo('Francisco', 'Araújo'))  # Argumentos (dados passados durante a execução da função)
+
+# A ordem dos parâmtros importa.
+
+# Argumentos nomeados (Keyword Arguments) ----- Posso colocar na ordem que eu bem desejar. Parece muito vantajoso
+# Caso utilizemos nomes dos parâmetros nos argumentos para informá-los, podemos utilizar qualquer nome.
+nome = 'Lara'
+sobrenome = 'Cristina'
+print(nome_completo(nome='Francisco', sobrenome='Araújo'))
+print(nome_completo(nome=nome, sobrenome=sobrenome))
+print(nome_completo(sobrenome='Limas', nome='Amanda'))
+
+print('------')
+# Erro comum na utilização do return
+
+
+def soma_impares(numeros):
+    total = 0
+    for num in numeros:
+        if num % 2 != 0:
+            total = total + num
+    return total  # veja que se dermos mais um tab, o if itera apenas uma vez, já que o return finaliza o passo
+
+
+lista = [1, 2, 3, 4, 5, 6, 7]
+print(soma_impares(lista))
+
+tupla = (1, 2, 3, 4, 5, 6, 7)
+print(soma_impares(tupla))
+-----------------------------------------------------------------------------------------------------------------------
+"""
+FUNÇÕES COM PARÂMETRO PADRÃO (Default Parameters):
+
+- Funções onde a passagem de parâmetro seja opcional;
+- == representa igualdade, igual ao matlab
+
+Quais tipos de dados podemos utilizar como valores default para parâmetro?
+ - qualquer tipo: números, strings, floats, booleanos, listas, tuplas, dicionários, funcções, etc...
+"""
+print('Francisco Araújo')
+print()  # Veja que a passagem de parãmetro para o print é opcional
+
+
+def quadrado(numero):  # Passagem obrigatória
+    return numero ** 2
+
+
+print(quadrado(3))  # ok
+# print(quadrado())  # Veja que aqui a passagem de parâmetro é obrigatória
+
+
+def exponencial(numero=4, potencia=2):  # veja que agora não precisamos de nenhume argumento, teremos 4 ** 2
+    return numero ** potencia
+
+
+"""
+Na definição de um método, dizer que um parâmetro é igual a algo (2 por exemplo), faz ele ser opcional. Veja que essa
+sacada é muito simples, mas muito importante
+"""
+
+
+print(exponencial(2, 3))  # ok
+print(exponencial(2))  # ok
+print(exponencial())  # ok
+
+"""
+A ordem dos argumentos importa
+Obs.: Em funções Python, os parâmetros com valores default, DEVEM sempre estar ao final da declaração, ou seja:
+"""
+
+
+# def quadrado(num=2, potencia):
+#    return num ** potencia
+# print(2) Poderíamos até pensar que esse 2 vai para a potência, mas não vai, pois o parâmetro default deve estar no fim
+
+# Exemplo mais completo:
+
+print('-----')
+
+
+def mostra_informacao(nome='Francisco', instrutor=False):  # dois parâmetros não obrigatórios
+    if nome == 'Francisco' and instrutor:  # e instrutor for True
+        return 'Bem-vindo instrutor Francisco'
+    elif nome == 'Francisco':
+        return 'Eu pensei que você era instrutor'
+    return f'Olá {nome}'
+
+
+print(mostra_informacao())
+print(mostra_informacao(instrutor=True))  # Preciso escrever o nome "instrutor". Caso não, será atribuido ao "nome"
+print(mostra_informacao('Ana'))  # Podemos fazer de dois jeitos
+print(mostra_informacao(nome='Ana'))  # Podemos fazer de dois jeitos
+print(mostra_informacao(True))  # Veja que essa variável agora atribuída ao nome
+
+print('-----')
+
+
+def soma(num1, num2):
+    return num1 + num2
+
+
+def mat(num1, num2, fun=soma):  # não é comum em outras linguagens
+    return fun(num1, num2)  # aqui já estamos usando a função soma como paradigma
+
+
+def subracao(num1, num2):
+    return num1 - num2
+
+
+print(mat(2, 3))  # veja, que aqui já estamos usando a função soma.
+print(mat(2, 3, subracao))  # Aqui estamos usando a função subração. Além disso, veja que a função subtração está sem
+# parênteses.
+
+
+# Exemplos de escopo de variável. Variáveis Globais e Variáveis Locais. Evita problemas
+print('-----')
+
+instrutor = 'Petróleo'  # Exemplo de variável global. Pois está fora da função
+
+
+def diz_oi():
+    instrutor = 'Engenharia'  # dentro da função
+    """
+    Exemplo de variável local, veja que ela se sobressai em relação global, veja que ela também está marcada
+    Essa variável local só existe dentro desse bloco, nem adianta chamar ela dentro de um print fora do bloco que 
+    ela não vai existir
+    """
+
+    return f'oi {instrutor}'  # Esse return é muito legal
+
+
+print(diz_oi())
+# A dica é, evitar variável global, usar apenas se tiver confiança para usar.
+# Outro exemplo, para trabalhar com variáveis globais
+
+
+print('-----')
+total = 0
+
+
+def incremento():
+    global total  # Avisanso ao Python que a variável é a global que está lá fora. Uma forma de inicializar a variável
+    total = total + 1  # Se a inicialização gera um UnbooundLocalError.
+    return total
+
+# A declaração global se parece com o VBA do excel
+
+
+print(incremento())
+print(incremento())
+print(incremento())  # Legal, aqui fica tipo um for
+
+"""
+Podemos ter funções que podem ser declaradas dentro de funçoes, além de ter uma forma especial de escopo de variável
+Um jeito diferente de usar uma variável fora do escopo
+
+Não é comum, mas é importante saber
+"""
+print('-----')
+
+
+def fora():
+    contador = 0
+
+    def dentro():
+        nonlocal contador  # Veja que "contador" não é local, não é global, É A VARIÁVEL QUE ESTÁ NA FUNÇÃO ANTERIOR
+        # significa que está na função anterior
+        contador = contador + 1
+        return contador
+    return dentro()
+
+
+print(fora())
+print(fora())
+print(fora())
+
+# print(dentro()) veja que só existe no escopo da função fora, a função dentro não roda sozinha. Gera NameError
+-----------------------------------------------------------------------------------------------------------------------
+"""
+DOCSTRINGS:
+
+Documentando funções com Docstring: São as aspas para comentários.
+É importante documentar apenas o que é essencial
+
+- Faça: print(help(print)) no terminal do Python, lá existem documentações docstring
+help() or .__doc__
+A aprência do help é melhor!
+"""
+
+
+# Exemplos:
+def diz_oi():
+    """A documentação de uma função simples"""
+    return 'Olá!'
+
+# No terminal, faça: from docstring import diz_oi
+# help(diz_oi) or print(diz_oi.__doc__)
+
+
+# o Próprio Python cria documentação automática
+def exponencial(numero, potencia=2):
+    """
+    A função retorna o quadrado de outro, ou a qualquer potência informada
+    :param numero:  Base, obrigatório
+    :param potencia: Expoente, opicinal
+    :return: Rertono a potênica de um número
+    """
+    return numero ** potencia
+# Por algum motivo não estou conseguindo importar essa função no terminal
+-----------------------------------------------------------------------------------------------------------------------
+"""
+ARGS:
+
+Entendendo o *args: Um parâmetro especial de funções
+*args: parâmetro de entrada, como qualquer outro. Significa que você poderá chamá-lo de qualquer nome, desde de que
+comece com asterisco
+
+O que é o *args?
+- é utilizado em uma função e coloca os valores extras informados como entrada em uma tupla. Ou seja, imutáveis! já
+que é uma tupla ou vai será transformada em tupla.
+- o argumento nõa é obrigatório
+- naturalmente, o * desempacota
+Obsrvação pessoal. Ele transforma os dados em tuplas, mas gera erro ao transformar tupla em tupla.
+"""
+# Exemplo 1 - não trabalha além dos 3 argumentos, mesmo com argumento padrão, e teríamos que trabalhar com o return...
+
+
+def soma_todos(num1, num2, num3):
+    return num1+num2+num3
+
+
+print(soma_todos(1, 2, 3))  # ok
+# print(soma_todos(1, 2))  # Ok se existir parâmetro padrão
+# print(soma_todos(1, 2, 3, 6))  # TypeError, mesmo se existir parâmetro padrão
+
+
+print('-----')
+# Exemplo 2 - Entendendo o *args
+
+
+def soma_todos_novamente(*args):  # Com asterisco
+    print(args)  # sem asterisco
+
+
+soma_todos_novamente()
+soma_todos_novamente(1)
+soma_todos_novamente(1, 2)
+soma_todos_novamente(1, 2, 3)
+print('-----')
+
+
+# Refatorando
+
+
+def soma_agora(*args):
+    total = 0
+    for numero in args:
+        total = total + numero
+    return total
+
+
+print(soma_agora())
+print(soma_agora(1, 2))
+print(soma_agora(1, 2, 3))
+print(soma_agora(1, 2, 3, 4))
+
+
+# or
+print('-----')
+
+
+def depois_soma(*args):
+    return sum(args)
+
+
+print(depois_soma())
+print(depois_soma(1, 2))
+print(depois_soma(1, 2, 3))
+print(depois_soma(1, 2, 3, 4))
+
+
+# Outro exemplo
+def verifica_inf(*args):
+    if 'Francisco' in args and 'Araújo' in args:
+        return 'Bem vindo Francisco'
+    return 'Não tenho certeza de quem você é!'
+
+
+print(verifica_inf())
+print(verifica_inf(1, True, 'Francisco', 'Araújo'))
+print(verifica_inf(1, 'Araújo', 2.71))
+
+
+# Como resolver esse problema ao somar elementos de uma lista em um args?
+print('-----')
+
+
+def somando(*args):
+    return sum(args)
+
+
+# Desempacotador para resolver o problema do TypeErro abaixo. Vamos fazer automaticamente.
+"""
+Modo antigo: num1, num2, num3, num4 = numeros / modo moderno: *numeros
+O asterisco indica que estamos passando uma coleção e que precisa ser desempacotado
+Até o momento, podemos desempacotar conjunto, lista e até a própria tupla. Mas ainda não podemos desempacotar um dict.
+"""
+numeros = (1, 2, 2,)
+print(somando(*numeros))  # sem o asterisoco gera um TypeError
+
+# Meu exemplo :-)
+
+
+def mensagem(*args, nome='Francisco', sobrenome='Araújo'):
+    return f'Olá {nome} {sobrenome} Seu número da sorte é {sum(args)}'
+
+
+num = [1, 2, 3]
+print(mensagem(*num, nome='Larissa'))
+-----------------------------------------------------------------------------------------------------------------------
+"""
+KWARGS:
+
+-Entendendo o **kwargs: É apenas uma convenção. Vai funcionar desde que tenha "**". Usado para parâmetros extras
+-É apenas uma parâmentro
+-Exige que utilizemos parâmetros nomeados. Esses parâmetros são transformados em um dicionário
+-Tanto o *args quando o **kwargs não são obrigatórios
+-naturalmente, o ** desempacota
+-ao usar dicionários em uma função, cuidado! os nomes da chave em um dicionário devem ser os mesmos dos parâmetros
+da função
+
+"""
+# Exemplo 1:
+
+
+def cores_favoritas(**kwargs):
+    for pessoa, cor in kwargs.items():
+        print(f'A cor favorita de {pessoa.title()} é {cor}!')
+
+
+cores_favoritas(eu='Azul', ela='preto', nos='azul escuro')  # Vai criar o dicionário
+cores_favoritas()  # Não gera erro
+cores_favoritas(Francisco='Araújo')
+
+# Exemplo 3
+print('-----')
+
+
+def cumprimento_especial(**kwargs):
+    if 'Francisco' in kwargs and kwargs['Francisco'] == 'Araújo':  # se a chave estiver no dicionário e valor for Ara...
+        return 'Você recebeu um comprimento direto de Francisco Araújo!'
+    elif 'Francisco' in kwargs:  # Se a chave estiver no dicionário
+        return f"{kwargs['Francisco']}, é o sobrenome do Fracisco"
+    return 'Não faço ideia de quem seja você!'
+
+
+print(cumprimento_especial())
+print(cumprimento_especial(Francisco='Araújo'))
+print(cumprimento_especial(Francisco='Almeida'))
+print(cumprimento_especial(Francisco='Silva'))
+
+"""
+Em suma, nas nossas funções podemos ter (nesta ordem - se for usar todos):
+- Parâmetros obrigatórios
+- *args
+- Parâmetros default (não obrigatórios)
+- **kwargs
+"""
+# Vejo o exemplo abaixo. Podemos ter no mesmo argumento, tipos repetidos de parâmetro.
+print('-----')
+
+
+def minha_func(nome, idade, *args, solteiro=False, **kwargs):
+    print(f'{nome} tem {idade} anos!')
+    print(sum(args))
+    if solteiro:
+        print('Solteiro')
+    else:
+        print('Pegando')
+    print(kwargs)
+
+
+numeroo = [2, 3, 4]
+print(minha_func('Francisco', 25, *numeroo, True, Arg='dicionário'))
+print('-----')
+print(minha_func('Francisco', 25, curso='Engenha', espec='Petróleo'))  # Os dois últimos vão para **kwargs
+
+
+# Desempacotar com o **kwargs
+print('-----')
+
+
+def mostra_nomes(**kwargs):
+    return f"{kwargs['nome']} {kwargs['sobrenome']}"
+
+
+nomes = {'nome': 'Francisco', 'sobrenome': 'Araújo'}  # É aquela outra forma de criar dicionário
+
+# print(mostra_nomes(nomes))  # Gera erro, pois não tem como desempacotar assim
+print(mostra_nomes(nome='Eu', sobrenome='Araújo'))  # ok
+print(mostra_nomes(**nomes))  # Pythônico
+-----------------------------------------------------------------------------------------------------------------------
+"""
+Exercícios da Seção 8
+"""
+import math
+
+# 1
+
+
+def func(numero):
+    return numero * 2
+
+
+print(func(10))
+print('-----')
+
+# 2
+
+
+def horario(dia, mes, ano):
+    meses = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']
+    return f'{dia} de {meses[mes-1]} de {ano}'
+
+
+print(horario(1, 12, 2022))
+
+
+# 3
+print('-----')
+
+
+def avalia(numero):
+    if numero < 0:
+        return -1
+    elif numero == 0:
+        return 0
+    return 1
+
+
+print(avalia(0))
+
+
+# 4
+print('-----')
+
+
+def verifica(numero):
+    if numero < 0:
+        return f'{numero} é um número negativo, não poderá ser quadrado perfeito!'
+    elif numero == 0:
+        return f'{numero} não é um quadrado perfeito!'
+    else:
+        if numero**(1/2) == int(numero**(1/2)):
+            return f'{numero} é um quadrado perfeito!'
+        return f'{numero} não é um quadrado perfeito!'
+
+
+print(verifica(9))
+
+
+# 5
+print('-----')
+
+
+def volume(raio):
+    return f'Volume da esfera: {(4/3)*math.pi*raio**2} u.v'
+
+
+print(volume(2))
+
+
+# 8
+print('----')
+
+
+def raiz(ca, co):
+    return f'Valor da hipotenusa = {math.sqrt(ca**2+co**2)}'
+
+
+print(raiz(2, 2))
+
+
+# 10
+print('-----')
+
+
+def tipo(a, b):
+    tip = [a, b]
+    return f'O maior: {max(tip)}'
+
+
+print(tipo(5, 4))
+
+
+# 11
+print('-----')
+
+
+pesos = [5, 3, 2]
+somando = 0
+
+
+def analisa(a, b, c, *args):
+    global pesos
+    global somando
+    listanota = [a, b, c]
+    if args[0] == 'A' or args[0] == 'a':  # [0]
+        soma = a+b+c
+        return f'A média aritmética: {soma/(len(pesos))}'
+    elif args[0] == 'P' or args[0] == 'p':
+        for numero in range(0, len(pesos)):
+            somando += pesos[numero] * listanota[numero]
+    return f'A média ponderada: {somando/sum(pesos)}'
+
+
+print(analisa(1, 2, 3, 'a'))
+print(analisa(1, 2, 3, 'P'))
+
+
+# 13
+print('-----')
+
+
+def realiza(a, b, *args):
+    if args[0] == '+':
+        return f'Soma: {a+b}'
+    elif args[0] == '-':
+        return f'Subtração: {a-b}'
+    elif args[0] == '/':
+        return f'Divisão: {a/b}'
+    elif args[0] == '*':
+        return f'Multiplicação: {a*b}'
+    return f"Escolha '+' para adição, '-' para subtração, '/' para divisão ou '*' para multiplicação"
+
+
+print(realiza(1, 2, '+'))
+print(realiza(1, 2, '-'))
+print(realiza(1, 2, '/'))
+print(realiza(1, 2, '*'))
+
+
+# 22
+print('-----')
+-----------------------------------------------------------------------------------------------------------------------
+"""
+LIST COMPREHENSION PARTE 1:
+
+COMPREHENSION: poderoso. Apenas na linguagem python
+
+Parte 1
+- Utilizando o List Comprehension, podemos gerar novas listas com dados processados a partir de outro iterável.
+
+# Sintaxe
+[dado for dado in iterável] # Para cada dado na coleção, precesse o dado. Veja que lemos de trás para frente
+dado: variável
+iterável: coleção
+"""
+# Exemplo
+numeros = [10, 20, 30, 40, 50, 60]
+res = [dado/10 for dado in numeros]
+print(f'A funcionalidade da List Comprehension: {res}')
+
+"""
+Ou seja:
+Parte 1 - for dado in numeros; Para cada número na lista
+Parte 2 - dado/10; O processamento que vai modificar a lista
+"""
+
+# Exemplo:
+
+
+def uma_funcao(numer):
+    return numer*numer
+
+
+print(uma_funcao(2))
+print('-----')
+
+
+listao = [1, 2]
+resp = [uma_funcao(dado) for dado in listao]
+print(f' A função aplicada numa lista qualquer trabalhando com o list comprehension: {resp}')
+
+# Loop v List Comprehension
+print('-----')
+
+# loop - Para quem conhece o Python
+umalista = [10, 20, 30, 40]
+umaListaVazia = []
+
+for N in umalista:
+    num_dobrado = N*2
+    umaListaVazia.append(num_dobrado)
+
+print(f' A lista original: {umalista}')
+print(f' A lista dorbrada: {umaListaVazia}')
+print('-----')
+
+# List Comphension - Para quem conhece o Python Avançado
+print(f' A lista dobrada com List Comprehension: {[numero*2 for numero in umalista]}')
+print('-----')
+-----------------------------------------------------------------------------------------------------------------------
+"""
+LIST COMPREHENSION PARTE 2:
+
+Podemos adicionar estrutrua condicionais lógicas às nossas List Comprehension
+
+# Sintaxe
+[dado for dado in coleção condição]
+"""
+
+#  Exemplo 1: verifica os pares
+numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(f'Os pares: {[dado for dado in numeros if dado % 2 == 0]}')
+
+"""
+Ou seja, estamos dizendo que:
+Pegamos o dado, para cada dado na coleção se o resto da divisão desse dado por 2 for 0 (condição de paridade).
+"""
+
+#  Exemplo 2: verifica os ímpares
+numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(f'Os ímpares: {[dado for dado in numeros if dado % 2 != 0]}')
+print('------')
+
+
+# Refatorado:
+"""
+Quando o número é par, o módulo de 2 é zero. Zero em Python é False. A Condiçao not
+gera False = True. Vai salvar os True, que são os pares (False).
+Estamos fazendo uma negação.
+"""
+print(f'Os pares: {[nume for nume in numeros if not nume % 2]}')
+
+# Qualquer número ímpar módulo de 2 é 1, e 1 em Python é True. Vai salvar os True. Nem precisa de negação.
+print(f'Os pares: {[nume for nume in numeros if nume % 2]}')
+
+
+# Exemplo 3: condição no início
+print(f'Modificando: {[numero**numero if numero % 2 == 0 else numero/numero for numero in numeros]}')
+print('-----')
+-----------------------------------------------------------------------------------------------------------------------
+"""
+LISTAS ANINHADAS:
+
+Algumas linguagens de programação possuem uma estrutura de dados chamadas de arrays:
+    - Unidimensionais (arrays/vetores)
+    - Multidimensionais (matrizes)
+
+Em Python temos as listas
+
+numeros = [1, 'b', 3.14, 4, True, 6]
+"""
+
+listas = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]  # Matriz 3x3
+print(listas)
+print(type(listas))
+
+# Como acessar os dados?
+print(listas[0][2])  # Acessando a linha 1, coluna 3 da matriz
+print(listas[2][1])  # Acessando a linha 3, coluna 2 da matriz
+print(listas[2][-2])  # Acessando a linha 3, coluna 2 da matriz
+
+
+# Iterando com loops em uma lista aninhada. Vamos precisar de dois loops.
+print('-----')
+
+for lista in listas:
+    for num in lista:
+        print(f'O número com o for: {num}')
+
+
+# Muito mais fácil do que no matlab. Isso é alegria
+# Como usar list comprehension nesse caso?
+print('-----')
+
+# Primeiro [[]for lista in listas]
+# Segundo [[for valor in lista]for lista in listas]
+# Terceiro [[print(valor) for valor in lista] for lista in listas]
+[[print(f'O valor com list comprehension: {valor}') for valor in lista] for lista in listas]
+print('-----')
+
+# gerando uma matriz 3x3
+
+print(f'A matriz: {[[numero for numero in range(1, 4) ]for valor in range(1, 4)]}')
+print('-----')
+""" 
+Primeiro preencheu colunas com o "valor", depois preencheu as linhas com o "numero".
+"""
+
+
+# Jogo da velha. Vamos usar a estrutura condicional
+a = [['x' if numero % 2 == 0 else '0' for numero in range(1, 4)]for valor in range(1, 4)]
+print(f'O jogo da velha: {a}')
+print('-----')
+
+# Gerando valores iniciais
+print(f"Com valores inciais: {[['*' for val in range(1, 4)] for nu in range(1, 4)]}")
+-----------------------------------------------------------------------------------------------------------------------
+"""
+DICTIONARY COMPREHENSION:
+
+Pense:
+se quisermos criar:
+lista = [1, 2, 3, 4]
+tupla = (1, 3, 5, 5) ou 1, 3, 5, 5,
+conjunto = {1, 3, 5, 5}
+dicionário {'a': 1, 'b': 2}
+
+# sintaxe
+{chave: valor for valor in interável}: dictionary comprehension
+[valor for valor in iterável]: list comprehension
+"""
+
+# exemplo
+numeros = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e':5}
+quadrado = {chave: valor ** 2 for chave, valor in numeros.items()}
+"""
+ Ou seja, vamos elevar todos os valores ao quadrado. Mas não modificamos a chave
+ """
+
+print(f'O dicionário ao quadrado: {quadrado}')
+print('-----')
+
+
+"""
+Imagine que você tem uma lista de números, e deseja elevar esses números ao quadrado e colocar em um dicionário:
+"""
+
+numeroListas = [1, 3, 5, 6]
+# numeroListas = {1, 3, 5, 6}  # Poderíamos também usar esse set
+quadrad = {valor: valor**3 for valor in numeroListas}  # lembrar que dicionário não aceita chave repetida.
+print(f'O cubo dos valores da lista em um dicionário: {quadrad}')
+print('-----')
+
+# Criando chaves e valores a partir de uma string e uma lista
+
+chavesss = 'abcde'
+valores = [1, 2, 3, 4, 5]
+
+mistura = {chavesss[i]: valores[i] for i in range(0, len(valores))}
+print(f'Juntando as chaves: {mistura}')
+print('-----')
+
+# Exemplo com estrutura condicional
+numpe = [1, 2, 3, 4, 5, 6]
+res = {num: ('par' if num % 2 == 0 else 'ímpar') for num in numpe}
+print(f'O dicionário com as específicações: {res}')-----------------------------------------------------------------------------------------------------------------------
+"""
+SET COMPREHENSION:
+
+Lembrar que set não guarda ordenação e não aceita repetição de valores.
+"""
+# exemplo
+
+numeros = {num for num in range(1, 7)}
+print(numeros)
+print('----')
+
+# outro
+res = {num**3 for num in range(10)}
+print(res)
+print('-----')
+
+# gerando um dicionário
+resp = {num: num**3 for num in range(10)}
+print(resp)
+print('-----')
+
+# exemplo com string
+letras = {letra for letra in 'Francisco Araújo'}
+print(f'O set de letras: {letras}')
+-----------------------------------------------------------------------------------------------------------------------
+"""
+LAMBDAS:
+
+Utilizando lambdas:
+    - São funções sem nome, anônima
+    - Palavra reservada: lambda
+    - Podemos ter múlitplas entradas
+
+Obs.: Só aceita a quantidade de argumentos esperados
+"""
+
+
+def fucao(x):
+    return 3 * x + 1
+
+
+print(f'O retorno: {fucao(2)}')
+print('-----')
+
+# Expressão lambda
+lambda x: 3 * x + 1
+
+"""
+x-> Parâmetros de entrada
+Como não tem nome, vamos direto para o retorno: 3 * x + 1
+"""
+
+# Como utilizar a expressão lambda? Podmeos dar um nome a ela
+calc = lambda x: 3 * x + 1  # Não é a forma correta de utilização dessas expressões.
+
+
+print(f'O valor do cálculo: {calc}')
+print('-----')
+
+# Imagine um formulário, com nome e sebrenome em campos diferentes, com múltiplas entradas. Mas precisamos do nome
+# e sobrenome.
+
+"""
+Entradas: logo após a palavra reservada "lambda" e antes dos dois pontos.
+nome e sobrenome: são duas entradas
+
+strip(): nome = ' Francisco '; nome.strip() = 'Francisco'. Ou seja, remove espaços no início e no fim.
+title(): Transforma a primeira letra em caixa alta
+"""
+
+nome_completo = lambda nome, sobrenome: nome.strip().title() + ' ' + sobrenome.strip().title()
+
+print(nome_completo(' francisco', ' araújo   '))
+print('-----')
+
+
+# lambda sem entrada
+like = lambda: 'Como não gostar do Python?'
+love = lambda x: 3 * x
+avenue = lambda x, y: x * y
+
+print(like())
+print(love(4))
+print(avenue(1, 4))
+print('-----')
+
+
+# lista de autores
+
+autores = ['Francisco Araújo', 'Senhora lendy', 'Senhora alquimista', 'Os três', 'O grande êxodo', 'L. G. Almeida']
+print(autores)
+print('-----')
+
+# E se precisar ordenar pelo sobrenome? Usando o lambda de forma Pythônica
+autores.sort(key=lambda sobrenome: sobrenome.split(' ')[-1].lower())  # [-1] pega o útlimo elemento da lista, RODA
+# sort(). faz a ordenação
+print(autores)
+print('-----')
+
+# split(): gera lista a cada espaço
+# lower(): transforma tudo em minúsculo
+
+"""
+Agora, uma aplicação muito interessante.
+Vamos criar uma função quadrática, recebendo as constantes e o valor da variável x.
+"""
+
+
+def geradora_quadratica(a, b, c):
+    return lambda x: a*x**2+b*x+c
+
+
+Teste = geradora_quadratica(2, 4, 4)
+print(Teste(2))
+print(Teste(-1))
+print(Teste(25))
+print('-----')
+
+# ou
+
+print(f'O valor da função quadrática: {geradora_quadratica(2, 4, 4)(2)}')
+print(f'O valor da função quadrática: {geradora_quadratica(2, 4, 4)(-1)}')
+print(f'O valor da função quadrática: {geradora_quadratica(2, 4, 4)(25)}')
+print('-----')
+
+"""
+E onde aplicamos as expressões lambdas?
+Geralmente: 
+    -filtragem
+    -ordenação de dados
+"""
+-----------------------------------------------------------------------------------------------------------------------
+"""
+MAP:
+
+A função do map recebe um parâmetro
+Map: Fazemos mapeamento de valores para função.
+Não confundir esse Map com o Mapa estudado em coleções
+Map: recebe dois parâmetros. Primeiro; a função. Segundo; um iterável
+Retorna um map object. Mas posso converter
+Só podemos usar uma única vez
+A função do Map recebe apenas um parâmetro. Isto é importante.
+"""
+
+import math
+
+
+def aras(r):
+    """
+    :param r: raio do círculo
+    :return: área
+    """
+    return math.pi*r**2
+
+
+print(f'A áreia do círculo: {aras(2)} u.a')
+print(f'A áreia do círculo: {aras(3.14)} u.a')
+print('-----')
+
+# Imagine agora. Uma lista contendo vários raios:
+raios = [2, 3, 5, 20]
+
+"""
+Primeiro: Calculando todos os raios 
+"""
+raio = []
+for i in raios:
+    raio.append(aras(i))
+
+
+print(f'Todos os raios a partir da lista de raios: {raio}')
+print('-----')
+
+"""
+Segunda forma. Usando o Map. Essa função vai usar cada função do iterável e aplicar na função. Por isso recebe 
+dois parâmentros
+"""
+
+areeas = map(aras, raios)
+print(areeas)
+print(type(areeas))
+print(f'Valores transformados em lista: {list(areeas)}')  # muito mais prático
+print('-----')
+
+# A grande sacada, é que geralmente não criamos uma função para isso. Usamos as expressções lambdas direto no map.
+# Vamos refatorar nosso problemas:
+print(f'A área da nossa função refatorada: {list(map(lambda r: math.pi*r**2, raios))}')
+print('-----')
+
+"""
+NOTA IMPORTANTE: 
+Após utilizar a função map(), depois da primeira utilização do resultado nossos valores são zerados
+
+Para fixar: Map precisa de uma função ou um iterável. Essa função pode ser anônima or não.
+"""
+
+# Exemplo com cidade e temperatura em graus celcius
+
+cidades = [('Berlim', 29), ('Cairo', 36), ('Buenos Aires', 19), ('Los Angeles', 26), ('Tokio', 27), ('Nova York', 28),
+           ('Londres', 22)]
+
+# como podemos passar para gruas fahrenheit?
+"""
+dado: lista de cidades, nesse caso
+f = 9/5 * c + 32
+"""
+
+c_para_f = lambda dado: (dado[0], (9/5) * dado[1] + 32)
+
+print(f'Cidades com as temperaturas convertidas:\n {list(map(c_para_f, cidades))}')
+
+# Esse exemplo foi muito bom.
+-----------------------------------------------------------------------------------------------------------------------
+"""
+FILTER:
+
+A função do filter recebe um parâmetro
+Lambda + filter parece uma ótima combinação
+O objetivo é conhecer o Python e pensar fora da caixa.
+Uma vez aplicado Map e Filter, mostra-se que você conhece o Python
+filter: utizado para filtrar dados de uma determinada coleção
+Assim como a função Map, a filter recebe dois parâmetros (função, iterável)
+Assim como o Map, aqui, usamos os dados apenas uma vez.
+Retornamos um objeto
+Usado para remoção de dados faltantes: fundamental para quem quer trabalhar com ciência de dados, para não distorcer
+o resultado final
+
+Diferença clara entre Map e Filter
+Map: Rertonar valores. Recebe uma função e um iterável e retorna um objeto mapeando a função para cada elemento
+do iterável
+Filter: Retorna True ou False (booleano) para ser usado como filtro. Recebe uma função e um iterável e retorna
+um objeto filtrando apenas um elemento de acordo com a função.
+"""
+# Biblioteca para trabalhar com estatística
+import statistics
+
+valores = 1, 2, 3, 4, 5, 6, 7, 8, 9,
+print(type(valores))
+media = (sum(valores))/len(valores)
+print(f'A média: {media}')
+print('-----')
+
+# Dados coletados de algum sensor
+dados = [1.3, 3.7, 0.8, 4.1, 4.3, -0.1]
+
+# função mean da biblioteca statistics
+med = statistics.mean(dados)
+
+print(f'A média: {med}')
+res = filter(lambda x: x > med, dados)  # O 'x' representa cada dado de uma função
+print(type(res))
+"""
+Nessa análise do filter, retornamos True or False
+"""
+print(list(res))
+print('-----')
+print(f'Não imprime novamente: {list(res)}')
+print('-----')
+
+# Dados faltantes
+
+paises = ['', 'Argentina', '', 'Brasil', 'Chile', '', 'Colombia', '', 'Equador', '', '', 'Venezuela']
+print(f'Sem o filter:\n {paises}')
+print(f'Com o filter:\n {list(filter(None, paises))}')
+"""
+O None vai remover os espaços em branco e usar
+os não vazios. Recomendado.
+"""
+print(f'Com lamba:\n {list(filter(lambda pais: len(pais) > 0, paises))}')  # or pais != '', paises
+print('-----')
+
+
+# Exemplo mais complexo. Temos uma lista cujos elementos são dicionários
+usuarios = [
+    {"username": "Samuel", "tweets": ["Eu adoro bolos", "Eu adoro pizzas"]},
+    {"username": "Carla", "tweets": ["Eu amo gatos"]},
+    {"username": "Larissa", "tweets": []},
+    {"username": "Pedro", "tweets": []},
+    {"username": "Eliza", "tweets": ["Eu gosto de cachorros", "Vou sair hoje"]},
+    {"username": "Anna", "tweets": []}
+]
+
+
+print(f'Os usuários do twitter:\n {usuarios}')
+print('-----')
+# Filtrar os usuários inativos no twitter. Aqueles sem tweets
+inativos = list(filter(lambda u: len(u['tweets']) == 0, usuarios))
+"""
+Ou seja, para cada elemento de "usuários" passamos para a variável "u", e fazemos a seleção com as propriedades dos
+dicionários
+"""
+print(f'Usuários inativos no twitter:\n {inativos}')
+print('-----')
+print(f"Usuários ativos no twitter:\n {list(filter(lambda u: len(u['tweets']) != 0, usuarios))}")
+
+
+# Refatorando os usuários inativos.
+"""
+No terminal: 
+usuarios = {"username": "Samuel", "tweets": ["Eu adoro bolos", "Eu adoro pizzas"]}
+usuarios
+not usuarios['tweets'] -> gera False, já que possui tweets. Se possui tweets gera True, mas not gera a negação.
+Portanto, o vazio significa False e não vazio significa True
+"""
+
+# Forma 2:
+inativos2 = list(filter(lambda usuario: not usuario['tweets'], usuarios))  # Modo avançado
+"""
+Ou seja, uma lista vazia transformada em booleano gera False: usuario['tweets']
+"""
+print(f'Os novos inativos refatorados:\n {inativos2}')
+print('-----')
+
+
+# Combinando map() e filter()
+"""
+Tarefa: criar uma lista contendo 'Sua instrutura é' + nome, desde que cada nome tenha menos que 5 caracteres.
+"""
+
+nomes = ['Carla', 'Roberto', 'Larissa', 'Letícia', 'Bia', 'Lois']
+lista = list(map(lambda nome: f'Sua instrutora é {nome}', filter(lambda nome: len(nome) < 5, nomes)))
+"""
+Observe que filter() está dentro de map() como segundo argumento já filtrado, já que o map() recebe dois parâmentros
+"""
+print(f'A classificação das instrutores:\n {lista}')
+-----------------------------------------------------------------------------------------------------------------------
+"""
+REDUCE:
+
+É viável para um teste de programação, pois demonstra conhecimeno avançado.
+A função do reduce recebe dois parâmetros
+Essa função recebe dois parâmetros: a função e o iterável
+Um pouco mais confuso.
+reduce: a partir do Python 3.0 a função reduce() não é mais uma função integrada (built-in). Agora temos que
+importar e utilizar a partir do módulo 'functools'
+
+Guido van Rossum: Utilize a função reduce() se você realmente precisa dela. Em todo caso, 99% das vezes um loop for
+é mais legível.
+
+Imagine a situação:
+dados = [a1, a2, a3, a4, ..., an]
+
+Precisa de uma função que recebe dois parâmetros:
+    def func(x, y)
+        return x*y
+
+reduce(func, dados)
+
+Funcionamento do reduce:
+Passo 1: res1 = f(a1, a2) # Aplica a função no dois primeiros elementos da coleção e guarda o resultado
+Passo 2: res2 = f(res1, a3) # Aplica a função passando o resultado do passo 1 mais o terceiro elemento e guarda o resul.
+
+E assim por diante até obter o resultado final.
+
+
+Forma alternativa para o reduce:
+funcao(funcao(funcao(a1, a2), a3), a4), ...), an)
+"""
+# Na prática
+# aplicando reduce para multiplicar todos os valores de uma lista
+from functools import reduce
+
+dados = [2, 3, 4, 7, 11, 13, 19, 23, 29]
+
+# Vamos usar a função lambda recebendo dois parâmetros
+
+res = reduce(lambda x, y: x * y, dados)
+print(f'O resultado com o reduce:\n {res}')
+
+# Fazendo a mesma operação com laço for
+res = 1
+for n in dados:
+    res = res * n
+
+print(f'O resultado com o for:\n {res}')
+-----------------------------------------------------------------------------------------------------------------------
+"""
+ANY E ALL:
+
+algum e todo
+Any e all
+All(): retorna True (booleano) se todos os elementos do iterável são verdadeiros ou ainda se o iterável estiver vazio.
+Uma função booleana
+
+any(): retorna True se qualquer elemento do iterável for verdadeiro. Se o iterável estiver vazio, retorna False
+"""
+
+# Exemplo all()
+print(all([0, 1, 2, 3, 4]))  # todos os valores são True, menos o 0. False
+print(all([1, 2, 3, 4]))  # True
+print(all([]))  # True
+print(all('Francisco Araújo'))  # True
+print('-----')
+
+
+# Vamos fazer uma busca com list comprehension + all(). Bom para se fazer uma checagem
+nomes = ['Carina', 'Carla', 'Clara', 'Camilha', 'Cassiano', 'Cristina']
+print(all([nome[0] == 'C' for nome in nomes]))
+print('-----')
+
+# Um iterável vazio convertido em booleano é False, mas o all() entende como True. Sempre vai dar True aqui.
+print(all([letra for letra in 'eio' if letra in 'aeiou']))
+print('-----')
+
+# outro caso, e for par vai da True, se for vazio vai dar True
+print(all([num for num in [4, 2, 10, 6, 8] if num % 1 == 0]))
+print('-----')
+
+# Exemplo com any()
+print(any([0, 1, 2, 3, 4]))  # se tiver apenas um verdadeiro, retorna verdadeiro.
+print(any([]))  # False
+
+nomes = ['Carina', 'Carla', 'Clara', 'Camilha', 'Cassiano', 'Cristina', 'Francisco']
+print(any([nome[0] == 'C' for nome in nomes]))  # True
+print('-----')
+-----------------------------------------------------------------------------------------------------------------------
+"""
+GENERATORS EXPRESSION:
+
+Possui muita performance, confirme com os resultados a baixo.
+Generators: Vai gerar um objeto em memória, ou seja, posso mudar o estilo do dado
+    - Podemos usar os dados apenas uma vez, assim como map, filter...
+    - Possui muito mais performance
+Já vimos;
+    - list comprehensionc, já gera lista em memória
+    - dictionary comprehension, já gera dicionário em memória
+    - set comprehension, já gera conjunto em memória
+
+Não vimos;
+    - tuple comprehension, pois elas sãos os chamados  GENERATORS
+
+Na aula passado foi feito:
+nomes = ['Carina', 'Carla', 'Clara', 'Camilha', 'Cassiano', 'Cristina', 'Francisco']
+print(any([nome[0] == 'C' for nome in nomes]))  # True
+
+Obs.: Poderíamos fazer usando generators.
+Portanto, é recomendado usar o generators na maioria dos casos, a não ser que queiramos um conjuta, um dicionáiro ou
+uma lista logo de cara.
+"""
+# Qual a utilidade de getsizeof()? - Retorna a quantidade de bytes em memória do elemento passado como parâmetro.
+from sys import getsizeof
+print(getsizeof('Francisco Araújo'))
+print(getsizeof(9))
+print(getsizeof(96356525653256))
+print(getsizeof(True))
+print('-----')
+
+# lista de números usando o list comprehension
+list_comp = getsizeof([x * 10 for x in range(1000)])
+print(f'Bytes em list comprehension: {list_comp}')
+print('-----')
+# lista de números usando o set comprehension
+set_comp = getsizeof({x * 10 for x in range(1000)})
+print(f'Bytes em set comprehension: {set_comp}')
+print('-----')
+# lista de números usando o dictionary comprehension
+dic_comp = getsizeof({x: x * 10 for x in range(1000)})
+print(f'Bytes em dic comprehension: {dic_comp}')
+print('------')
+# lista de números usando o generators
+gen = getsizeof(x * 10 for x in range(1000))
+print(f'Veja como temos menos bytes em Generator Expression: {gen}')
+print('-----')
+
+# Usando generators
+nomes = ['Carina', 'Carla', 'Clara', 'Camilha', 'Cassiano', 'Cristina', 'Francisco']
+print(any((nome[0] == 'C' for nome in nomes)))  # Veja que agora é um tuple comprehension (generators).
+# Vai gerar performance
+print('-----')
+
+"""
+Por que o generator usa tão pouco bytes em memória?
+Porque ele ainda não gerou nada, só deixou tudo preparado, e quando for usar vai gerar em memória e apagar em memória, 
+diferente do lis comprehension
+"""
+
+gen = (x * 10 for x in range(1000))
+print(gen)
+print(type(gen))
+
+for num in gen:
+    print(num)
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+"""
+SORTED:
+
+ELE SEMPRE IRÁ RETORNAR UMA LISTA (por padrão, mas posso mudar) COM OS ELEMENTOS DO ITERÁVEL
+Sorted: Serve para ordenar, mas funciona além das listas, inclusive, para elas, também. Além disso, ele cria uma nova
+lista ordenada, diferente do sort() - que ordena a própria lista
+Obs.: Nâo confundir com a função sort() que já estudamos. Além disso, lembrar que sort() funciona APENAS em listas:
+lembrar como usar:
+dado_lista = [3, 2, 1]
+dado_lista.sort()
+>> [1, 2, 3]
+"""
+numeros = [6, 1, 8, 2]
+print(numeros)  # Sem ordenação
+print(sorted(numeros))  # Com ordenação e com uma nova lista
+print(numeros)  # Sem ordenação, mesma distribuição dos dados originais
+print('-----')
+numeros1 = 6, 1, 8, 2,
+print(sorted(numeros1))  # Retorna essa tupla em formato de lista ordenada
+
+# Adicionando parâmetros ao sorted()
+print(sorted(numeros1, reverse=True))  # Ordena e inverte a lista
+
+# Convertendo o serted()
+print(tuple(sorted(numeros1, reverse=True)))
+print('-----')
+# Exemplo mais complexo com o sorted()
+usuarios = [
+    {"username": "Samuel", "tweets": ["Eu adoro bolos", "Eu adoro pizzas"]},
+    {"username": "Carla", "tweets": ["Eu amo gatos"]},
+    {"username": "Larissa", "tweets": []},
+    {"username": "Pedro", "tweets": []},
+    {"username": "Eliza", "tweets": ["Eu gosto de cachorros", "Vou sair hoje"]},
+    {"username": "Anna", "tweets": []}
+]
+
+
+print(f'Os usuários do twitter:\n {usuarios}')
+print('-----')
+# print(sorted(usuarios))  # não vai funcionar, ele não itera em dicionário assim
+print(sorted(usuarios, key=lambda usuario: usuario["username"]))  # Na chave, podemos passar até uma função para odern.
+print('-----')
+"""
+Estamos ordenando pelo nome de usuário, mas podemos pelo tweets
+"""
+
+# Ordenando pela quantidade de tweets do usuário (do maior para o menor)
+print(sorted(usuarios, key=lambda usuario: len(usuario['tweets']), reverse=True))
+print('-----')
+
+# Imagine a lista de músicas, com seus respectivos títulos e quantidade de vezez que ela tocou.
+musicas = [
+    {"título": 'Rap', "tocou": 3},
+    {"título": 'MPB', "tocou": 32},
+    {"título": 'Sertanejo', "tocou": 21},
+    {"título": 'Rock', "tocou": 80},
+    {"título": 'Serenata', "tocou": 17}]
+
+# Ordena da menos tocada para a mais tocada
+print(sorted(musicas, key=lambda mus: mus['tocou']))
+
+# Ordena da mais tocada para a menos tocada
+print(sorted(musicas, key=lambda mus: mus['tocou'], reverse=True))
+-----------------------------------------------------------------------------------------------------------------------
+"""
+MIN E MAX:
+
+max e min: retorna o maior/menor valor em um iterável ou o maior/menor de dois ou mais elementos.
+funciona para:
+- lista
+- tupla
+- set
+- dicionário. Esse precisa de cuidado
+"""
+"""
+# Exemplos
+lista = [1, 8, 4, 99, 34, 129]
+print(max(lista))
+print('-----')
+
+dicionario = {'a': 1, 'b': 8, 'c': 4, 'd': 99, 'e': 34, 'f': 129}
+print(max(dicionario))  # Vai retorna "f", a maior chave
+print(max(dicionario.values()))  # Vai retorna 129, o maior valor
+"""
+
+# Olha como é fácil no Python, nem precisamos de estrutura condicional para obter um dado
+# Construir um código que recebe dois valores do usuário e retorna o maior
+
+# valor1 = int(input('Digite o primeiro valor: '))
+# valor2 = int(input('Digite o segundo valor: '))
+# print(f'O maior valor: {max(valor1, valor2)}')
+
+# or
+print(max('a', 'b', 'g'))  # retorna o maior em relação a posição no alfabeto
+print(max('a', 'ab', 'abc', 'abcd'))  # retorna o maior em relação a quantidade de elementos
+print(max(1.3344, 1.3343))
+print('-----')
+
+# Outros exemplos:
+nomes = ['Arya', 'Samson', 'Dora', 'Tim', 'Ollivandader']
+print(max(nomes))  # Vai localizar o 'Tim', pois está levando em consideração a ordem alfabética
+print(min(nomes))  # Vai licalizar o 'Arya', pois está levando em consideração a ordem alfabética
+print('-----')
+
+# Como encontrar o maior nome? Vamos alterar o comportamento padrão do max()
+print(max(nomes, key=lambda nome: len(nome)))  # Vai buscar o que possui mais caracteres
+print('-----')
+
+"""
+O que estamos fazendo é:
+Para cada nome, na lista de nomes, vamos ordenar pelo tamanho dos nomes.
+
+E como saber se posso fazer essas alterações?
+Faça no terminal:
+help(max): lá temos um parâmetro que recebe uma função
+
+Ou, use o ctrl na função max(). Acho que esse meio mais recomendado
+"""
+
+musicas = [
+    {"título": 'Rap', "tocou": 3},
+    {"título": 'MPB', "tocou": 32},
+    {"título": 'Sertanejo', "tocou": 21},
+    {"título": 'Rock', "tocou": 80},
+    {"título": 'Serenata', "tocou": 17}]
+
+print(f"A música que mais tocou:\n{max(musicas, key=lambda nome: nome['tocou'])}")
+print(f"A música que menos tocou:\n{min(musicas, key=lambda nome: nome['tocou'])} ")
+print('-----')
+
+# Desafio: imprimir apenas o título da música mais/menos tocada
+print(f"O título da música mais tocada: {max(musicas, key=lambda nome: nome['tocou'])['título']}")
+print(f"O título da música menos tocada: {min(musicas, key=lambda nome: nome['tocou'])['título']}")
+
+# Essa sacada de enxergar a própria função como objeto, e pedir a chave, foi muito bom
+
+# Desafio: como encontrar a música mais/menos tocada sem o max/min e sem o lambda?
+
+max = 0
+
+for musica in musicas:
+    if musica['tocou'] > max:
+        max = musica['tocou']
+
+for musica in musicas:
+    if musica['tocou'] == max:
+        print(f"O título da música que mais tocou com o loop for: {musica['título']}")
+
+"""
+Veja que dá muito mais trabalho sem o max e as expressões lambdas.
+"""-----------------------------------------------------------------------------------------------------------------------
+"""
+LEITURA DE ARQUIVOS:
+
+Para ler o conteúdo de uma arquivo em Python, utilizamos a função integrada open(). Por padrão, já está no modo de
+leitura "r"
+
+open(): Na forma mais simples de utilização passamos apenas um parâmetro de entrada, que nesse caso é caminho do arquivo
+a ser lido. Essa função retorna um _io.TextIOWrapper e é com ele que trabalharemos
+
+https://docs.python.org/3/library/functions.html#open
+
+Obs.: por padrão, a função open() abre o arquivo para leitura. Esse arquivo deve existir, caso contrário
+teremos o erro  FileNotFoundError
+
+"""
+# Exemplo:
+arquivo = open('59.1-texto.txt', encoding='UTF-8')  # Por padrão, my escrita não era "UTF-8", por isso tive que forçar
+print(arquivo)
+# ret = arquivo.read()  # O parâmetro (posição) do read sinaliza até onde queremos ler. Lá o cursor fica parado
+# print(type(ret))  # Tipo string
+print('-----')
+"""
+<_io.TextIOWrapper name='59.1-texto.txt' mode='r' encoding='cp1252'>
+name: nome do arquivo
+'r': indica que é apenas um modo de leitura. r: read(), ou seja, apenas para ler
+encoding: diz respeito a atualização. Não é importante. Mas o padrão seria UTF-8 (99,9% dos casos)
+"""
+print(type(arquivo))
+print('----')
+
+
+# Para ler o conteúdo de um arquivo após a abertura
+print(arquivo.read())  # ele lê a primeira linha e o cursor fica no fim
+print(arquivo.read())  # Não vai repetir o print porque o cursor já está no fim.
+# Ou seja, não tem nada do fim pra frente
+-----------------------------------------------------------------------------------------------------------------------
+"""
+SEEK E CURSORS:
+
+Seek: Utilizado para mover o cursor pelo arquivo
+"""
+"""
+arquivo = open('59.1-texto.txt', encoding='UTF-8')
+print(arquivo.read())
+print(arquivo.read())  # Não lê nada
+
+# Movimentando o cursor com a função seek()
+
+# A função seek(): recebe um parâmetro que indica onde queremos colocar o cursor. Esse parâmetro pode se qualquer valor
+
+arquivo.seek(0)  # volta o curso para a posição 0
+print(arquivo.read())
+
+arquivo.seek(5)
+print(arquivo.read())
+"""
+
+"""
+Problema do read(): Lê todo o nosso conteúdo. Dependendo do tamanho do arquivo pode ser um problema.
+Solução: readline(): Lê linha a linha do nosso conteúdo
+"""
+
+# arquivo = open('59.1-texto.txt', encoding='UTF-8')
+# print(arquivo.readline())   # Lê a primeira linha
+# print(arquivo.readline())   # Lê a segunda linha
+
+"""
+ret = arquivo.readline()
+print(type(ret))  # É sempre bom saber o tipo para que possamos saber o que podemos fazer como o tipo
+print(ret.split(' '))  # transforma a string em uma lista a cada espaço.
+"""
+
+# Colocando colocando cada lista do texto como sendo um elemento de uma lista. Útil para saber quantas linhas temos.
+# print(len(arquivo.readlines()))
+# print(arquivo.readlines())  # lista de linhas do texto
+
+
+"""
+Quando abrimos um arquivo com a função open() uma conexão é criada entre o arquivo no disco do computador e o nosso
+programa. Essa conexão é chamada de streaming. Então, ao finalizar a aplicação com o arquivo devemos fechar essa 
+conexão. Para isso, usamos a função close()
+
+Passor para trabalhar com arquivo
+1: Abriro arquivo;
+2: Trabalhar o arquivo;
+3: Fechar o arquivo para evitar problemas para um segundo uso.
+"""
+
+# 1
+arquivo = open('59.1-texto.txt', encoding='UTF-8')
+
+# 2
+print(arquivo.read())
+print(arquivo.closed)  # Verifica se o arquivo está fechado ou aberto. True=fechado, False=aberto
+
+# 3
+arquivo.close()  # Para usar o arquivo abaixo novamente, é preciso abrir novamente
+print(arquivo.closed)
+
+
+-----------------------------------------------------------------------------------------------------------------------
+"""
+BLOCO WITH:
+
+O bloco with - Para não precisar fazer o fechamento do arquivo. Dentro do with está aberto! Fora está fechado
+
+Passos para se trabalhar com arquivo:
+1 - abrir o arquivo
+2 - manipular o arquivo
+3 - fechar o arquivo (nós, manualmente)
+
+O bloco with é usado para criar um contexto de trabalho onde os recursos utilizados são fechados após o bloco with.
+"""
+
+# o bloco with
+with open('59.1-texto.txt', encoding='UTF-8') as arquivo:  # forma pythônica de trabalhar com arquivos
+    print(arquivo.readlines())  # imprime cada linha como um elemento da lista
+
+# print(arquivo.readlines())  # a operação não existe fora do with
+-----------------------------------------------------------------------------------------------------------------------
+"""
+ESCREVENDO EM ARQUIVOS:
+
+ - Quando abrimos para leitura, podemos apenas ler, sem escrever
+ - Quando abrimos pra escrita, pdemos apenas escrever, sem ler
+ - Para ler ou escrever precisamos abrir o arquivo
+ - Abrimos com o open, mas agora, não no formato leitura "r"
+
+-Quando abrimos no formato escrita, um arquivo é criado no sistema operacinal
+-A função write recebe apenas string como parâmetro
+
+Obs.: Na escrita:
+Abrindo um arquivo para escrita  como o modo 'w': se o arquivo não existir um será criado; caso ele já exista, o
+anterior será apagado
+"""
+
+# exemplo. Precisamos criar um novo arquivo.
+with open('62.1-novo.txt', 'w', encoding="UTF-8") as arquivo:  # w: write
+    arquivo.write('Podemos acrescentar uma linha no texto. \n')
+    arquivo.write('Podemos acrescentar outra. \n')
+    arquivo.write('Podemos acrescentar quantas quisermos. \n')
+    # arquivo.write(2) TypeError, pois só aceita string
+
+# Escrevendo várias vezes o mesmo arquvivo
+print('-----')
+
+with open('62.2-novoArquivo', 'w', encoding='UTF-8') as novoarquivo:
+    novoarquivo.write('Francisco Araújo\n'*100)
+
+# Recebendo dados do usuário e escrevendo
+with open('62.3-Frutas', 'w', encoding='UTF-8') as arq:
+    while True:
+        fruta = input("Digite a fruta que deseja adicionar ou digite 'sair' para finalizar: ")
+        if fruta != 'sair':
+            arq.write('-'+fruta + '\n')   # or na próxima linha: arq.write('\n')
+        else:
+            break
+
+print('-----')
+
+-----------------------------------------------------------------------------------------------------------------------
+"""
+MODOS DE ABERTURA DE ARQUIVO:
+
+r: abre para leitura
+w: abre para escrita - sobrescreve caso o arquivo já exista.
+x: abre para escrita somente se o arquivo não existir
+
+http://docs.python.org/3/library/functions.html#open
+
+a: abre para escrita, adiciona o conteúdo ao final do arquivo, como o append. Um arquivo é criado se não existir. Se
+existir, será adicionado. ESSE É MUITO INTERESSANTE
+
+
+E para escrever no início do arquivo?
+Não sei ainda. Nem adianta usar seek(0). Me parece que sempre será adicionado no começo
+
+with open('62.1-novo.txt', 'a', encoding='UTF-8') as arkiu:
+    arkiu.seek(0)  # Não adianta
+    arkiu.write('Escrevendo no começo!')
+"""
+"""
+with open('63.1-beach.txt', 'x', encoding='UTF-8') as qualquer:
+    qualquer.write('Teste de conteúdo.\n')
+
+
+# Ou seja aplicação é executada apenas uma vez. Num próximo run gera erro
+
+# Refatorando para não gerar erro
+try:
+    with open('63.1-beach.txt', 'x', encoding='UTF-8') as qualquer:
+    qualquer.write('Teste de conteúdo.\n')
+except FileExsistsError:
+    print('Arquivo já existe') # gera um aviso
+
+"""
+
+
+"""
+with open('62.3-Frutas', 'a', encoding='UTF-8') as arq:
+    while True:
+        fruta = input("Digite a fruta que deseja adicionar ou digite 'sair' para finalizar: ")
+        if fruta != 'sair':
+            arq.write('-'+fruta + '\n')   # or na próxima linha: arq.write('\n')
+        else:
+            break
+"""
+
+-----------------------------------------------------------------------------------------------------------------------
+"""
+STRINGIO:
+
+StringIO: Utilizado para ler e criar arquivos em memória, pois nem sempre temos permissão para ler um arquivo
+
+Ter permissão:
+    -Permissão para leitura: Podemos ler o arquivo
+    -Permissão para Escrita: Para criar o arquivo
+"""
+
+# Primeiro: Fazemos o import
+from io import StringIO
+
+mensagem = 'É uma primeira mensagem que ficará em memória. Parece sentimento póstumo, mas é apenas um procedimento.'
+
+# Podemos criar um arquivo em memória já com uma string inserida ou mesmo vazio para inserirmos texto depois
+arquivo = StringIO(mensagem+'\n')
+# é equivalente a: arquivo = open('arquivo.txt', 'w')
+
+# Tendo o arquivo, agora, podemos manipular o mesmo normalmente.
+print(arquivo.read())  # Veja que nenhuma arquivo será criado. Apenas criado em memória
+print('-----')
+
+# Inserindo novo texto
+arquivo.write('Outro texto.')
+
+# Podemos até manipular o cursor
+arquivo.seek(0)
+print(arquivo.read())
+-----------------------------------------------------------------------------------------------------------------------
