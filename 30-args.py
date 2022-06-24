@@ -10,7 +10,7 @@ O que é o *args?
 que é uma tupla ou vai será transformada em tupla.
 - o argumento nõa é obrigatório
 - naturalmente, o * desempacota
-Obsrvação pessoal. Ele transforma os dados em tuplas, mas gera erro ao transformar tupla em tupla.
+Observação pessoal. Ele transforma os dados em tuplas, mas gera erro ao transformar tupla em tupla.
 """
 # Exemplo 1 - não trabalha além dos 3 argumentos, mesmo com argumento padrão, e teríamos que trabalhar com o return...
 

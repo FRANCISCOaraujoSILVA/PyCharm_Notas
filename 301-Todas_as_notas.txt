@@ -1,13 +1,13 @@
 """
 PEP8 - SÃO PROPOSTAS DE MELHORIAS PARA A LINGUAGEM PYTHON.
 
-import this
+Faça no terminal: import this (um poema)
 
-A ideia da pep8 é que possamos escrever códigos de forma pythônica, ou seja, visualmente bonita.
-[1] utilizar Camel Case para nome de classes;
+A ideia da pep8 é que possamos escrever códigos de forma pythônica, ou seja, visualmente bonitas.
+[1] Utilizar Camel Case para nome de classes;
 ou seja, NomeSobrenome: Observe as letras maiúsculas.
 Perceba que duas linhas em brancos são necessárias para evitar o traço em baixo.
-Para tirar erros de palavras, mude: file,settings,slelling,desatiar typo
+Para tirar erros de palavras, mude: file,settings,slelling,desativar typo
 [2] Utilizar nome minúsculo, separados por underline para funções ou variáveis;
 
 
@@ -27,39 +27,53 @@ def soma():
 def soma_dois():
     pass
 
-numero=4
-numero_impar=5
+Obs.: -use "#" para escrever comentários apenas de uma linha: # comentário
 
-[3] utilize 4 espaços para identação!, se não seguir, não conseguimos programar.
-Os dois pontos no fim indica que um novo bloco vai começar, por isso precisamos de 4 espaços.
-Não é recomendado usar o tab para dar os espaços.
-Essa linguagem de programação é completamente dependente da indentação.
+Observe o espaço entre "#" e "comentário". Ele é necessário!
 
+- use aspas triplas para comentários maior que uma linha. Segue como exemplo o local onde estou colocando as
+informações
+
+- não ultrapasse essa linha na vertical à direita
+
+- se o comentário for logo após um dado (na mesma linha) é necessário deixar dois espaços entre esse dado e a cerquilha
+"#"
+"""
+numero = 4
+numero_impar = 5
+
+"""[3] Utilize 4 espaços para identação! se a regra não for seguida, não conseguiremos programar.
+Os dois pontos no fim da classe, função... indica que um novo bloco vai começar, por isso precisamos de 4 espaços.
+Não é recomendado usar o TAB do teclado para dar os espaços, muito embora ele esteja (em algumas máquinas) programado 
+com 4 espaços.
+Essa linguagem de programação é completamente dependente da indentação, por isso, tenha muito cuidado e fique atento.
+"""
 
 if 'a' in 'banana':
     print('tem')
 
-[4] linhas em branco.
--Precisamos das duas linhas de espaço, entre funções e definições de classe.
+"""[4] linhas em branco.
+-Precisamos de duas linhas de espaço, entre funções e definições de classe.
 -Métodos dentro de uma classe devem ser separados com uma única linha em branco.
+"""
 
-[5] Imports devem ser sempre feitos em linhas separadas.
+# [5] Imports devem ser sempre feitos em linhas separadas.
 
-#Import errado
-
+"""Import errado
 import sys. os
+"""
 
-#import certo
-
+"""
+# import certo
 import sys
 import os
+"""
 
-#Podemos importar partes de uma biblioteca, não há problema em fazer isso. Serve para no máximo 3
+"""
+Podemos importar partes de uma biblioteca, não há problema em fazer isso. Serve para no máximo 3
+from types import StringType, ListType
 
-from types import StringType,ListType
-
-#para mais de 3, fazemos assim:
-
+# para mais de 3, fazemos assim:
 from types import (
     StringTupe,
     ListType,
@@ -67,69 +81,64 @@ from types import (
     OutroType
 )
 
-# imports devem ser colocadas no topo do arquivo, logo depois de qualquer comentário ou docstringr
+# imports devem ser colocadas no topo do arquivo, logo depois de qualquer comentário ou docstring
 # e antes de constantes ou variáveis globais.
+"""
 
-[6] Espaços em expressões e instruções
+# [6] Espaços em expressões e instruções
 
-# Não faça:
-
+"""
+Não faça: Observe os espaços desnecessários (erro de indentação)
 funcao( algo[ 1 ],{outro: 2})
 
 # faça:
-
 funcao(algo[1],{outro:2})
 
 # não faça:
-
 algo (1)
 
 # faça:
-
-algo (1)
+algo(1)
 
 # não faça:
-
 dict ['chave'] = list [indice]
 
 # faça:
-
 dict['chave'] = list[indice]
 
-# não faça:
-
+# faça:
 x = 1
 y = 3
 
-# faça:
-
+# não faça (observe a falta de espaço):
 x=1
 y=3
 
-[7] Sempre termine uma instrução com uma nova linha
+[7] Sempre termine uma instrução com uma NOVA linha
 
-obs.: podemos fazer comentários com três aspas simples também. Mas é preferível usar três aspas duplas.
+obs.: podemos fazer comentários com três aspas simples também ('''texto'''). Mas é preferível usar três aspas duplas!
 """
 -----------------------------------------------------------------------------------------------------------------------
 """
 dir e help: UTILITÁRIOS PARA AUXILIAR NA PROGRAMAÇÃO.
 
-dir->apresenta todos os atributos e funções/métodos disponíveis para determinado tipo de dado ou variável.
+dir-> apresenta todos os atributos e funções/métodos disponíveis para determinado tipo de dado ou variável.
 
 dir(tipo de dado ou variável)
 lower
 upper
 title
 
-help->apresenta  a documentação/como utilizar os atributos/propriedades e funções/métodos disponívels
+help-> apresenta a documentação/como utilizar os atributos/propriedades e funções/métodos disponívels
 para determinado tipo de dado ou variável
 
-help(tipo de dado/variável.propriedade)
+help(tipo de dado/variável.propriedade())
 
 q: sai do help
 
 Podemos fazer direto no terminal ou aqui no script.
 
+Faça no terminal:
 print(dir("sorte")).
 
 No terminal os dados saem muito melhor.
@@ -138,7 +147,7 @@ No terminal os dados saem muito melhor.
 """
 RECEBENDO DADOS DO USUÁRIO: DADOS RECEBDIDOS VIA INPUT SÃO DO TIPO STRING.
 
-Outro exemplos de string:
+Outros exemplos de string:
 -aspas simples
 'Palavra'
 -aspas duplas
@@ -146,7 +155,8 @@ Outro exemplos de string:
 -aspas simples triplas
 '''Palavra'''
 -aspas duplas triplas
-""Palavra""
+""Palavra""     # só não coloquei as três aspas duplas, de fato, para não dar erro aqui no python, haja vista já ter
+aspas duplas e triplas logo abaixo.
 """
 
 # entrada de dados
@@ -162,7 +172,7 @@ nome = input('Qual o seu nome? ')
 # Exemplo de print moderno
 # print('seja bem-vindo(a) {0}'.format(nome))
 
-# Exemplo de print 'mais atual'. Percebe que o f é de>>format
+# Exemplo de print 'mais atual'. Perceba que o f é de >>format
 print(f'Seja bem-vindo(a) {nome}!')
 
 
@@ -179,73 +189,73 @@ idade = input('Qual a sua idade? ')
 # Exemplo de print moderno
 # print('O(a) {0} tem {1} anos'.format(nome,idade))
 
-# Exemplo de print 'mais atual'. Percebe que o f é de>>format
+# Exemplo de print 'mais atual'. Percebe que o f é de >>format
 print(f'O(a) {nome} tem {idade} anos, ou seja, nasceu em {2021-int(idade)}.')
 
 # O int(idade) => cast
-# cast é a conversão de um tipo de dado. Ou seja, conseguimos subtrair uma string de um número.
+# cast é a conversão de um tipo de dado. Ou seja, conseguimos subtrair uma string de um número (percebeu?).
 # Podemos fazer cálculos dentro das chaves
-# é importante notar que eu poderia tirar esse int aqui de baixo e colocar lá no input da idade, antes do input, para
+# É importante notar que eu poderia tirar esse int aqui de baixo e colocar lá no input da idade, antes do input, para
 # transformar em inteiro.
 
 # Achei o jeito atual muito mais maneiro e profissional. A coisa está ficando boa.
-
-
-# import scipy.optimize
 -----------------------------------------------------------------------------------------------------------------------
 """
 TIPO NUMÉRICO:
 
-formas de obter um número inteiro: int(5/2) ou no modo pythônico 5//2
-obter o resto da divisão: 5%2
+Formas de obter um número inteiro: int(5/2) ou no modo pythônico 5//2
+
+Obter o resto da divisão: 5%2
 
 obs.: se o resto da divisão de um número por 2 for 0, ele é par. se o resto da divisão de um número por 2 for 1, é ímpar
 
-exponenciação: 2**3
-
-em java, o limite de número inteiro é 2**63. Por outro lado, no python, o limite é a memória do computador
+Exponenciação: 2**3
+Em java, o limite de número inteiro é 2**63. Por outro lado, no python, o limite é a memória do seu computador
 
 LIMPAR O CONSOLE DO PYTHON NO TERMINAL: CTRL+l
 
-uma forma fácil de escrever um número difícil de visualizar:
-1_000_000_000
+uma forma fácil de escrever um número difícil de visualizar: 1_000_000_000
+
     n+=1 é equivalente: n=n+1
     n-=1 é equivalente: n=n-1
     n*=1 é equivalente: n=n*1
     n/=1 é equivalente: n=n/1
 
-Saber que tipo de variável temos: type(variável) no console
+Observe que tem um padrão nesse formato de abreviação de operação que acabamos de ver. Veja que a operação vem antes do
+sinal de igualdade.
+
+Saber que tipo de variável temos: type(variável) no Python console
 """
 -----------------------------------------------------------------------------------------------------------------------
 """
 TIPO FLOAT:
 
-ou seja, tipo real, decimal.
-o separador de casas decimais é um ponto(.)
+Ou seja, tipo real, decimal.
+O separador de casas decimais é um ponto(.)
 
-Ao converter valores tipo float para inteiros perdemos precisão, lembrar de cálculo numérico.
+Ao converter valores tipo float para inteiros perdemos precisão, lembrar de cálculo numérico
 
-Número complexo sempre tem um "j" acompanhado.
+Número complexo sempre tem um "j" acompanhado
 
 Podemos também passar um número inteiro para ponto flutuante, basta: float(num)
 """
 
-# É possível fazer dupla atribuição:
+# É possível fazer dupla atribuição aqui no python:
 
 n1, n2 = 25.1, 33.2
-print(n1)
-print(n2)
+print(f'O desempacotamento para n1 = {n1}')
+print(f'O desempacotamento para n2 = {n2}')
 -----------------------------------------------------------------------------------------------------------------------
 """
 TIPO BOOLEANO:
 
 Esse tipo vem da álgebra booleana, criada por George Boole.
-2 constantes, verdadeiro ou falso.
+Temos 2 constantes, verdadeiro ou falso.
 
 True -> verdadeiro
 False -> falso
 
-obs.: não podemos usar letras minúsculas para representar "True" ou "False".
+obs.: Não podemos usar letras minúsculas para representar "True" ou "False".
 Usado também para operações básicas.
 """
 
@@ -299,14 +309,15 @@ Sempre que:
 - dados de input
 
 O mais comum é usar aspas simples.
-Se quisermos pular uma linha dentro de uma string, basta colocar \nFrancisco
+Se quisermos pular uma linha dentro de uma string, basta colocar: \nFrancisco
 
-A primeira posição de uma lista é o 0.
+A primeira posição de uma lista é o 0, diferente do MatLab.
 """
 
 nome = 'Francisco \nAraújo \nda \nSilva'
 print(nome)
 print(type(nome))
+print('-----')
 
 # Podemos fazer assim também, mas tem que ser com duplas triplas
 
@@ -317,27 +328,34 @@ silva
 """
 print(nome)
 print(type(nome))
+print('-----')
 
-nome2 = "Francisco \"Araújo\" "
-# print(nome2.lower()) transforma tudo em minúsculo.
+nome2 = "Francisco \"Araújo\" "  # Uma maneira elegante de inserir aspas dentro de uma string.
+# print(nome2.lower()) Transforma tudo em minúsculo.
 print(nome2)
+print('-----')
 
-print(nome2[0:9])  # Forma de capturar o dado, conhecido como Slice de string
-print(nome2.split())  # transforma os nomes em uma lista
-print(nome2.split()[0])  # pegamos o primeiro elemento dessa lista
-print(nome2.split()[1])  # pegamos o segunodo elemento de uma lista
+print(nome2[0:9])  # Forma de capturar um dado, conhecido como Slice de string
+print(nome2.split())  # Transforma os nomes em uma lista
+print(nome2.split()[0])  # Pegamos o primeiro elemento dessa lista, já que o "0" é a primeira posição
+print(nome2.split()[1])  # pegamos o segundo elemento da lista
+print('-----')
 
 # invertendo as letras
 
-print(nome2[::-1])  # ou seja, vamos do primeiro até o último e invertemos.
+print(nome2[::-1])  # Ou seja, vamos do primeiro até o último e invertemos.
+print('-----')
 
 # Podemos também trocar uma letra por outra
-
-print(nome.replace('F', 'FF'))  # ou seja, trocamos F por FF
+print(nome.replace('F', 'FF'))  # Ou seja, trocamos F por FF
+print('-----')
 
 texto = 'socorram me subino onibus em marrocos'  # Palíndromo
 print(texto)
 print(texto[::-1])
+print('-----')
+
+print("""Francisco "Araújo" """)  # Outro Jeito de escrever aspas dentro de uma string.
 -----------------------------------------------------------------------------------------------------------------------
 """
 TIPO NONE: EM PYTHON REPRESENTA O TIPO SEM TIPO. ALÉM DISSO, PODE SER DO TIPO VAZIO.
@@ -359,11 +377,11 @@ print(type(numeros))
 ESCOPO DE VARIÁVEIS:
 
 Escopo é a limitação de algo. Ou seja, onde que nossa variável vai ser reconhecida dentro do nosso código. Temos dois
-casos.
+casos:
 
 VARIÁVEIS GLOBAIS: seu escopo compreende no programa inteiro
 
-VARIÁVEIS LOCAIS: reconhecidas apenas no bloco onde forma declaradas
+VARIÁVEIS LOCAIS: reconhecidas apenas no bloco onde foram declaradas
 
 Para declarar variáveis em python:
 
@@ -371,31 +389,32 @@ Nome_da_variavel = valor_da_variavel
 
 Python é uma liguagem de tipagem dinâmica, ou seja, quando declaramos uma variável, não colocamos o tipo de dado dela.
 
-Se fosse em C:
-int numero = 42
-Se fosse em Java:
+Se fosse em linguagem C:
 int numero = 42
 
-Nessas linguagens, uma vez que a variável é declarada não podemos mais mudar. Já aqui no python
-podemos fazer retribuição.
+Se fosse em linguagem Java:
+int numero = 42
+
+Nessas linguagens, uma vez que a variável é declarada não podemos mais mudar. No entanto, aqui no python
+podemos fazer retribuição, por isso, dinâmica
 
 if numero > 10:
     novo = numero + 10
-    print(novo)
+    print(novo)  # Dentro do bloco
 
-print(novo)
+print(novo)  # Fora do bloco
 
-Veja que a variável novo está apenas dentro do laço.
+Veja que a variável novo está apenas dentro do laço. Ou seja, ela só existe lá, por isso ela é uma variável local
 """
 
 numero = 42  # exemplo de variável global, posso acessar em qualquer parte do código
 print(numero)
 print(type(numero))
+print('-----')
 
 if numero > 10:
     novo = numero + 10
-    print(novo)
-
+    print(novo)  # ela vai existir aqui dentro
 
 # um exemplo de variável de escopo não global é aquela que pode estar dentro de um if apenas, por exemplo.
 -----------------------------------------------------------------------------------------------------------------------
@@ -2860,7 +2879,7 @@ O que é o *args?
 que é uma tupla ou vai será transformada em tupla.
 - o argumento nõa é obrigatório
 - naturalmente, o * desempacota
-Obsrvação pessoal. Ele transforma os dados em tuplas, mas gera erro ao transformar tupla em tupla.
+Observação pessoal. Ele transforma os dados em tuplas, mas gera erro ao transformar tupla em tupla.
 """
 # Exemplo 1 - não trabalha além dos 3 argumentos, mesmo com argumento padrão, e teríamos que trabalhar com o return...
 
@@ -3220,7 +3239,8 @@ print('-----')
 
 listao = [1, 2]
 resp = [uma_funcao(dado) for dado in listao]
-print(f' A função aplicada numa lista qualquer trabalhando com o list comprehension: {resp}')
+print(f' A função aplicada numa lista qualquer trabalhando com o list comprehension: {resp}') # Isso aqui é muito
+# interessante
 
 # Loop v List Comprehension
 print('-----')

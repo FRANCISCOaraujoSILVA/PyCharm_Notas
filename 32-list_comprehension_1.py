@@ -35,7 +35,8 @@ print('-----')
 
 listao = [1, 2]
 resp = [uma_funcao(dado) for dado in listao]
-print(f' A função aplicada numa lista qualquer trabalhando com o list comprehension: {resp}')
+print(f' A função aplicada numa lista qualquer trabalhando com o list comprehension: {resp}') # Isso aqui é muito
+# interessante
 
 # Loop v List Comprehension
 print('-----')

@@ -16,7 +16,7 @@
 - split: transforma uma string em uma lista
 - print(parâmetro, end=' ', ): faz com que as impressões sejam feitas na mesma linha, com uma escolha de divisores
 - enumerate: cria o índice -> for dado in enumerate(nome):  # Retorna o índice e valor de uma string, por exemplo
-lembrar que dentro do laço for posso printar tanto o índice queando o valor
+lembrar que dentro do laço for posso printar tanto o índice quanto o valor
 - rápida criação de lista: lista = list(range(12))
 - o loop while se repete enquanto a expressão boolena for verdadeira
 - o critério de parada "break" é tanto para a laço for quando o loop while

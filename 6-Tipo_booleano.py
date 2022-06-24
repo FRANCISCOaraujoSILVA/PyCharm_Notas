@@ -2,12 +2,12 @@
 TIPO BOOLEANO:
 
 Esse tipo vem da álgebra booleana, criada por George Boole.
-2 constantes, verdadeiro ou falso.
+Temos 2 constantes, verdadeiro ou falso.
 
 True -> verdadeiro
 False -> falso
 
-obs.: não podemos usar letras minúsculas para representar "True" ou "False".
+obs.: Não podemos usar letras minúsculas para representar "True" ou "False".
 Usado também para operações básicas.
 """
 
