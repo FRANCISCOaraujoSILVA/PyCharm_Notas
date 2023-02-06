@@ -1,6 +1,7 @@
 """
-Exercícios da Seção 8
+                  ///Espaço reservado para solucionar alguns exercícios da seção 8///
 """
+
 import math
 
 # 1
@@ -22,10 +23,9 @@ def horario(dia, mes, ano):
 
 
 print(horario(1, 12, 2022))
-
+print('-----')
 
 # 3
-print('-----')
 
 
 def avalia(numero):
@@ -37,10 +37,9 @@ def avalia(numero):
 
 
 print(avalia(0))
-
+print('-----')
 
 # 4
-print('-----')
 
 
 def verifica(numero):
@@ -55,10 +54,9 @@ def verifica(numero):
 
 
 print(verifica(9))
-
+print('-----')
 
 # 5
-print('-----')
 
 
 def volume(raio):
@@ -66,10 +64,9 @@ def volume(raio):
 
 
 print(volume(2))
-
+print('----')
 
 # 8
-print('----')
 
 
 def raiz(ca, co):
@@ -77,10 +74,9 @@ def raiz(ca, co):
 
 
 print(raiz(2, 2))
-
+print('-----')
 
 # 10
-print('-----')
 
 
 def tipo(a, b):
@@ -89,10 +85,9 @@ def tipo(a, b):
 
 
 print(tipo(5, 4))
-
+print('-----')
 
 # 11
-print('-----')
 
 
 pesos = [5, 3, 2]
@@ -114,10 +109,9 @@ def analisa(a, b, c, *args):
 
 print(analisa(1, 2, 3, 'a'))
 print(analisa(1, 2, 3, 'P'))
-
+print('-----')
 
 # 13
-print('-----')
 
 
 def realiza(a, b, *args):
@@ -136,7 +130,3 @@ print(realiza(1, 2, '+'))
 print(realiza(1, 2, '-'))
 print(realiza(1, 2, '/'))
 print(realiza(1, 2, '*'))
-
-
-# 22
-print('-----')

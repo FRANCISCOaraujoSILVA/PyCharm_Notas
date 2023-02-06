@@ -1,8 +1,9 @@
 """
-PROPRIEDADES (PROPERTIES)
+                                            PROPRIEDADES (PROPERTIES)
 
-- sempre criamos nossos atributos de forma privada. Como consequência, as propriedades getters() e setters() de acordo
-como tal.
+
+- Sempre criamos nossos atributos de forma privada. Como consequência, as propriedades getters() e setters() de acordo
+como tal
 """
 
 
@@ -40,6 +41,7 @@ print('------')
 
 
 # Como somar o saldo das duas contas?
+
 """
 Não faça isso, não acesse um elemento privado se ele foi criado para ser privado:
 
@@ -88,7 +90,7 @@ class NovaConta:
     def get_titular(self):
         return self.__titular
 
-    def set_titular(self, titular):  # recebe o valor do atributo e faz alteração do mesmo
+    def set_titular(self, titular):  # Recebe o valor do atributo e faz alteração do mesmo
         self.__titular = titular
 
     def get_saldo(self):
@@ -114,12 +116,12 @@ print('-----')
 
 """
 Até aqui aplicamos muito bem os conceitos e vimos que os métodos getters() e setters() funcionam muito bem. Todavia,
-essa nomenclatura não é muito amigável, por vezez, até se parece com a nomenclatura aplicada na linguagem java. Há outra
-tipo de nomenclatura, usando propreidades (property):
+essa nomenclatura não é muito amigável, por vezes, até se parece com a nomenclatura aplicada na linguagem java. Há outra
+tipo de nomenclatura, usando propriedades (property):
 
 - O @property faz o papel do método getter()
-- E se você quiser criar um setter()?:
-    @nomeDaPropriedade.setter no lugar de @property
+- E se você quiser criar um setter()?
+    - @nomeDaPropriedade.setter no lugar de @property
 """
 
 
@@ -154,7 +156,7 @@ class OutraConta:
     def limite(self, novo_limite):
         self.__limite = novo_limite
 
-    def extrato(self):  # método de instância
+    def extrato(self):  # Método de instância
         return f'Saldo de {self.__saldo} do cliente {self.__titular}'
 
     def depositar(self, valor):
@@ -177,22 +179,23 @@ conta6 = OutraConta('LarA', 5000, 8000)
 print(conta5.extrato())
 print(conta6.extrato())
 print(conta5.saldo + conta6.saldo)
-
 print('------')
+
 print(conta5.__dict__)
-conta5.limite = 767676  # não é mais um método, é uma propriedade chamada limite. Funciona como o método setter()
+conta5.limite = 767676  # Não é mais um método, é uma propriedade chamada limite. Funciona como o método setter()
 print(conta5.__dict__)
 print(conta5.limite)
 print('-----')
 
 
 # Além disso, é possível criar métodos como propriedades
+
 """
 @property
 def valor_total(self):
     return self.__saldo + self.__limite  
 """
 
-print(conta5.valor_total)  # veja que não é uma função, pois: conta5.valor_total é diferente de conta5.valor_total(),
+print(conta5.valor_total)  # Veja que não é uma função, pois: conta5.valor_total é diferente de conta5.valor_total()
 # com os parênteses
 print(conta6.valor_total)

@@ -1,17 +1,16 @@
 """
 Aula 88
+                                        MRO - METHOD RESOLUTION ORDER
 
-MRO - METHOD RESOLUTION ORDER
 
 - É a ordem de execução, ou seja, os métodos são executados na ordem
-- Fenômeno que ocoore quando temos herança mútlipla.
+- Fenômeno que ocoore quando temos herança mútlipla
 - Nesse caso, o super() funciona para a classe que tem apenas uma herança, no caso a classe Aquatico
 
 Podemos conferir a ordem de execução dos métodos de três formas:
     - via propriedade da classe __mro__
     - via método mro()
     - via help
-
 """
 
 
@@ -31,7 +30,7 @@ class Aquatico(Animal):
     def nadar(self):
         return f'{self._Animal__nome} está nadando.'
 
-    def cumprimentar(self):  # sobrescrevendo o método cumprimentar()
+    def cumprimentar(self):  # Sobrescrevendo o método cumprimentar()
         return f'Eu sou {self._Animal__nome} do mar!'
 
 
@@ -55,7 +54,7 @@ class Pinguim(Aquatico, Terrestre):
         return 'Comprimentar Pinguim'
 
 
-# caso 1: class Pinguim(Terrestre, Aquatico):
+# Caso 1: class Pinguim(Terrestre, Aquatico)
 
 shef = Pinguim('shef')
 print(shef.cumprimentar())
@@ -63,12 +62,14 @@ print(shef.cumprimentar())
 Eu sou shef da terra!
 """
 
-# caso 2: class Pinguim(Aquatico, Terrestre):
+# Caso 2: class Pinguim(Aquatico, Terrestre)
+
 """
 Eu sou shef do mar!
 """
 
-# no terminal faça:
+# No terminal, faça:
+
 """
 from MRO import Pinguim
 

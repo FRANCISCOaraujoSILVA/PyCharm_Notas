@@ -1,2 +1,7 @@
+Obs.: Crie este arquivo com o nome '59a - texto.txt' para que a leitura de arquivo da aula passada seja possível, pois
+lá criei o arquivo com esse nome.
+
+O conteúdo desse arquivo txt foi criado manualmente por mim.
 Esse é um arquivo para teste. A princípio, é um bom arquivo.
-Estou na segunda linha.
+Estou na terceira linha.
+Estou na quarta linha.

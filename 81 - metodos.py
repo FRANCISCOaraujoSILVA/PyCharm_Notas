@@ -1,39 +1,36 @@
 """
-POO - Métodos
+                                                    MÉTODOS
 
-- Métodos (funções) - representam o comportamento do objeto. Ou seja, as ações que este objeto pode realizar no seu
-sistema.
+
+- Métodos (funções): Representam o comportamento do objeto. Ou seja, as ações que este objeto pode realizar no seu
+sistema
 
 Em Python, dividimos os métodos, assim como os atributos, em 2 grupos:
- - Método de instânica
- - Método de classe
+    - Método de instânica
+    - Método de classe
 
- Vamos criar atributos privados para ter segurança. Ou seja, acessar os atributos apenas dentro da classe
+Nota:
+Vamos criar atributos privados para ter segurança. Ou seja, acessar os atributos apenas dentro daquela classe.
 """
 
 # Método de instância
+
 """
-O método dunder __init__ é um método especial chamado de construtor e sua função é construir o objeto a partir da 
-classe.
-
-Todo elemento em Python que inicia e finaliza com duplo underline é chamado de dunder (Double Underline).
-
-Os métodos/funções dunder em Python são chamados de métodos mágicos.
-
-Não é recomendado que nós, programadores, criemos métodos dunders. Pois podemos dar o azar de criar um dunder que já
+- O método dunder __init__ é um método especial chamado de construtor e sua função é construir o objeto a partir da 
+classe
+- Todo elemento em Python que inicia e finaliza com duplo underline é chamado de dunder (Double UNDERline)
+- Os métodos/funções dunder em Python são chamados de métodos mágicos
+- Não é recomendado que nós, programadores, criemos métodos dunders. Já que podemos dar o azar de criar um dunder que já
 existe internamente (vários dunders)
-
-Quando uma função está contida dentro de uma classe ela é chamada de método, ou métodos de instância.
-Métodos de instância: pois precisamos de uma instância da classe para utilizá-los
-
-Métodos são escritos em letras minúsculas. Se o nome for composto, o nome terá as palavras separadas por underline
-
+- Quando uma função está contida dentro de uma classe ela é chamada de método, ou método de instância
+    - Métodos de instância: pois precisamos de uma instância da classe para utilizá-los
+- Métodos são escritos em letras minúsculas. Se o nome for composto, esse nome terá as palavras separadas por underline
 """
 
 
 class Lampada:
 
-    def __init__(self, cor, voltagem, luminosidade):  # init é o método construtor, o objetivo é construir o objeto
+    def __init__(self, cor, voltagem, luminosidade):  # __init__ é o método construtor, o objetivo é construir o objeto
         self.__cor = cor
         self.__voltagem = voltagem
         self.__luminosidade = luminosidade
@@ -81,17 +78,19 @@ class Usuario:
 
 """
 p1 = Produto('Playstation 4', 'Video Game', 2300)
-print(p1.desconto(20))  # precisamos de uma instância para acessar o método
+print(p1.desconto(20))  # Veja que precisamos de uma instância para acessar o método
 
-# print(Produto.desconto(20))  -> Gera erro, assim não conseguimos. Precisamos da instância.
-print(Produto.desconto(p1, 40))  # Outra maneira de fazer. Mas ainda precisamos da instância.
+# print(Produto.desconto(20))  -> Gera erro, assim não conseguimos. Precisamos da instância
+print(Produto.desconto(p1, 40))  # Outra maneira de fazer. Mas ainda precisamos da instância
 """
+
 user1 = Usuario('Francisco', 'Araújo', 'Franciscoaraujo2016f2@outlook.com', '123')
 user2 = Usuario('Lara', 'Siqueira', 'LaraSiqueira2016f2@outlook.com', '456')
 
 print(f'Nome completo: {user1.nome_completo()}')
 print(Usuario.nome_completo(user1))
 print('-----')
+
 print(f'Nome completo: {user1.nome_completo()}')
 print(Usuario.nome_completo(user2))
 
@@ -100,11 +99,10 @@ Método de instânicia: é um método que está dentro de uma classe.
 """
 
 # print(f'Senha user 1: {user1._Usuario__senha}')  # Acesso de forma errada de um atributo de classe
-## print(f'Senha user 1: {user1._Usuario__senha}')  # Acesso de forma errada de um atributo de classe
+# print(f'Senha user 1: {user1._Usuario__senha}')  # Acesso de forma errada de um atributo de classe
 print('-----')
 
-from passlib.hash import pbkdf2_sha256 as cryp
-""" Pacote de criptografia extramente poderoso"""
+from passlib.hash import pbkdf2_sha256 as cryp  # Esse é um pacote de criptografia extramente poderoso
 
 
 class Usuario:
@@ -113,22 +111,22 @@ class Usuario:
         self.__sobrenome = sobrenome
         self.__email = email
         self.__senha = cryp.__hash__(senha, rounds=200000, salt_sizer=16)
-        # string que quer encriptar. Rounds, número de embaralhamento. Tamanho do texto que deve se juntar com outro
-        # para gerar o embaralhamento
+        # 'senha' é a string que quer encriptar. 'Rounds', número de embaralhamento. 'salt_sizer' é o tamanho do texto
+        # que deve se juntar com outro para gerar o embaralhamento
 
     def nome_completo(self):
         return f'{self.__nome} {self.__sobrenome}'
 
-    def checa_senha(self, senha):  # Recebe a senha, e verifica a senha recebida se igual a senha do objeto instanciado
-        if cryp.verify(senha, self.__senha):  # verifica se senha = self.senha
+    def checa_senha(self, senha):  # Recebe a senha, e verifica se a senha recebida é = a senha do objeto instanciado
+        if cryp.verify(senha, self.__senha):  # Verifica se senha = self.senha
             return True
         return False
 
 
 """
-Deu um erro aqui.
+Deu um erro aqui:
 
-# Para criar um usuário.
+# Para criar um usuário
 nome = input('Informe o nome: ')
 sobrenome = input('Informe o sobrenome: ')
 email = input('Informe o e-mail: ')
@@ -152,9 +150,8 @@ else:
 
 print(f'Senha User Criptografada: {user.Usuario_senha}')
 
-Métodos de instancia, então, trabalha com valores da instancia do objeto
+Métodos de instancia, então, trabalham com valores da instancia do objeto
 """
-
 
 """
 Métodos de classe.
@@ -168,8 +165,7 @@ class Usuarios:
     contador = 0
 
     @classmethod  # Decorador. Necessário para usar um método de classe
-
-    def conta_usuarios(cls):  # argumento cls, é a própria classe.
+    def conta_usuarios(cls):  # Argumento cls, é a própria classe
         print(f'Temos {cls.contador} usuário(s) no sistema.')
 
     def __init__(self, nome, sobrenome, email, senha):
@@ -183,42 +179,33 @@ class Usuarios:
     def nome_completo(self):
         return f'{self.__nome} {self.__sobrenome}'
 
-    def ver(self):  # veja que, como esse método não faz acesso a nenhum atributo de instância, ele recomenda usar
+    def ver(self):  # Veja que, como esse método não faz acesso a nenhum atributo de instância, ele recomenda usar
         print('ver')      # método de classe
 
 
 # Antes, para acessar o contador:
-#Usuarios.contador
-
+# Usuarios.contador
 
 # Agora
 
 user = Usuarios('Francisco', 'Araújo', 'gmail', '123')
-
-
-user4 = Usuarios.conta_usuarios()  # Forma correta, nome_da_classe.metodo_de_classes. Via nome da classe
-user.conta_usuarios() # Possível, mas incorreta. Via instância da classe.
-
-
+user4 = Usuarios.conta_usuarios()  # Forma correta, nome_da_classe.metodo_de_classe. Via nome da classe
+user.conta_usuarios()  # Possível, mas incorreto. Via instância da classe
 
 """
-Quando usar método de clase é método de instancia?
-Basta olhar na estrutura acima
+Quando usar método de classe e método de instancia? Basta olhar na estrutura acima.
+- Métodos de instâncias: Quando o método precisa fazer acesso a atributos de instância
+- Método de classe: Não fazemos acesso à métodos de instância, e nem teria como fazer. Pois não temos acesso ao self. Ou
+seja, a instância
+- Métodos de classe, aqui no Python, são conhecidos como métodos estáticos em outras linguagens
 
-Métodos de instâncias: quando o método precisa fazer acesso a atributos de instância
-
-Método de classe: Não fazemos acesso à métodos de instância, e nem teria como fazer. Pois não temos acesso ao self. Ou
-seja, a instância.
-Métodos de classe, aqui no Python, são conhecidos como métodos estáticos em outras linguagens
-
-def ver(self):  # veja que, como esse método não faz acesso a nenhum atributo de instância, ele recomenda usar
+def ver(self):  # Veja que, como esse método não faz acesso a nenhum atributo de instância, ele recomenda usar
     print('ver')      # método de classe
-
 """
 
+# Métodos privados (duplo __ no começo do método): Refatorando a classe usuarios:
 
-# MÉTODOS PRIVADOS (duplo __ no começo do método): Refatorando a classe usuarios:
-"Assim como temos atributos públicos e privados, também temos métodos públicos e privados"
+# Assim como temos atributos públicos e privados, também temos métodos públicos e privados
 
 
 class Usuarios:
@@ -226,7 +213,7 @@ class Usuarios:
     contador = 0
 
     @classmethod  # Decorador. Necessário para usar um método de classe
-    def conta_usuarios(cls):  # argumento cls, é a própria classe.
+    def conta_usuarios(cls):  # Argumento cls, é a própria classe
         print(f'Temos {cls.contador} usuário(s) no sistema.')
 
     def __init__(self, nome, sobrenome, email, senha):
@@ -242,23 +229,21 @@ class Usuarios:
         return f'{self.__nome} {self.__sobrenome}'
 
     def __gera_usuario(self):
-        return self.__email.split('@')[0]  # separa o email no '@', gera uma lista, retorna o 1° elemento da lista.
+        return self.__email.split('@')[0]  # Separa o email no '@', gera uma lista, retorna o 1° elemento da lista
     # split e slice de string.
 
 
-
 """
-user5 = Usuarios('Francisco', 'Araújo', 'Francisco@gmail.com','123')  # só tenho acesso à classe __gera_usuario dentro
-# da classe.
+user5 = Usuarios('Francisco', 'Araújo', 'Francisco@gmail.com','123')  # Só tenho acesso à classe __gera_usuario dentro
+# da classe
 
-# print(user5.__gera_usuario())  # veja que ele não imprime. Pois não temos acessso a esse método fora da classe.
+# print(user5.__gera_usuario())  # Veja que ele não imprime. Pois não temos acessso a esse método fora da classe.
 print(user5._Usuarios__gera_usuario())  # Tenho acesso, mas não é recomendado
 """
 
-"""
-MÉTODOS DE ESTÁTICOS AQUI NO PYTHON. Muito parecidos com métodos de classe.
-Sem acesso a classe e sem acesso a instâncias
-"""
+# Métodos estáticos aqui no Python: Muito parecidos com métodos de classe
+
+# Sem acesso a classe e sem acesso a instâncias
 
 
 class Usuarios:
@@ -266,7 +251,7 @@ class Usuarios:
     contador = 0
 
     @classmethod  # Decorador. Necessário para usar um método de classe
-    def conta_usuarios(cls):  # argumento cls, é a própria classe.
+    def conta_usuarios(cls):  # Argumento cls, é a própria classe
         print(f'Temos {cls.contador} usuário(s) no sistema.')
 
     @staticmethod
@@ -292,6 +277,6 @@ class Usuarios:
 print('-----')
 print(Usuarios.contador)  # 0 porque ainda não instanciamos nenhum usuario
 print(Usuarios.definicao())
-user6 = Usuarios('Francisco', 'Araújo', 'Francisco@gmail.com','123')
+user6 = Usuarios('Francisco', 'Araújo', 'Francisco@gmail.com', '123')
 print(user6.contador)
 print(user6.definicao())

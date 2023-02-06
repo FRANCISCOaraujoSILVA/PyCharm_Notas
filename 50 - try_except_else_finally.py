@@ -1,21 +1,20 @@
 """
-Try / Except / Else/ Finally
+                                            TRY / EXCEPT / ELSE/ FINALLY
 
-Obs.:
-- usar try/except é comum
-- usar else/finally não é comum
 
-Quando saber que devemos tratar um erro?
-Dica:
-Toda entrada de dado deve ser tratada!
+- Usar try/except é comum
+- Usar else/finally não é comum
+
+Quando saber que devemos tratar um erro? Dica:
+    - Toda entrada de dado deve ser tratada!
 
 Nota:
-A função do usuário é DESTRUIR seu sistema.
+- A função do usuário é DESTRUIR seu sistema.
+- Dica ao tratar erros: Tratar sempre no começo
+"""
 
-Dica ao tratar erros: Tratar sempre no começo
-"""
-"""
-# Else - executa a linha a apenas se não ocorrer o erro. Podemos ter um else para cada exept.
+# Else: Executa a linha apenas se não ocorrer o erro. Podemos ter um else para cada exept
+
 try:
     num = int(input('Informe um número: '))
 except ValueError:
@@ -24,7 +23,8 @@ else:
     print(f'Você digitou: {num}')
 print('-----')
 
-# Finally - o menos interessante
+# Finally: O menos interessante
+
 try:
     num = int(input('Informe um número: '))
 except ValueError:
@@ -33,16 +33,14 @@ else:
     print(f'Você digitou o número: {num}')
 finally:
     print('Executando o finally')
-"""
+
 """
 Nota:
-O bloco finally sempre será executado, independente se houve exceção ou não. Ou seja, no fim do dia
-faz o mesmo papel tiver apenas o print da linha 32. Experimente tirar o finally de lá.
-
-Então, por que executá-lo? Para fechar ou desalocar recursos. Ou seja, para encerrar conexões de arquivos para escrita 
-ou leitura, ou para encerrar conexão com banco de dados por exemplo.
+- O bloco finally sempre será executado, independente se houve exceção ou não. Ou seja, no fim do dia, faz o mesmo papel 
+se tiver apenas o print da linha 33. Experimente tirar o finally de lá
+- Então, por que executá-lo? Para fechar ou desalocar recursos. Ou seja, para encerrar conexões de arquivos para escrita 
+ou leitura, ou para encerrar conexão com um banco de dados por exemplo
 """
-
 
 # Exemplo mais elaborado de tratamento de erro
 
@@ -50,7 +48,7 @@ ou leitura, ou para encerrar conexão com banco de dados por exemplo.
 def dividir(a, b):
     try:
         return int(a) / int(b)
-    except (ValueError, ZeroDivisionError) as err:
+    except (ValueError, ZeroDivisionError) as err:  # Note que podemos compilar os erros ao invés de criar vários except
         return f'Ocorreu algum problema: {err}'
 
 

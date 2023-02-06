@@ -4,8 +4,8 @@
 Temos:
     - if
     - else
-    - elif (para mais de duas estruturas condicionais
-        elif = else+if. Se parece muito com o elseif do matlab
+    - elif (para mais de duas estruturas condicionais)
+        - elif = else+if. Se parece muito com o elseif do matlab
 """
 
 idade = 15

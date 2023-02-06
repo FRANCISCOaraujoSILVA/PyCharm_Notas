@@ -1,5 +1,6 @@
 """
-MÉTODOS MÁGICOS
+                                                MÉTODOS MÁGICOS
+
 
 Não tem muita relação com programação orientada a objetos.
 
@@ -9,7 +10,6 @@ Métodos mágicos são todos os métodos que utilizam dunder (utilizam Double UN
     - dunder len
     - dunder del  (faça o teste no terminal)
     - dunder add
-
 
 No terminal faça: dir(__builtins__)
 """
@@ -26,8 +26,8 @@ class Livro:
 livro1 = Livro('Um navio não foi feito para estar na costa', "Desconhecido", 300)
 livro2 = Livro('Um livro sobre empatia', "População", 5000)
 
-print(livro1)  # endereço de memória
-print(livro2)  # endereço de memória
+print(livro1)  # Endereço de memória
+print(livro2)  # Endereço de memória
 print('-----')
 
 """
@@ -44,9 +44,9 @@ class NovoLivro:
         self.paginas = paginas
 
     def __repr__(self):
-        return self.titulo  # estamos representando apenas o título
+        return self.titulo  # Estamos representando apenas o título
 
-    def __str__(self):  # tem preferência na execução. Ou seja, __repr__ não será executado
+    def __str__(self):  # Tem preferência na execução. Ou seja, __repr__ não será executado
         return self.titulo
 
     def __len__(self):
@@ -56,13 +56,13 @@ class NovoLivro:
         return 'Um objeto foi apagado'
 
     def __add__(self, other):
-        return f'{self} - {other}'  # self é o primeiro elemento
+        return f'{self} - {other}'  # Self é o primeiro elemento
 
 
 livro3 = NovoLivro('Um navio não foi feito para estar na costa', "Desconhecido", 300)
 livro4 = NovoLivro('Um livro sobre empatia', "População", 5000)
 
-print(livro3)  # melhor representação das informações
+print(livro3)  # Melhor representação das informações
 print(livro4)
 print('-----')
 
@@ -70,4 +70,4 @@ print(len(livro3))
 print(len(livro4))
 print('-----')
 
-print(livro3 + livro4)  # aplicando o add. Fazendo uma operação. O add é o sinal de '+'
+print(livro3 + livro4)  # Aplicando o add. Fazendo uma operação. O add é o sinal de '+'

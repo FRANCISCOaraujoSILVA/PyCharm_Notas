@@ -1,7 +1,8 @@
 """
-CRIANDO SUA PRÓPRIA VERSÃO DE LOOP
+                                        CRIANDO SUA PRÓPRIA VERSÃO DE LOOP
 
-Por quê? Porque precisamos etender a fundo como esses laços funcionam.
+
+Por quê? Porque precisamos entender a fundo como esses laços funcionam.
 """
 
 

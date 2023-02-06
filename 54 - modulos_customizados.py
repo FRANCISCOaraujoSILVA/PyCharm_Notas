@@ -1,7 +1,8 @@
 """
-MÓDULOS CUSTOMIZADOS (criados por nós mesmo)
+                                MÓDULOS CUSTOMIZADOS (CRIADOS POR NÓS)
 
-Como módulos python nada mais são do que arquivos python, então, todos os arquvios que criamos neste curso são módulos
+
+Já que módulos python nada mais são do que arquivos python, então, todos os arquvios que criamos neste curso são módulos
 Python prontos para serem utilizados.
 """
 

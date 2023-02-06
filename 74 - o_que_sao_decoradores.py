@@ -1,5 +1,6 @@
 """
-DECORADORES (DECORATORS)
+                                                DECORADORES (DECORATORS)
+
 
 O que são decoradores?
     - São funções
@@ -7,7 +8,7 @@ O que são decoradores?
     - São exemplos de Higher Order Function
     - Possui sintaxe própria, usando "@" (Syntact Sugar / Açucar Sintático)
     - Geralmente, uma função decorator recebe como parâmetro uma função, pois estamos decorando a função que está sendo
-    passada como argumento
+    passada como parâmetro
 
 ...........................................
 |           Function Decorator            |
@@ -31,13 +32,13 @@ Não confunda Decorator com Decorator Function
 
 """
 
-# Decoradores como funções - Sintaxe não recomendada / Sem açucar Sintático -------------------------------------------
+# Decoradores como funções - Sintaxe não recomendada / Sem açucar Sintático
 
 
-def seja_educado(funcao):  # função principal que tem como argumento outra função
-    def sendo():  # função interna
+def seja_educado(funcao):  # Função principal que tem como argumento outra função
+    def sendo():  # Função interna
         print('Foi um prazer conhecer você!')
-        funcao()  # executa a função
+        funcao()  # Executa a função
         print('Tenha um ótimo dia.')
     return sendo  # Retorna a função interna, e não a execução da função
 
@@ -47,16 +48,18 @@ def saudacao():
 
 
 # Testando 1
-saudacao()
 
+saudacao()
 print('-----')
+
 teste = seja_educado(saudacao)
 teste()
-# estamos decorando a função saudacao com a função seja_educado. Estamos aprimorando o comportamento da função saudacao
+# Estamos decorando a função saudacao com a função seja_educado. Estamos aprimorando o comportamento da função saudacao
 print('-----')
 
-
 # Testando 2
+
+
 def raiva():
     print('EU TE ODEIO!')
 
@@ -65,8 +68,8 @@ raiva_educada = seja_educado(raiva)
 raiva_educada()
 print('-----')
 
-# Decoradores como funções - Sintaxe recomendada /  açucar Sintático --------------------------------------------------
-# É muito melhor de enxergar
+
+# Decoradores como funções - Sintaxe recomendada /  açucar Sintático. É muito melhor de enxergar
 
 
 def seja_educado_mesmo(funcao):
@@ -81,8 +84,8 @@ def seja_educado_mesmo(funcao):
 def apresentando():
     print('Meu nome é Francisco.')
 
-# Testando 3
 
+# Testando 3
 
 apresentando()
 print('-----')

@@ -1,22 +1,26 @@
 """
+                                O QUE É ORIENTAÇÃO A OBJETOS?
+
+
 Programação Orientada a Objetos - POO
 Paradigmas de programação: Depende da linguagem.
- - Programação estrutural; liguangem C, Já não entre aqui
- - orientada a objeto; A liguagem C não consegue usar essa paradigma, java
- - programaçõa funcional;
+ - Programação estrutural; Liguangem C, já não entra aqui
+ - Orientada a objeto; A liguagem C não consegue usar esse paradigma, java
+ - programaçõa funcional
 
-Python: multparadigma
+Python: Multparadigma
 
-Programação orientada a objeto, mapeia o objeto do mundo real para modelos computacinais, capaz de descrever seu
+Programação orientada a objeto mapeia o objeto do mundo real para modelos computacinais, capaz de descrever seu
 comportamento na vida real:
     Componentes:
-        - classe: Modelo do objeto do munod real sendo representado computacinalment
+        - classe: Modelo do objeto do mundo real sendo representado computacionalmente
             nome (atributo)
             preco (atributo)
             desconto (atributo)
-        - Atributos: característica do objeto. Uma clase pode ou não ter atributos
 
-        - metodos (funções): comportamento do objeto, ações que o objeto pode ter
+        - Atributos: Característica do objeto. Uma clase pode ou não ter atributos
+
+        - Métodos (funções): comportamento do objeto, ações que o objeto pode ter
              (Notebook, valor, desconto): Construtor
              (Caneta BIC, valor, desconto) Construtor
 
@@ -32,25 +36,18 @@ print(type(numero))
 print('-----')
 
 
-class Produto:
+class Produto:  # Esssa classe nao faz nada, o pass é apenas para indentar. Classe sem atributo, sem método
     pass
 
-
-"""
-Uma classe que não faz nada, o pass é apena para indentar. Diz que podemos passar. Sem atributo, sem método
-"""
 
 ps4 = Produto()
 print(ps4)
 print(type(ps4))
 
-
 """
-Produto() - Construtor padrão da classe, o próprio nome dela. Ele é um método, devido ao parênteses
+Produto() - Construtor padrão da classe, o próprio nome dela. Ele é um método, devido aos parênteses
 ps4 - Objeto da classe Produto
 
 No console:
-0x0000021ABBCE1570: Onde o objeto está alocado na memória.
-Agora, temos um tipo de dado chamado produto.
+0x0000021ABBCE1570: É onde o objeto está alocado na memória. Agora, temos um tipo de dado chamado produto.
 """
-

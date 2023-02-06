@@ -6,12 +6,12 @@ Faça no terminal:
     - python
     - import this (veja o poema do programador)
 
-- A ideia da pep8 é que possamos escrever códigos de forma pythônica, ou seja, visualmente bonitas
+- A ideia da pep8 é que possamos escrever códigos de forma pythônica, ou seja, visualmente bonitos
 
 Dicas:
  - Utilizar Camel Case para nome de classes. Ou seja, NomeSobrenome: Observe as letras maiúsculas
- - Perceba que duas linhas em branco são necessárias para evitar a cobrinha
- - Para tirar erros de palavras, modifique em: file,settings,slelling,desativar typo
+ - Perceba que duas linhas em branco são necessárias para evitar a cobrinha de aviso
+ - Para tirar erros de palavras, modifique em: file/settings/slelling/desativar typo
  - Utilizar nome minúsculo, separados por underline para funções ou variáveis
 
 
@@ -47,7 +47,7 @@ numero = 4
 numero_impar = 5
 
 """
-    - Utilize 4 espaços para identação! se a regra não for seguida, não conseguiremos programar
+    - Utilize 4 espaços para indentação! se a regra não for seguida, não conseguiremos programar
     - Os dois pontos no fim da classe, função... indica que um novo bloco vai começar, por isso precisamos de 4 espaços
     - Não é recomendado usar o TAB do teclado para dar os espaços, muito embora ele esteja (em algumas máquinas)
     programado com 4 espaços da tecla space

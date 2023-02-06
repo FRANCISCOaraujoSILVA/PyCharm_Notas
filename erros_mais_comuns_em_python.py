@@ -58,8 +58,3 @@ print('Francisco')
 Obs.: Exceptions e Erros são sonônimos na programção. "Deu exception no código"
 Obs.: É importante verificar as saídas de erros
 """
-
-
-
-
-

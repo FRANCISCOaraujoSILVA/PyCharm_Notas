@@ -1,7 +1,8 @@
 """
-HERANÇA MÚLTIPLA
+                                                HERANÇA MÚLTIPLA
 
-    Enquando que no java conseguimos herdar diretamente apenas de uma classe, aqui no Python conseguimos herdar de múltiplas
+
+Enquando que no java conseguimos herdar diretamente apenas de uma classe, aqui no Python conseguimos herdar de múltiplas
 classes.
 
 Nota:
@@ -25,13 +26,9 @@ class Pessoa:
 
 class Pessoa(object):
     pass
-
-
-
-
 """
 
-# Exemplo 1 - Multiderivação Direta
+# Exemplo 1: Multiderivação Direta
 
 
 class Base1:
@@ -46,11 +43,11 @@ class Base3:
     pass
 
 
-class MultiDerivada(Base1, Base2, Base3):  # herda 3 classes
+class MultiDerivada(Base1, Base2, Base3):  # Herda 3 classes
     pass
 
 
-# Exemplo 2 - Multiderivação Indireta
+# Exemplo 2: Multiderivação Indireta
 
 
 class Base4:
@@ -61,11 +58,11 @@ class Base5(Base4):
     pass
 
 
-class Base6(Base5):  # herda diretamente a Base5 e indiretamente a Base4
+class Base6(Base5):  # Herda diretamente a Base5 e indiretamente a Base4
     pass
 
 
-class MultiDerivadaBases(Base6):  # herda diretamente a Base6 e indiretamente a Base5 e Base4
+class MultiDerivadaBases(Base6):  # Herda diretamente a Base6 e indiretamente a Base5 e Base4
     pass
 
 
@@ -85,7 +82,7 @@ class Aquatico(Animal):
     def nadar(self):
         return f'{self._Animal__nome} está nadando.'
 
-    def cumprimentar(self):  # sobrescrevendo o método cumprimentar()
+    def cumprimentar(self):  # Sobrescrevendo o método cumprimentar()
         return f'Eu sou {self._Animal__nome} do mar!'
 
 
@@ -101,7 +98,7 @@ class Terrestre(Animal):
         return f'Eu sou {self._Animal__nome} da terra!'
 
 
-class Pinguim(Terrestre, Aquatico):  # herança múltipla. Herdando diretamente Terrestre e Aquatico e indiretamente de
+class Pinguim(Terrestre, Aquatico):  # Herança múltipla. Herdando diretamente Terrestre e Aquatico e indiretamente de
     # Animal. Pinguim anda, nada e cumprimenta. A pergunta que fica é: Quando o pinguim tiver que cumprimentar, qual dos
     # três métodos ele irá executar?
 
@@ -125,17 +122,15 @@ print('-----')
 son = Pinguim('Son')
 print(son.andar())
 print(son.nadar())
-print(son.cumprimentar())  # qual dos metodos cumprimentar() será executado? A escolha é feita por:
+print(son.cumprimentar())  # Qual dos metodos cumprimentar() será executado? A escolha é feita por:
 # Method Resolution Order - MRO.
 print('------')
 
 """
 Vai executar o método cumprimentar() da classe Terrestre, pois é o primeiro da ordem de herança: Eu sou Son da terra!. 
 Se o primeiro da ordem de herança fosse Aquatico, o método cumprimentar() seria: Eu sou Son do mar!
-
 """
 
+# Descobrindo de qual instância é determinado objeto
 
-# Descobrindo de qual instância é determinado objeto:
-
-print(f'son é instância de Pinguim? {isinstance(son, Pinguim)}')  # retorna um booleano
+print(f'son é instância de Pinguim? {isinstance(son, Pinguim)}')  # Retorna um booleano

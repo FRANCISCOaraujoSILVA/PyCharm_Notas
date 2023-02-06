@@ -10,13 +10,13 @@ Outros exemplos de string:
 - aspas simples triplas
     '''Palavra'''
 - aspas duplas triplas
-    ""Palavra""     # só não coloquei as três aspas duplas, de fato, para não dar erro aqui no python, haja vista já ter
-aspas duplas e triplas logo abaixo.
+    ""Palavra""     # Só não coloquei as três aspas duplas, de fato, para não dar erro aqui no python, haja vista já ter
+aspas duplas e triplas logo abaixo
 """
 
 # Entrada de dados
 
-# Podemos fazer esse input em apenas uma linha. Muito mais elegante
+# Podemos fazer esse input apenas em uma linha. Muito mais elegante
 
 # print("Qual é o seu nome?")
 # nome = input()
@@ -35,7 +35,7 @@ nome = input('Qual o seu nome? ')
 
 print(f'Seja bem-vindo(a) {nome}!')
 
-# Podemos fazer esse input em apenas uma linha. Muito mais elegante
+# Podemos fazer esse input apenas em uma linha. Muito mais elegante
 
 # print('Qual sua idade?')
 # idade=input()

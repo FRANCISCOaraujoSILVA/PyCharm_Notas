@@ -1,12 +1,15 @@
+ ,--------------------------------------------------------------------------------------------------------------------,
+|                                          COMPILADO POR >>  FRANCISCO ARAÚJO                                          |
+ `--------------------------------------------------------------------------------------------------------------------´
 
-——————————————————————————————————————————————————————————————
+
+.............................
 INTRODUÇÃO A LINGUAGEM PYTHON
 1 - PEP8
 2 - Dir e Help
 3 - Recebendo dados do usuário
-——————————————————————————————————————————————————————————————
-..............................................................
-——————————————————————————————————————————————————————————————
+
+....................................
 VARIÁVEIS E TIPOS DE DADOS EM PYTHON
 4 - O tipo numérico
 5 - O tipo float
@@ -14,23 +17,20 @@ VARIÁVEIS E TIPOS DE DADOS EM PYTHON
 7 - O tipo string
 8 - Escopo de variáveis
 8a - O tipo None
-——————————————————————————————————————————————————————————————
-..............................................................
-——————————————————————————————————————————————————————————————
+
+...........................................
 ESTRUTURAS LÓGICAS E CONDICIONAIS EM PYTHON
 9 - IF, ELSE, ELIF
 10 - AND, OR, NOT, IS
-——————————————————————————————————————————————————————————————
-..............................................................
-——————————————————————————————————————————————————————————————
+
+.................................
 ESTRUTURAS DE REPETIÇÃO EM PYTHON
 11 - Loop for
 12 - Entendendo e explorando ranges
 13 - Loop while
 14 - Saindo de loops com break
-——————————————————————————————————————————————————————————————
-..............................................................
-——————————————————————————————————————————————————————————————
+
+...............
 COLEÇÕES PYTHON
 15 -  Listas
 16 - Tuplas
@@ -42,9 +42,8 @@ COLEÇÕES PYTHON
 22 - Módulo Collections - Ordered Dict
 23 - Módulo Collecitons - Named Tuple
 24 - Módulo Collections - Deque
-——————————————————————————————————————————————————————————————
-..............................................................
-——————————————————————————————————————————————————————————————
+
+.................
 FUNÇÕES EM PYTHON
 25 - Definindo funções
 26 - Funções com retorno
@@ -53,18 +52,16 @@ FUNÇÕES EM PYTHON
 29 - Documentando funções com docstrings
 30 - Entendendo o *args
 31 - Entendendo o **kwargs
-——————————————————————————————————————————————————————————————
-..............................................................
-——————————————————————————————————————————————————————————————
+
+........................
 COMPREHENSIONS EM PYTHON
 32 - List comprehension (parte 1)
 33 - List comprehension (parte 2)
 34 - Listas aninhadas
 35 - Dictionary comprehension
 36 - Set comprehension
-——————————————————————————————————————————————————————————————
-..............................................................
-——————————————————————————————————————————————————————————————
+
+.......................................
 EXPRESSÕES LAMBDAS E FUNÇÕES INTEGRADAS
 37 - Utilizando lambdas
 38 - Map
@@ -77,17 +74,15 @@ EXPRESSÕES LAMBDAS E FUNÇÕES INTEGRADAS
 45 - Reversed
 46 - LEN, ABS, SUM, ROUND
 47 - Zip
-——————————————————————————————————————————————————————————————
-..............................................................
-——————————————————————————————————————————————————————————————
+
+..........................
 DEBUGANDO E TRATANDO ERROS
 48 - Levantando os próprios erros com raise
 49 - O bloco Try/Except
 50 - TRY, EXCEPT, ELSE, FINALLY
 51 - Debugando o código com PDB
-——————————————————————————————————————————————————————————————
-..............................................................
-——————————————————————————————————————————————————————————————
+
+...........................................
 TRABALHANDO COM MÓDULOS E PACOTES EM PYTHON
 52 - O módulo random
 53 - Trabalhando com módulos Built-in
@@ -95,9 +90,8 @@ TRABALHANDO COM MÓDULOS E PACOTES EM PYTHON
 55 - Instalando e utilizando módulos externos
 56 - Pacotes
 57 - Dunder Main e Dunder Name
-——————————————————————————————————————————————————————————————
-..............................................................
-——————————————————————————————————————————————————————————————
+
+.............................
 LEITURA E ESCRITA EM ARQUIVOS
 59 - Leitura de arquivos
 60 - Seek e cursors
@@ -106,10 +100,9 @@ LEITURA E ESCRITA EM ARQUIVOS
 63 - Modos de arquivos
 64 - StringI
 65 - Sistema de arquivos - Navegação
-66
-——————————————————————————————————————————————————————————————
-..............................................................
-——————————————————————————————————————————————————————————————
+66 - ?
+
+.............................
 ITERADORES E GERADORES PYTHON
 67 - Entendendo iterators e iteráveis
 68 - Criando sua própria versão de loop
@@ -117,18 +110,16 @@ ITERADORES E GERADORES PYTHON
 70 - Geradores
 71 - Teste de memória com generators
 72 - Teste de velocidade com expressões geradoras
-——————————————————————————————————————————————————————————————
-..............................................................
-——————————————————————————————————————————————————————————————
+
+.....................
 DECORADORES EM PYTHON
 73 - Funções de maior grandeza
 74 - O que são decoradores
 75 - Decoradores com diferentes assinaturas
 76 - Preservando metadata com wraps
 77 - Forçando tipos de dados com um decorador
-——————————————————————————————————————————————————————————————
-..............................................................
-——————————————————————————————————————————————————————————————
+
+...............................
 ORIENTAÇÃO A OBJETOS COM PYTHON
 78 - O que é orientação a objetos
 79 - Classes
@@ -136,9 +127,8 @@ ORIENTAÇÃO A OBJETOS COM PYTHON
 81 - Métodos
 82 - Objetos
 83 - Abstração e encapsulamento
-——————————————————————————————————————————————————————————————
-..............................................................
-——————————————————————————————————————————————————————————————
+
+......................
 HERANÇA E POLIMORFISMO
 84 - Herança
 85 - Propriedades
@@ -147,6 +137,16 @@ HERANÇA E POLIMORFISMO
 88 - MRO - Method Resolution Ordr --> esse arquivo é o MRO
 89 - Polimorfismo
 90 - Métodos mágicos
-——————————————————————————————————————————————————————————————
-..............................................................
-——————————————————————————————————————————————————————————————
+
+
+
+ ,--------------------------------------------------------------------------------------------------------------------,
+|                                                 OBSERVAÇÕES IMPORTANTES                                              |
+ `--------------------------------------------------------------------------------------------------------------------´
+- Essas notas foram criadas durante o meu curso de Python 'DO BÁSICO AO AVANÇADO' e nelas estão contidas observações
+minhas e do instrutor do curso
+- Cada bloco (tudo, incluindo as aspas) entre linhas contínuas equivale a um script (aula) do Python. Ao todo há um
+pouco mais de 90 aulas
+- Você pode copiar e colar qualquer bloco para seu próprio script, para praticar e modificar como desejar
+- Ao copiar os arquivos do pdf para seu PyCharm pode ocorrer de estarem sem indentação, para corrigir faça:
+    - CTRL + ALT + SHIFT + L, e selecione a opção: Whole file

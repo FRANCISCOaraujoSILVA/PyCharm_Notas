@@ -3,7 +3,7 @@
 
 
 - Aceita diferentes tipos de dados
-- Tuplas são representadas por parênteses.
+- Tuplas são representadas por parênteses
 - Tuplas são IMUTÁVEIS, ou seja, ela nunca muda. Todas as operações em uma tupla gera uma NOVA tupla
 """
 
@@ -19,7 +19,7 @@ print(tupla2)
 print(type(tupla2))
 print('-----')
 
-# Nota 3: Tuplas com 1 elemento, não é uma tupla, é um inteiro. Por isso o aviso sobre (1), dizendo que é redundante
+# Nota 3: Tupla com 1 elemento, não é uma tupla, é um inteiro. Por isso o aviso sobre (1), dizendo que é redundante
 
 tupla3 = (1)
 print(tupla3)

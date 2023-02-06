@@ -24,9 +24,8 @@ def diz_oi():
 
 def exponencial(numero, potencia=2):
     """
-    A função retorna o quadrado de outro, e para qualquer potência informada.
     :param numero:  Base, obrigatório
     :param potencia: Expoente, opcional
-    :return: Rertono a potênica de um número
+    :return: Retorna a potência de um número
     """
     return numero ** potencia

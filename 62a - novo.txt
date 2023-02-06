@@ -1,4 +1,3 @@
-Podemos acrescentar uma linha no texto. 
-Podemos acrescentar outra. 
-Podemos acrescentar quantas quisermos. 
-Escrevendo no começo!
+Podemos acrescentar a primeira linha no texto. 
+Podemos acrescentar a segunda linha no texto. 
+Podemos acrescentar a terceira linha no texto. 

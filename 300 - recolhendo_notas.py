@@ -22,9 +22,9 @@ lista_arquivos = ['0 - cronograma_de_conteudos.txt', '1 - PEP8.py', '2 - dir_e_h
                   '46 - len_abs_sum_round.py', '47 - zip.py', '48 - raise.py', '49 - try_except.py',
                   '50 - try_except_else_finally.py', '51 - debugando_com_pdb.py', '52 - modulo_random.py',
                   '53 - modulos_builtin.py', '54 - modulos_customizados.py', '55 - modulos_externos.py',
-                  '56 - pacotes.py', '57 - dunder.py', '59 - leitura_de_arquivos.py', '60 - seek_e_cursors.py',
-                  '61 - bloco_with.py', '62 - escrevendo_em_arquivos.py', '63 - modos_abertura_arquivo.py',
-                  '64 - stringIO.py', '65 - sistema_de_arquivos_navegacao.py',
+                  '56 - pacotes.py', '57 - dunder.py', '59 - leitura_de_arquivos.py', '59a - texto.txt',
+                  '60 - seek_e_cursors.py', '61 - bloco_with.py', '62 - escrevendo_em_arquivos.py',
+                  '63 - modos_abertura_arquivo.py','64 - stringIO.py', '65 - sistema_de_arquivos_navegacao.py',
                   '67 - entendendo_iterators_e_iteraveis.py', '68 - criando_sua_propria_versao_de_loop.py',
                   '69 - escrevendo_um_iterador_customizado.py', '70 - geradores.py',
                   '71 - teste_de_memoria_com_generators.py', '72 - teste_de_velocidade_com_expressoes_geradoras.py',
@@ -33,12 +33,12 @@ lista_arquivos = ['0 - cronograma_de_conteudos.txt', '1 - PEP8.py', '2 - dir_e_h
                   '77 - forcando_tipos_de_dados_com_um_decorador.py', '78 - o_que_e_orientacao_a_objetos.py',
                   '79 - classes.py', '80 - atributos.py', '81 - metodos.py', '82 - objetos.py',
                   '83 - abstracao_e_encapsulamento.py', '84 - heranca.py', '85 - propriedades.py',
-                  '86 - o_metodo_super.py', '87 - heranca_multipla.py', 'MRO.py']
+                  '86 - o_metodo_super.py', '87 - heranca_multipla.py', 'MRO.py', '89 - polimorfismo.py',
+                  '90 - metodos_magicos.py', '300 - recolhendo_notas.py']
 leitura_completa = [open(dado, 'r', encoding='UTF-8') for dado in lista_arquivos]
 leitura_completa = [dado.read() for dado in leitura_completa]
 
 with open('301 - todas_as_notas.txt', 'w', encoding='UTF-8') as notass:
     for i in range(0, len(leitura_completa)):
         notass.write(leitura_completa[i] +
-                     '\n-----------------------------------------------------------------------------------------------'
-                     '-------------------\n\n')
+                     '\n——————————————————————————————————————————————————————————————————————\n\n')
